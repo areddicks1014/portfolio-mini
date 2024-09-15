@@ -1,0 +1,42 @@
+---
+import LinkIconButton from './LinkIconButton.astro';
+
+interface Props {
+  subheading: string,
+}
+
+const { subheading } = Astro.props;
+---
+
+<div class="subheader-container">
+  {
+    Astro.slots.has('left') ? <slot name="left" /> : <div class="spacer"></div>
+  }
+  
+  <h2 class="subheading">{subheading}</h2>
+  {
+    Astro.slots.has('right') ? <slot name="right" /> : <div class="spacer"></div> 
+  }
+</div>
+
+<style>
+    .subheader-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 75px;
+    }
+    .subheader-container h2 {
+      min-height: 75px;
+      text-align: center;
+    }
+    .spacer {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        width: 67px;
+        height: 75px;
+        background: transparent;
+    }
+</style>
+<script src="../utilities/magnetism.ts"></script>

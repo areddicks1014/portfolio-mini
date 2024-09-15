@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    id?: string,
+    link?: string,
+    icon?: string,
+    label?: string | never,
+    external?: boolean
+}
+
+const { id, link, icon, label, external = false } = Astro.props;
+---
+
+<a id={id} href={link ?? ''} target={external ? '_blank' : '_self'} rel={external ? 'noopener': 'noreferrer'}
+    class="interactive link-icon-button flex-center">
+    <!-- <span class="material-symbols-sharp flex-center">{icon}</span> -->
+    <Icon name={icon} class="icon"></Icon>
+    <span class="label">{label}</span>
+</a>
+
+<style>
+    .link-icon-button {
+        color: var(--link-color);
+        padding: var(--padding-x) var(--padding-y);
+        text-decoration: none;
+        flex-direction: column;
+    }
+    .link-icon-button:hover, .link-icon-button:focus {
+        color: var(--link-hover);
+        font-weight: bold;
+    }
+    .link-icon-button:hover:active, .link-icon-button:focus:active {
+        color: var(--link-active-hover);
+    }
+    /* TODO: fix color transition timing */
+    .link-icon-button .icon {
+        border-radius: 35px;
+        transition: border 0.2s, color 0.2s;
+        border: 2px solid transparent;
+        height: 55px;
+        width: 55px;
+        padding: 5px;
+    }
+    .link-icon-button:hover .icon, 
+    .link-icon-button:focus .icon {
+        border: 2px solid var(--link-hover);
+    }
+    .link-icon-button:hover:active .icon, 
+    .link-icon-button:focus:active .icon {
+        border: 2px solid var(--link-active-hover);
+    }
+    .label {
+        font-family: var(--font-brand);
+        font-weight: 600;
+        transition: font-weight 0.2s, color: 0.2s;
+    }
+    .link-icon-button:hover .label, 
+    .link-icon-button:focus .label {
+        font-weight: bold;
+    }
+    .link-icon-button:hover:active .label, 
+    .link-icon-button:focus:active .label {
+        font-weight: bold;
+    }
+</style>
+<script src="../utilities/magnetism.ts"></script>

@@ -1,0 +1,54 @@
+---
+import FlipHeader from "../components/FlipHeader.astro"
+import LinkIconButton from "../components/LinkIconButton.astro"
+import SubHeader from "../components/SubHeader.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+    <main>
+        <div class="header">
+            <FlipHeader/>
+            <SubHeader subheading="work">
+                <LinkIconButton slot="left" icon="mdi:arrow-back" link="/"/>
+            </SubHeader>
+        </div>
+        <div class="text-body">
+            <h3>Web</h3>
+            <h4>Polymer</h4>
+            <h4>Codepen</h4>
+            <h3>Fitbit (and Pebble)</h3>
+            <h3>Design</h3>
+            <h4>Case Studies</h4>
+            <h4>Research</h4>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+    h3 {
+        color: var(--gray-50);
+    }
+    h4 {
+        color: var(--gray-100);
+    }
+    h5 {
+        color: var(--gray-300);
+    }
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+    .text-body {
+        max-width: 600px;
+        margin: auto;
+    }
+</style>

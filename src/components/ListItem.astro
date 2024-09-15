@@ -1,0 +1,71 @@
+---
+interface Props {
+    label?: string,
+    link?: string
+}
+
+const { label, link } = Astro.props;
+---
+
+<li>
+  <a href={link} class="list-item interactive">
+    <span>{label}</span>
+    <slot/>
+  </a>
+</li>
+
+<style>
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-align: center;
+      font-family: var(--font-brand);
+      font-weight: 500;
+      user-select: none;
+    }
+    .list-item {
+		display: inline-block;
+		color: var(--gray-100);
+		text-decoration: none;
+    width: fit-content;
+    cursor: pointer;
+    padding: var(--padding-x) var(--padding-y);
+    font-weight: normal;
+    transition: font-weight 0.15s;
+	}
+    .list-item:hover,
+    .list-item:focus {
+      /* color: #000; */
+      /* color: var(--gray-400); */
+      font-weight: bold;
+      color: var(--gray-100);
+    }
+    .list-item:active {
+      color: var(--accent-dark);
+      /* color: var(--accent-text-over); */
+      /* color: var(--link-active); */
+    }
+    @supports (-webkit-text-stroke: 1px var(--accent-dark)) {
+      .special.list-item:hover,
+      .special.list-item:focus {
+        /* color: #000; */
+        /* color: var(--gray-400); */
+        color: var(--accent-dark);
+        -webkit-text-fill-color: var(--gray-999);
+        -webkit-text-stroke: 2px var(--accent-dark);
+      }
+    }
+
+    @supports (-webkit-text-stroke: 1px var(--accent-dark)) {
+      .special.list-item:active:hover,
+      .special.list-item:active:focus {
+        color: var(--link-active-hover);
+        -webkit-text-fill-color: var(--accent-dark);
+        -webkit-text-stroke: 2px var(--gray-999);
+      }
+    }
+    
+
+</style>
+<script src="../utilities/magnetism.ts"></script>

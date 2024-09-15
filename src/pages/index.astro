@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ListItem from '../components/ListItem.astro';
+import FlipHeader from '../components/FlipHeader.astro';
+import SubHeader from '../components/SubHeader.astro';
+---
+
+<BaseLayout>
+	<main>
+		<!-- <h1 class="text-gradient">augmented.alex</h1> -->
+		 <div class="header">
+			<FlipHeader/>
+			<SubHeader subheading='UX Design Engineer'/>
+		 </div>
+		<ul role="list" class="main-list">
+			<!-- <ListItem label="work" link="/work/"></ListItem> -->
+			<ListItem label="resume" link="/resume/"></ListItem>
+			<ListItem label="about" link="/about/"></ListItem>
+		</ul>
+	</main>
+</BaseLayout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+	.header :global(h2.subheading) {
+		font-size: var(--text-3xl);
+		color: var(--accent-light);
+	}
+	.main-list {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		font-size: var(--text-4xl);
+	}
+</style>
+<script>
+	// Add “loaded” class once the document has completely loaded.
+	addEventListener('load', () => document.documentElement.classList.add('loaded'));
+</script>

@@ -1,0 +1,132 @@
+<theme-toggle>
+	<button>
+		<span class="current-theme"></span>
+		<span class="icon material-symbols-sharp">light_mode</span>
+	</button>
+</theme-toggle>
+
+<style>
+	button {
+		display: flex;
+		border: 0;
+		padding: 0;
+		background: var(--gray-999);
+		cursor: pointer;
+		font: inherit;
+		font-family: var(--font-brand);
+	}
+	button:hover .current-theme {
+		color: var(--accent-text-over);
+		transform: translateX(-20%);
+	}
+	button:focus .current-theme {
+		color: var(--accent-text-over);
+		transform: translateX(-20%);
+	}
+	
+	.current-theme {
+		color: transparent;
+		margin-top: 0.25rem;
+		transition: all var(--theme-transition), color var(--theme-transition);
+		font-weight: 500;
+	}
+
+	:global(.theme-dark) .current-theme {
+		margin-top: 1.5rem;
+		transition: all var(--theme-transition);
+	}
+	.icon {
+		z-index: 1;
+		position: relative;
+		display: flex;
+		padding: 0.5rem;
+		width: 3rem;
+		height: 3rem;
+		font-size: 2rem;
+		color: var(--accent-overlay);
+		justify-content: center;
+		align-items: center;
+		border-radius: 25px;
+	}
+	
+	:global(.theme-dark) .icon.light::before {
+		transform: translateX(100%);
+	}
+	
+	:global(.theme-dark) .icon.dark,
+	:global(html:not(.theme-dark)) .icon.light,
+	button[aria-pressed='false'] .icon.light {
+		color: var(--accent-text-over);
+		background: var(--gradient-accent);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.icon,
+		.icon.light::before {
+			transition: transform var(--theme-transition), color var(--theme-transition);
+		}
+	}
+
+	@media (forced-colors: active) {
+		.icon.light::before {
+			background: SelectedItem;
+		}
+	}
+</style>
+
+<script>
+	class ThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+
+			const button = this.querySelector('button')!;
+			const icon = this.querySelector('.icon')!;
+			const currentThemeText = this.querySelector('.current-theme')!;
+			enum Theme {
+				Light = 'light',
+				Dark = 'dark',
+			};
+
+			let currentTheme: Theme = this.isDark() ? Theme.Dark : Theme.Light;
+
+			/** Set the theme to dark/light mode. */
+			const setTheme = (theme: Theme) => {
+				switch (theme) {
+					case Theme.Light:
+						document.documentElement.classList.remove('theme-dark');
+						currentThemeText.textContent = Theme.Light.toUpperCase();
+						icon.classList.add('light');
+						icon.classList.remove('dark');
+						icon.textContent = 'light_mode';
+						break;
+					case Theme.Dark:
+						document.documentElement.classList.add('theme-dark');
+						currentThemeText.textContent = Theme.Dark.toUpperCase();
+						icon.classList.remove('light');
+						icon.classList.add('dark');
+						icon.textContent = 'dark_mode';
+						break;
+					default:
+						// look at default browser theme
+						window.matchMedia('(prefers-color-scheme: dark)').matches
+							? document.documentElement.classList.add('theme-dark')
+							: document.documentElement.classList.remove('theme-dark');
+				};
+				// document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
+				button.setAttribute('aria-pressed', String());
+			};
+
+			// Toggle the theme when a user clicks the button.
+			button.addEventListener('click', () => setTheme(this.isDark() ? Theme.Light : Theme.Dark));
+
+			// Initialize button state to reflect current theme.
+			setTheme(currentTheme);
+		}
+
+		isDark() {
+			return document.documentElement.classList.contains('theme-dark');
+		}
+	
+	}
+	customElements.define('theme-toggle', ThemeToggle);
+</script>

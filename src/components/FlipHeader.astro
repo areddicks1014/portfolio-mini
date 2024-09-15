@@ -1,0 +1,83 @@
+---
+interface Props {
+  first?: string,
+  second?: string,
+  toggleTheme?: boolean
+}
+const { first = 'Alex Reddicks', second = 'augmented.alex', toggleTheme } = Astro.props;
+---
+
+<flip-header data-first={first} data-second={second} data-toggleTheme={toggleTheme}>
+  <h1 class="interactive-header text-gradient-accent interactive"></h1>
+</flip-header>
+
+<style>
+  .interactive-header {
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: all 0.2s;
+    overflow-wrap: anywhere;
+    margin: auto;
+    min-height: 90px;
+  }
+  .flipping {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  h1 {
+		text-align: center;
+	}
+</style>
+
+<script>
+    class FlipHeader extends HTMLElement {
+      connectedCallback() {
+        const header = this.querySelector('h1')!;
+        let isFlipped = false;
+        enum Theme {
+          Light = 'light',
+          Dark = 'dark',
+			  };
+        let currentTheme: Theme = this.isDark() ? Theme.Dark : Theme.Light;
+
+        /** Set the theme to dark/light mode. */
+			const setTheme = (theme: Theme) => {
+				switch (theme) {
+					case Theme.Light:
+						document.documentElement.classList.remove('theme-dark');
+						break;
+            case Theme.Dark:
+              document.documentElement.classList.add('theme-dark');
+						break;
+					default:
+						// look at default browser theme
+						window.matchMedia('(prefers-color-scheme: dark)').matches
+							? document.documentElement.classList.add('theme-dark')
+							: document.documentElement.classList.remove('theme-dark');
+				};
+			};
+        console.log(header);
+        header.addEventListener('click', () => {
+          isFlipped = !isFlipped;
+          setTheme(this.isDark() ? Theme.Light : Theme.Dark)
+          header.classList.add('flipping');
+          void header.offsetWidth;
+          setTimeout(() => {
+            header.textContent = this.isDark() ? this.dataset.second as string : this.dataset.first as string;
+            header.classList.remove('flipping');
+          }, 200);
+        });
+        setTheme(currentTheme);
+        header.textContent = this.isDark() ? this.dataset.second as string : this.dataset.first as string; 
+      }
+
+      isDark() {
+			return document.documentElement.classList.contains('theme-dark');
+		  }
+    }
+    
+    customElements.define('flip-header', FlipHeader);
+    
+</script>
+<script src="../utilities/magnetism.ts"></script>

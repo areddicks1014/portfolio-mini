@@ -1,0 +1,164 @@
+---
+import { Icon } from "astro-icon/components"
+import FlipHeader from "../components/FlipHeader.astro"
+import LinkIconButton from "../components/LinkIconButton.astro"
+import SubHeader from "../components/SubHeader.astro"
+import SubNav from "../components/SubNav.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+    <main>
+        <div class="header">
+            <FlipHeader/>
+            <SubHeader subheading="resume">
+                <LinkIconButton slot="left" icon="mdi:arrow-back" link="/"/>
+                <LinkIconButton slot="right" id="scroll-to-downloads" icon="mdi:download" link="#downloads"/>
+            </SubHeader>
+        </div>
+        <div class="text-body">
+            <hr class="divider">
+            <h3>Skills | Tools | Languages</h3>
+            <h4>Proficient In:</h4>
+            <ul>
+                <li>Application/Web Design</li>
+                <li>Wireframing, User Journeys</li>
+                <li>Figma</li>
+                <li>HTML/CSS</li>
+                <li>JavaScript/TypeScript</li>
+                <li>NgRx</li>
+                <li>Firebase</li>
+                <li>Angular</li>
+                <li>Azure DevOps</li>
+            </ul>
+            <h4>Additional Skills:</h4>
+            <ul>
+              <li>Amazon Web Services</li>
+              <li>Drupal, WordPress</li>
+              <li>C++/C#</li>
+              <li>Java (Android)</li>
+              <li>Polymer, React, Astro</li>
+            </ul>
+            <hr class="divider">
+            <h3>Projects</h3>
+            <h4>Web Apps</h4>
+            <ul>
+              <li><a class="interactive" href="https://unhelpful-thinking.firebaseapp.com/" target="_blank" rel="noopener">Unhelpful Thinking Habits (2017) <Icon name="mdi:external-link"></Icon></a></li>
+              <li><a class="interactive" href="https://patios-n-stuff.firebaseapp.com/" target="_blank" rel="noopener">Patios-N-Stuff (2017) <Icon name="mdi:external-link"></Icon></a></li>
+              <li><a class="interactive" href="https://areddicks1014.firebaseapp.com/" target="_blank" rel="noopener">Old Portfolio Site (2017) <Icon name="mdi:external-link"></Icon></a></li>
+            </ul>
+            <h4>Fitbit/Pebble</h4>
+            <ul>
+              <li>ISACv1 watch face (Pebble, <a class="interactive" href="https://gallery.fitbit.com/details/f22839a7-513c-442c-a273-03ba5c4f144f" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>)</li>
+              <li>Miles Skill Tree watch face (<a class="interactive" href="https://gallery.fitbit.com/details/de8214b4-4ecf-4e14-aa33-8de9d5f4f94b" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>, <a class="interactive" href="https://gallery.fitbit.com/details/579c6239-b87e-4d4a-9305-7d0635965682" target="_blank" rel="noopener">Sense <Icon name="mdi:external-link"></Icon></a>)</li>
+            </ul>
+            <hr class="divider">
+            <h3>Employment</h3>
+            <h4>JB Hunt Transport Inc</h4>
+            <h5>Software Engineer (April 2018 - Present)</h5>
+            <ul>
+              <li>Front-end Lead on an internal platform FAQ application</li>
+              <li>Helped create the Tracking and Yards applications</li>
+              <li>Worked on the Design System team</li>
+              <li>Helped start the company-wide initiative to update all product teams to the latest Design System version</li>
+              <li>Previous instructor for internal NgRx class</li>
+            </ul>
+            <h4>EveryChannel Marketing</h4>
+            <h5>Web Developer (Jan 2016 - Dec 2017)</h5>
+            <ul>
+              <li>Responsible for finding and modifying Drupal and WordPress templates for the client’s needs.</li>
+              <li>Learned to use Amazon Web Services, such as the E3 and S3 servers.</li>
+            </ul>
+            <h4>CIS Department at Arkansas Tech University</h4>
+            <h5>Work study (Sep 2012 - Jan 2016)</h5>
+            <ul>
+              <li>I did various work for the department such as filing papers, delivering paperwork/etc. to other departments, assisting with networking, as well as studying for classes.</li>
+              <li>I also tutored other students in programming such as C++, C#, HTML/CSS, JavaScript, etc.</li>
+            </ul>
+            <hr class="divider">
+            <h3>Education</h3>
+            <h4>Arkansas Tech University</h4>
+            <h5>(Aug 2010 - 2016)</h5>
+            <ul>
+              <li>Senior project involved working with the FBI and the Emergency Management Department on campus to build a Windows application that would help someone quickly contact the appropriate admin office within a specific county, city, or district. Key features were a backend database as well as an intuitive and responsive UX/UI design with an interactive map.</li>
+            </ul>
+            <h4>Certificates</h4>
+            <h5>(2024 - In Progress)</h5>
+            <ul>
+              <li>Google UX Design Professional Certificate</li>
+            </ul>
+            <hr class="divider">
+            <h3>Interests</h3>
+            <ul>
+              <li>Keeping up with the latest technologies</li>
+              <li>Pursuing physical and outdoor activities</li>
+              <li>Playing video games</li>
+              <li>Sketching/coding personal designs</li>
+            </ul>
+            <hr class="divider">
+        </div>
+        <div id="downloads" #downloads class="download-links">
+            <h3>download resume</h3>
+            <div class="flex-center">
+                <LinkIconButton label="Docx" icon="mdi:file-document" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5b.docx?alt=media&token=d8dc2c8e-ddde-4044-b6d3-229a6180b8e8"/>
+                <LinkIconButton label="PDF" icon="mdi:adobe-acrobat" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5b.pdf?alt=media&token=a786be76-c609-4eee-b3ac-540bc6659bd8"/>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+    h3 {
+        color: var(--gray-50);
+    }
+    h4 {
+        color: var(--gray-100);
+    }
+    h5 {
+        color: var(--gray-300);
+    }
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+    .text-body {
+        max-width: 600px;
+        margin: auto;
+    }
+    .text-body ul {
+        font-size: var(--text-lg);
+    }
+    .text-body a {
+        font-weight: 500;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .text-body a:hover, .text-body a:focus {
+        text-decoration: underline;
+    }
+    .download-links {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .download-links .flex-center {
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+    }
+</style>
+<script src="../utilities/magnetism.ts"></script>
+<script>
+    document.getElementById('scroll-to-downloads')?.addEventListener('click', (event) => {
+        event.preventDefault();
+        const downloadsSection = document.getElementById('downloads'); 
+        downloadsSection?.scrollIntoView({ behavior: 'smooth' });
+    })
+</script>

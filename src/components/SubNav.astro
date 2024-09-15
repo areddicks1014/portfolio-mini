@@ -1,0 +1,29 @@
+---
+interface Props {
+    breadcrumbs: string[]
+}
+
+const { breadcrumbs } = Astro.props;
+---
+
+<div class="sub-nav">
+    {breadcrumbs.map((crumb, index) => (
+        <>
+            <a class="interactive" href={index === 0 ? '/' : `/${breadcrumbs.slice(0, index + 1).join('/')}`}>
+                {crumb}
+            </a>
+            {index < breadcrumbs.length - 1 && " > "}
+        </>
+    ))}
+</div>
+
+<style>
+    a {
+        font-family: var(--font-brand);
+        font-size: var(--text-2xl);
+        padding: var(--padding-x) var(--padding-y);
+    }
+    .sub-nav {
+        margin: 0.5rem;
+    }
+</style>

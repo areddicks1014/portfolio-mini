@@ -1,0 +1,60 @@
+---
+import FlipHeader from "../components/FlipHeader.astro"
+import LinkIconButton from "../components/LinkIconButton.astro"
+import SubHeader from "../components/SubHeader.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+    <main>
+        <div class="header">
+            <FlipHeader/>
+            <SubHeader subheading="about">
+                <LinkIconButton slot="left" icon="mdi:arrow-back" link="/"/>
+            </SubHeader>
+        </div>
+        <div class="text-body">
+            <p class="summary">I am a UI/UX-focused software engineer passionate about crafting intuitive, accessible digital experiences. With a sharp eye for detail and a love for micro-interactions, I create experiences that are a joy to use. I enjoy learning and collaborating on projects that improve people's lives and well-being.</p>
+        </div>
+        <div class="social-links">
+            <h3>where to find me on the web</h3>
+            <div class="flex-center">
+                <LinkIconButton label="Email" icon="mdi:email" link="mailto:areddicks1014@gmail.com" external/>
+                <LinkIconButton label="LinkedIn" icon="mdi:linkedin" link="https://www.linkedin.com/in/areddicks1014/" external/>
+                <LinkIconButton label="Codepen" icon="mdi:codepen" link="https://codepen.io/augmented-alex" external/>
+                <LinkIconButton label="Github" icon="mdi:github" link="https://github.com/areddicks1014" external/>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+    .text-body {
+        max-width: 600px;
+        margin: auto;
+    }
+    .summary {
+        font-size: var(--text-lg);
+    }
+    .social-links {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .social-links .flex-center {
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+    }
+</style>
