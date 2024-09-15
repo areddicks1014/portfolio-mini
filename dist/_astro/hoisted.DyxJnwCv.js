@@ -1,1 +1,0 @@
-import"./hoisted.DrJ_s7rP.js";document.getElementById("scroll-to-downloads")?.addEventListener("click",o=>{o.preventDefault(),document.getElementById("downloads")?.scrollIntoView({behavior:"smooth"})});
