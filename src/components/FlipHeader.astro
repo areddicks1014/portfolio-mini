@@ -32,7 +32,8 @@ const { first = 'Alex Reddicks', second = 'augmented.alex', toggleTheme } = Astr
 
 <script>
     class FlipHeader extends HTMLElement {
-      connectedCallback() {
+      constructor() {
+        super();
         const header = this.querySelector('h1')!;
         let isFlipped = false;
         enum Theme {
