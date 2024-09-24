@@ -19,16 +19,25 @@ const { subheading } = Astro.props;
   }
 </div>
 
-<style>
+<style lang="scss">
     .subheader-container {
         display: flex;
         align-items: flex-end;
         justify-content: center;
         min-height: 75px;
     }
+    :global(.subheader-container:has(.link-icon-button span.reveal)) {
+      min-height: 100px;
+      margin-bottom: -0.5rem;
+    }
+    
+    
     .subheader-container h2 {
       min-height: 75px;
       text-align: center;
+    }
+    :global(.subheader-container:has(.link-icon-button span.reveal)) h2 {
+      min-height: 100px;
     }
     .spacer {
         display: flex;

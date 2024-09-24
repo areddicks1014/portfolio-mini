@@ -6,62 +6,100 @@ interface Props {
     link?: string,
     icon?: string,
     label?: string | never,
+    reveal?: boolean,
+    secondary?: boolean,
     external?: boolean
 }
 
-const { id, link, icon, label, external = false } = Astro.props;
+const { id, link, icon, label, reveal, secondary, external = false } = Astro.props;
 ---
 
 <a id={id} href={link ?? ''} target={external ? '_blank' : '_self'} rel={external ? 'noopener': 'noreferrer'}
     class="interactive link-icon-button flex-center">
-    <!-- <span class="material-symbols-sharp flex-center">{icon}</span> -->
-    <Icon name={icon} class="icon"></Icon>
-    <span class="label">{label}</span>
+    <Icon name={icon} class={secondary ? 'icon secondary' : 'icon'}></Icon>
+    <span aria-label={label} class={reveal ? 'label reveal' : 'label'}>{label}</span>
 </a>
 
-<style>
+<style lang="scss">
     .link-icon-button {
-        color: var(--link-color);
-        padding: var(--padding-x) var(--padding-y);
-        text-decoration: none;
-        flex-direction: column;
-    }
-    .link-icon-button:hover, .link-icon-button:focus {
+      color: var(--link-color);
+      padding: var(--padding-x) var(--padding-y);
+      text-decoration: none;
+      flex-direction: column;
+    
+      &:hover,
+      &:focus {
         color: var(--link-hover);
         font-weight: bold;
-    }
-    .link-icon-button:hover:active, .link-icon-button:focus:active {
-        color: var(--link-active-hover);
-    }
-    /* TODO: fix color transition timing */
-    .link-icon-button .icon {
+    
+        &:active {
+          color: var(--link-active-hover);
+        }
+      }
+    
+      .icon {
         border-radius: 35px;
         transition: border 0.2s, color 0.2s;
         border: 2px solid transparent;
         height: 55px;
         width: 55px;
         padding: 5px;
-    }
-    .link-icon-button:hover .icon, 
-    .link-icon-button:focus .icon {
-        border: 2px solid var(--link-hover);
-    }
-    .link-icon-button:hover:active .icon, 
-    .link-icon-button:focus:active .icon {
-        border: 2px solid var(--link-active-hover);
-    }
-    .label {
+        &.secondary {
+            border-style: dashed;
+        }
+      }
+    
+      &:hover {
+        .icon {
+          border: 2px solid var(--link-hover);
+          &.secondary {
+            border-style: dashed;
+          }
+        }
+    
+        &.reveal {
+          color: var(--link-hover);
+          transform: scale(1, 1) translateY(0);
+        }
+      }
+    
+      &:focus {
+        .icon {
+          border: 2px solid var(--link-active-hover);
+        }
+      }
+    
+      .label {
         font-family: var(--font-brand);
         font-weight: 600;
-        transition: font-weight 0.2s, color: 0.2s;
-    }
-    .link-icon-button:hover .label, 
-    .link-icon-button:focus .label {
+        transition: all 0.2s;
+    
+        &.reveal {
+          transform: scale(0.25, 0.25) translateY(-20px);
+          color: transparent;
+        }
+      }
+    
+      &:hover .label,
+      &:focus .label {
         font-weight: bold;
-    }
-    .link-icon-button:hover:active .label, 
-    .link-icon-button:focus:active .label {
+    
+        &.reveal {
+          color: var(--link-hover);
+          transform: scale(1, 1) translateY(0);
+        }
+      }
+    
+      &:hover:active .label,
+      &:focus:active .label {
         font-weight: bold;
+        color: var(--link-active-hover);
+    
+        &.reveal {
+          color: var(--link-active-hover);
+        }
+      }
     }
+    
 </style>
 <script src="../utilities/magnetism.ts"></script>

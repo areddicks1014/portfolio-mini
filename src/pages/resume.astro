@@ -3,7 +3,6 @@ import { Icon } from "astro-icon/components"
 import FlipHeader from "../components/FlipHeader.astro"
 import LinkIconButton from "../components/LinkIconButton.astro"
 import SubHeader from "../components/SubHeader.astro"
-import SubNav from "../components/SubNav.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
@@ -12,11 +11,46 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         <div class="header">
             <FlipHeader/>
             <SubHeader subheading="resume">
-                <LinkIconButton slot="left" icon="mdi:arrow-back" link="/"/>
-                <LinkIconButton slot="right" id="scroll-to-downloads" icon="mdi:download" link="#downloads"/>
+                <LinkIconButton slot="left" label="back" reveal icon="mdi:arrow-back" link="/"/>
+                <LinkIconButton slot="right" label="downloads" secondary reveal id="scroll-to-downloads" icon="mdi:download" link="#downloads"/>
             </SubHeader>
         </div>
         <div class="text-body">
+            <h3>Employment</h3>
+            <h4>JB Hunt Transport Inc</h4>
+            <h5>Software Engineer II (April 2018 - Present)</h5>
+            <ul>
+              <li>Front-end Lead on an internal platform FAQ application</li>
+              <li>Helped create new Tracking and Yards applications</li>
+              <li>Worked on the Design System team where I streamlined CI/CD pipelines for icons, updated documentation, and added custom functionalities for components</li>
+              <li>Conducted research that led to the company-wide initiative to update all product teams to the latest Design System version, how to measure compliance, and ways to ensure visibility on progress to the stakeholders</li>
+              <li>Instructor for internal NgRx class</li>
+            </ul>
+            <h4>EveryChannel Marketing</h4>
+            <h5>Web Developer (Jan 2016 - Dec 2017)</h5>
+            <ul>
+              <li>Responsible for finding and modifying Drupal and WordPress templates for the client’s needs.</li>
+              <li>Learned to use Amazon Web Services (EC2 and S3).</li>
+            </ul>
+            <h4>CIS Department at Arkansas Tech University</h4>
+            <h5>Work study (Sep 2012 - Jan 2016)</h5>
+            <ul>
+              <li>I did various work for the department such as filing papers, delivering paperwork/etc. to other departments, assisting with networking, as well as studying for classes.</li>
+              <li>I also tutored other students in programming such as C++, C#, HTML/CSS, JavaScript, etc.</li>
+            </ul>
+            <hr class="divider">
+            <h3>Projects</h3>
+            <h4>Web Apps</h4>
+            <ul>
+              <li><a class="interactive" href="https://unhelpful-thinking.firebaseapp.com/" target="_blank" rel="noopener">Unhelpful Thinking Habits (2017) <Icon name="mdi:external-link"></Icon></a></li>
+              <li><a class="interactive" href="https://patios-n-stuff.firebaseapp.com/" target="_blank" rel="noopener">Patios-N-Stuff (2017) <Icon name="mdi:external-link"></Icon></a></li>
+              <li><a class="interactive" href="https://areddicks1014.firebaseapp.com/" target="_blank" rel="noopener">Old Portfolio Site (2017) <Icon name="mdi:external-link"></Icon></a></li>
+            </ul>
+            <h4>Fitbit/Pebble</h4>
+            <ul>
+              <li>ISACv1 watch face (Pebble, <a class="interactive" href="https://gallery.fitbit.com/details/f22839a7-513c-442c-a273-03ba5c4f144f" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>)</li>
+              <li>Miles Skill Tree watch face (<a class="interactive" href="https://gallery.fitbit.com/details/de8214b4-4ecf-4e14-aa33-8de9d5f4f94b" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>, <a class="interactive" href="https://gallery.fitbit.com/details/579c6239-b87e-4d4a-9305-7d0635965682" target="_blank" rel="noopener">Sense <Icon name="mdi:external-link"></Icon></a>)</li>
+            </ul>
             <hr class="divider">
             <h3>Skills | Tools | Languages</h3>
             <h4>Proficient In:</h4>
@@ -38,42 +72,6 @@ import BaseLayout from "../layouts/BaseLayout.astro"
               <li>C++/C#</li>
               <li>Java (Android)</li>
               <li>Polymer, React, Astro</li>
-            </ul>
-            <hr class="divider">
-            <h3>Projects</h3>
-            <h4>Web Apps</h4>
-            <ul>
-              <li><a class="interactive" href="https://unhelpful-thinking.firebaseapp.com/" target="_blank" rel="noopener">Unhelpful Thinking Habits (2017) <Icon name="mdi:external-link"></Icon></a></li>
-              <li><a class="interactive" href="https://patios-n-stuff.firebaseapp.com/" target="_blank" rel="noopener">Patios-N-Stuff (2017) <Icon name="mdi:external-link"></Icon></a></li>
-              <li><a class="interactive" href="https://areddicks1014.firebaseapp.com/" target="_blank" rel="noopener">Old Portfolio Site (2017) <Icon name="mdi:external-link"></Icon></a></li>
-            </ul>
-            <h4>Fitbit/Pebble</h4>
-            <ul>
-              <li>ISACv1 watch face (Pebble, <a class="interactive" href="https://gallery.fitbit.com/details/f22839a7-513c-442c-a273-03ba5c4f144f" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>)</li>
-              <li>Miles Skill Tree watch face (<a class="interactive" href="https://gallery.fitbit.com/details/de8214b4-4ecf-4e14-aa33-8de9d5f4f94b" target="_blank" rel="noopener">Versa <Icon name="mdi:external-link"></Icon></a>, <a class="interactive" href="https://gallery.fitbit.com/details/579c6239-b87e-4d4a-9305-7d0635965682" target="_blank" rel="noopener">Sense <Icon name="mdi:external-link"></Icon></a>)</li>
-            </ul>
-            <hr class="divider">
-            <h3>Employment</h3>
-            <h4>JB Hunt Transport Inc</h4>
-            <h5>Software Engineer (April 2018 - Present)</h5>
-            <ul>
-              <li>Front-end Lead on an internal platform FAQ application</li>
-              <li>Helped create the Tracking and Yards applications</li>
-              <li>Worked on the Design System team</li>
-              <li>Helped start the company-wide initiative to update all product teams to the latest Design System version</li>
-              <li>Previous instructor for internal NgRx class</li>
-            </ul>
-            <h4>EveryChannel Marketing</h4>
-            <h5>Web Developer (Jan 2016 - Dec 2017)</h5>
-            <ul>
-              <li>Responsible for finding and modifying Drupal and WordPress templates for the client’s needs.</li>
-              <li>Learned to use Amazon Web Services, such as the E3 and S3 servers.</li>
-            </ul>
-            <h4>CIS Department at Arkansas Tech University</h4>
-            <h5>Work study (Sep 2012 - Jan 2016)</h5>
-            <ul>
-              <li>I did various work for the department such as filing papers, delivering paperwork/etc. to other departments, assisting with networking, as well as studying for classes.</li>
-              <li>I also tutored other students in programming such as C++, C#, HTML/CSS, JavaScript, etc.</li>
             </ul>
             <hr class="divider">
             <h3>Education</h3>
@@ -100,8 +98,8 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         <div id="downloads" #downloads class="download-links">
             <h3>download resume</h3>
             <div class="flex-center">
-                <LinkIconButton label="Docx" icon="mdi:file-document" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5b.docx?alt=media&token=d8dc2c8e-ddde-4044-b6d3-229a6180b8e8"/>
-                <LinkIconButton label="PDF" icon="mdi:adobe-acrobat" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5b.pdf?alt=media&token=a786be76-c609-4eee-b3ac-540bc6659bd8"/>
+                <LinkIconButton label="Docx" icon="mdi:file-document" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5c.docx?alt=media&token=b6b093de-4536-4aea-9ed0-e3ee053d73da"/>
+                <LinkIconButton label="PDF" icon="mdi:adobe-acrobat" link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5c.docx.pdf?alt=media&token=b54200bb-69fe-4484-8e92-73368679af42"/>
             </div>
         </div>
     </main>
@@ -131,7 +129,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 	}
     .text-body {
         max-width: 600px;
-        margin: auto;
+        margin: -0.5rem auto auto auto;
     }
     .text-body ul {
         font-size: var(--text-lg);
