@@ -1,0 +1,102 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FlipHeader from "../../components/FlipHeader.astro";
+import LinkIconButton from "../../components/LinkIconButton.astro";
+import SubHeader from "../../components/SubHeader.astro";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+// This is a dynamic route that generates a page for every Markdown file in src/content/
+// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
+// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
+export async function getStaticPaths() {
+  const work = await getCollection("work");
+  return work.map((entry: any) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout
+  title={"work - " + entry.data.title}
+  description={entry.data.description}
+>
+    <main>
+        <div class="header">
+            <FlipHeader/>
+            <SubHeader subheading={entry.data.title}>
+                <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/work"/>
+                <LinkIconButton slot="right" reveal label="home" icon="mdi:home" link="/"/>
+            </SubHeader>
+        </div>
+        <div class="text-body">
+            <hr class="divider"/>
+            <div class="work-info">
+                <!-- view icon link button -->
+                { entry.data.codeLink ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
+                <div class="tags">
+                    {entry.data.tags?.map((tag: any) => <span class="tag flex-center">{tag}</span>)}
+                </div>
+                <!-- code icon link button -->
+                { entry.data.viewLink ? <LinkIconButton small reveal above label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
+            </div>
+            <hr class="divider"/>
+            <Content />
+        </div>
+    </main>
+</BaseLayout>
+
+<style lang="scss">
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+    .work-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: -1.5rem 1rem 0 1rem;
+        .small-spacer {
+            width: 47px;
+            height: 71px;
+            background: transparent;
+            padding: var(--padding-x) var(--padding-y);
+        }
+    }
+    .text-body {
+        max-width: 700px;
+        margin: auto;
+    }
+  .tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem;
+    .tag {
+      border: 2px solid var(--gray-700);
+      border-radius: 35px;
+      padding: 0 0.75rem;
+      &:hover,
+      &:focus {
+        cursor: default;
+        border: 2px solid var(--gray-600);
+      }
+    }
+  }
+</style>

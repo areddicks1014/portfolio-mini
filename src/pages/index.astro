@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ListItem from '../components/ListItem.astro';
+import HomeListItem from '../components/HomeListItem.astro';
 import FlipHeader from '../components/FlipHeader.astro';
 import SubHeader from '../components/SubHeader.astro';
 ---
@@ -13,9 +13,9 @@ import SubHeader from '../components/SubHeader.astro';
 			<SubHeader subheading='UX Design Engineer'/>
 		 </div>
 		<ul role="list" class="main-list">
-			<!-- <ListItem label="work" link="/work/"></ListItem> -->
-			<ListItem label="resume" link="/resume/"></ListItem>
-			<ListItem label="about" link="/about/"></ListItem>
+			<HomeListItem label="work" link="/work/"></HomeListItem>
+			<HomeListItem label="resume" link="/resume/"></HomeListItem>
+			<HomeListItem label="about" link="/about/"></HomeListItem>
 		</ul>
 	</main>
 </BaseLayout>

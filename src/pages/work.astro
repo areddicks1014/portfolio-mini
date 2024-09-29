@@ -1,8 +1,12 @@
 ---
-import FlipHeader from "../components/FlipHeader.astro"
-import LinkIconButton from "../components/LinkIconButton.astro"
-import SubHeader from "../components/SubHeader.astro"
-import BaseLayout from "../layouts/BaseLayout.astro"
+import FlipHeader from "../components/FlipHeader.astro";
+import LinkIconButton from "../components/LinkIconButton.astro";
+import SubHeader from "../components/SubHeader.astro";
+import WorkListItem from "../components/WorkListItem.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+
+const workEntries = await getCollection('work');
 ---
 
 <BaseLayout>
@@ -14,18 +18,31 @@ import BaseLayout from "../layouts/BaseLayout.astro"
             </SubHeader>
         </div>
         <div class="text-body">
-            <h3>Web</h3>
-            <h4>Polymer</h4>
+            {
+                workEntries.map((entry: any) => (
+                    <WorkListItem title={entry.data.title} 
+                        description={entry.data.description}
+                        tags={entry.data.tags} 
+                        view={entry.data.viewLink}
+                        details={'/work/' + entry.slug}
+                        code={entry.data.codeLink} />
+                ))
+            }
+            <!-- <h3>Web</h3>
+            <p>Old Porfolio Site</p>
             <h4>Codepen</h4>
-            <h3>Fitbit (and Pebble)</h3>
             <h3>Design</h3>
             <h4>Case Studies</h4>
+            <p>UX Course</p>
             <h4>Research</h4>
+            <p>Design System Update Effort</p>
+            <p>Design System Update Compliance</p>
+            <p>Design System Accessibility</p> -->
         </div>
     </main>
 </BaseLayout>
 
-<style>
+<style lang="scss">
     main {
 		margin: auto;
 		padding: 1rem;
@@ -51,4 +68,5 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         max-width: 600px;
         margin: auto;
     }
+    
 </style>

@@ -7,17 +7,19 @@ interface Props {
     icon?: string,
     label?: string | never,
     reveal?: boolean,
+    above?: boolean,
     secondary?: boolean,
+    small?: boolean,
     external?: boolean
 }
 
-const { id, link, icon, label, reveal, secondary, external = false } = Astro.props;
+const { id, link, icon, label, reveal, above, secondary, small, external = false } = Astro.props;
 ---
 
 <a id={id} href={link ?? ''} target={external ? '_blank' : '_self'} rel={external ? 'noopener': 'noreferrer'}
-    class="interactive link-icon-button flex-center">
-    <Icon name={icon} class={secondary ? 'icon secondary' : 'icon'}></Icon>
-    <span aria-label={label} class={reveal ? 'label reveal' : 'label'}>{label}</span>
+    class:list={['interactive link-icon-button flex-center', { above: above }]}>
+    <Icon name={icon} class:list={['icon', { secondary: secondary }, { small: small }]}></Icon>
+    <span aria-label={label} class:list={['label', { reveal: reveal }, { above: above }]}>{label}</span>
 </a>
 
 <style lang="scss">
@@ -36,6 +38,9 @@ const { id, link, icon, label, reveal, secondary, external = false } = Astro.pro
           color: var(--link-active-hover);
         }
       }
+      &.above {
+        flex-direction: column-reverse;
+      }
     
       .icon {
         border-radius: 35px;
@@ -46,6 +51,10 @@ const { id, link, icon, label, reveal, secondary, external = false } = Astro.pro
         padding: 5px;
         &.secondary {
             border-style: dashed;
+        }
+        &.small {
+            height: 35px;
+            width: 35px;
         }
       }
     
@@ -77,6 +86,9 @@ const { id, link, icon, label, reveal, secondary, external = false } = Astro.pro
         &.reveal {
           transform: scale(0.25, 0.25) translateY(-20px);
           color: transparent;
+        }
+        &.above {
+            transform: scale(0.25, 0.25) translateY(20px);
         }
       }
     

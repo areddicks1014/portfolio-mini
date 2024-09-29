@@ -10,8 +10,10 @@ export default defineConfig({
 
   integrations: [icon({
     include: {
+      // mdi: ["*"], // useful for development
       mdi: [
         'arrow-back',
+        'home',
         'email', 
         'github',
         'linkedin',
@@ -19,7 +21,11 @@ export default defineConfig({
         'download',
         'file-document',
         'adobe-acrobat',
-        'external-link'
+        'external-link',
+        'eye',
+        'text-box',
+        'code',
+        'watch-variant'
       ],
     }
   })]
