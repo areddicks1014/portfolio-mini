@@ -2,79 +2,122 @@
 import LinkIconButton from "../components/LinkIconButton.astro";
 
 interface Props {
-    title: string,
-    description: string,
-    tags: string[],
-    view?: string,
-    details?: string,
-    code?: string
+  title: string;
+  description: string;
+  tags: string[];
+  view?: string;
+  details?: string;
+  code?: string;
 }
 
 const { title, description, tags, view, details, code } = Astro.props;
 ---
 
 <div class="work-item">
-    <h3 class="title">{title}</h3>
-    <p class="description">{description}</p>
-    <div class="footer">
-        <div class="tags">
-            {
-                tags?.map(tag => (
-                    <span class="tag flex-center">{tag}</span>
-                ))
-            }
-        </div>
-        <div class="actions">
-            { view ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={view} external/> : <span></span> }
-            <LinkIconButton small reveal above label="details" icon="mdi:text-box" link={details}/>
-            { code ? <LinkIconButton small reveal above label="code" icon="mdi:code" link={code} external/> : <span></span> }
-        </div>
+  <h3 class="title">{title}</h3>
+  <p class="description">{description}</p>
+  <div class="footer">
+    <div class="tags">
+      {tags?.map((tag) => <span class="tag flex-center">{tag}</span>)}
     </div>
+    <div class="actions">
+      {
+        view ? (
+          <LinkIconButton
+            small
+            reveal
+            above
+            label="view"
+            icon="mdi:eye"
+            link={view}
+            external
+          />
+        ) : (
+          <span />
+        )
+      }
+      <LinkIconButton
+        small
+        reveal
+        above
+        label="details"
+        icon="mdi:text-box"
+        link={details}
+      />
+      {
+        code ? (
+          <LinkIconButton
+            small
+            reveal
+            above
+            label="code"
+            icon="mdi:code"
+            link={code}
+            external
+          />
+        ) : (
+          <span />
+        )
+      }
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
-    .work-item {
-        border: 2px solid var(--gray-800);
-        padding: 0.5rem 0.5rem 0.5rem 1rem;
-        margin: 1rem;
-        &:hover {
-            border: 2px solid var(--gray-700);
-        }
-        .title {
-            font-size: var(--text-2xl);
-        }
-        .description {
-            margin-top: 0.5rem;
-        }
-        .footer {
-            display: flex;
-            align-items: flex-end;
-            width: 100%;
-            .tags {
-                height: fit-content;
-                display: flex;
-                flex: 1;
-                align-items: flex-end;
-                gap: 0.5rem;
-                overflow-x: auto;
-                padding: 0 0.3rem;
-                margin-left: -0.3rem;
-                -webkit-mask: linear-gradient(90deg,#0000,#000 1% 98%,#0000);
-                .tag {
-                    border: 2px solid var(--gray-700);
-                    border-radius: 35px;
-                    padding: 0 0.75rem;
-                    &:hover,
-                    &:focus {
-                        cursor: default;
-                        border: 2px solid var(--gray-600);
-                    }
-                }
-            }
-            .actions {
-                display: flex;
-                margin-bottom: -0.5rem;
-            }
-        }
+  .work-item {
+    border: 2px solid var(--gray-800);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin: 1rem;
+    &:hover {
+      border: 2px solid var(--gray-700);
     }
+    .title {
+      font-size: var(--text-2xl);
+    }
+    .description {
+      margin-top: 0.5rem;
+    }
+    .footer {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      .tags {
+        height: fit-content;
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0 0.3rem;
+        margin-left: -0.3rem;
+        -webkit-mask: linear-gradient(90deg, #0000, #000 1% 98%, #0000);
+        &::-webkit-scrollbar {
+          height: 2px;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--gray-600);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--gray-500);
+        }
+        .tag {
+          border: 2px solid var(--gray-700);
+          border-radius: 35px;
+          padding: 0 0.75rem;
+          &:hover,
+          &:focus {
+            cursor: default;
+            border: 2px solid var(--gray-600);
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        margin-bottom: -0.5rem;
+      }
+    }
+  }
 </style>

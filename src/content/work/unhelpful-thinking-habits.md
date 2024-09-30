@@ -1,6 +1,6 @@
 ---
 title: "Unhelpful Thinking Habits"
-description: "A demo site based off of one I created for a previous job that was not used."
+description: "My counselor at the time gave me a useful paper handout, but who's going to carry that around? So I made a small web app for it."
 tags:
 - "Polymer"
 - "HTML"
