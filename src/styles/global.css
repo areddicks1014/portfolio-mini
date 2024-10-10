@@ -88,6 +88,13 @@
 	--text-4xl: 3.5rem;
 	--text-5xl: 4.5rem;
 
+	--font-size-min: 17;
+	--font-size-max: 20;
+	--font-ratio-min: 1.25;
+	--font-ratio-max: 1.33;
+	--font-width-min: 320;
+	--font-width-max: 1500;
+
 	/* Fonts */
 	/* Borda_Light -> font-weight: 100 */
 	/* Borda -> font-weight: normal */
@@ -238,6 +245,33 @@
 	--shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
 		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
 }
+
+@property --size {
+	initial-value: 0;
+	inherits: true;
+	syntax: '<length>';
+  }
+
+  :where(.fluid) {
+	--fluid-min: calc(
+	  var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+	);
+	--fluid-max: calc(
+	  var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+	);
+	--fluid-preferred: calc(
+	  (var(--fluid-max) - var(--fluid-min)) /
+		(var(--font-width-max) - var(--font-width-min))
+	);
+	--fluid-type: clamp(
+	  (var(--fluid-min) / 16) * 1rem,
+	  ((var(--fluid-min) / 16) * 1rem) -
+		(((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+		(var(--fluid-preferred) * var(--variable-unit, 100vi)),
+	  (var(--fluid-max) / 16) * 1rem
+	);
+	font-size: var(--fluid-type) !important;
+  }
 
 html,
 body {

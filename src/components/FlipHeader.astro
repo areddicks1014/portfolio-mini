@@ -8,7 +8,7 @@ const { first = 'Alex Reddicks', second = 'augmented.alex', toggleTheme } = Astr
 ---
 
 <flip-header data-first={first} data-second={second} data-toggleTheme={toggleTheme}>
-  <h1 class="interactive-header text-gradient-accent interactive"></h1>
+  <h1 class="interactive-header text-gradient-accent interactive fluid"></h1>
 </flip-header>
 
 <style lang="scss">
@@ -17,9 +17,10 @@ const { first = 'Alex Reddicks', second = 'augmented.alex', toggleTheme } = Astr
     text-align: center;
     user-select: none;
     transition: all 0.2s;
-    overflow-wrap: anywhere;
+    text-wrap: balance;
     margin: auto;
-    min-height: 90px;
+    min-height: 100px;
+    --font-level: 5;
   }
   .flipping {
     opacity: 0;
