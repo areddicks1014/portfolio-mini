@@ -21,8 +21,14 @@ The stats (starting from the bottom left and going clockwise):
 - Active Zone Minutes (⬆️)
 - Heart Rate (💛🧡❤️)
     - The heart will change color to correspond with the current Active Zone to match Fitbit's colors.
+
 <br><br>
-Screenshots:
+All the credit goes to the amazing work done by Gil (@GilFromUI on Twitter) and the Insomniac team on the design work that I was inspired by.
+<hr class="divider">
+<br><br>
+
+### Screenshots:
+<br>
 
 ![Watch face screenshot 1](/screenshots/sm-miles-skill-tree-ss-1.png)
 ![Watch face screenshot 2](/screenshots/sm-miles-skill-tree-ss-2.png)
@@ -31,8 +37,10 @@ Screenshots:
 ![Watch face screenshot 5](/screenshots/sm-miles-skill-tree-ss-5.png)
 
 <br><br>
-All the credit goes to the amazing work done by Gil (@GilFromUI on Twitter) and the Insomniac team on the design work that I was inspired by.
 
-<br><br>
+### Wireframes
+![SM Miles Skill Tree Wireframe 1](/wireframes/SM_Miles_Skilltree_wireframe_1.jpg)
+![SM Miles Skill Tree Wireframe 2](/wireframes/SM_Miles_Skilltree_wireframe_2.jpg)
+
 
 *Note: I will update this page with my design process for this site including sketches and commentary.*
