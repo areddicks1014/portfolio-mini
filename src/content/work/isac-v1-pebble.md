@@ -27,4 +27,8 @@ Choose a theme to match your style:
 
 <br><br>
 
+### Wireframes
+
+![ISAC V1 Settings Wireframe](/wireframes/ISAC_v1_settings_wireframe.jpg)
+
 *Note: I will update this page with my design process for this site including sketches and commentary.*

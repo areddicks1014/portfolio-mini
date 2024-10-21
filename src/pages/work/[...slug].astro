@@ -40,12 +40,12 @@ const { Content } = await entry.render();
             <hr class="divider"/>
             <div class="work-info">
                 <!-- view icon link button -->
-                { entry.data.codeLink ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
+                { entry.data.viewLink ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
                 <div class="tags">
                     {entry.data.tags?.map((tag: any) => <span class="tag flex-center">{tag}</span>)}
                 </div>
                 <!-- code icon link button -->
-                { entry.data.viewLink ? <LinkIconButton small reveal above label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
+                { entry.data.codeLink ? <LinkIconButton small reveal above label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
             </div>
             <hr class="divider"/>
             <Content />
