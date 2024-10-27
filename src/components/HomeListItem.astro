@@ -8,7 +8,7 @@ const { label, link } = Astro.props;
 ---
 
 <li>
-  <a href={link} class="list-item interactive">
+  <a href={link} class="list-item interactive" transition:name={`${label}`}>
     <span>{label}</span>
     <slot/>
   </a>

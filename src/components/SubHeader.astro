@@ -11,7 +11,7 @@ const { subheading } = Astro.props;
     Astro.slots.has('left') ? <slot name="left" /> : <div class="spacer"></div>
   }
   
-  <h2 class="subheading">{subheading}</h2>
+  <h2 class="subheading" transition:name={`${subheading}`}>{subheading}</h2>
   {
     Astro.slots.has('right') ? <slot name="right" /> : <div class="spacer"></div> 
   }

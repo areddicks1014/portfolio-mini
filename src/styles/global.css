@@ -312,6 +312,9 @@ a:active {
 a:active:hover {
 	color: var(--link-active-hover);
 }
+a.interactive:not(.icon-link-button) svg {
+	vertical-align: text-bottom;
+}
 
 h1,
 h2,

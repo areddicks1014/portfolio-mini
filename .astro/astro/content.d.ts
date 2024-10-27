@@ -1,4 +1,14 @@
 declare module 'astro:content' {
+	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
 	interface RenderResult {
 		Content: import('astro/runtime/server/index.js').AstroComponentFactory;
 		headings: import('astro').MarkdownHeading[];
@@ -169,13 +179,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"sm-miles-skill-tree-hd.md": {
-	id: "sm-miles-skill-tree-hd.md";
+"sm-miles-skill-tree-hd.mdx": {
+	id: "sm-miles-skill-tree-hd.mdx";
   slug: "sm-miles-skill-tree-hd";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "unhelpful-thinking-habits.md": {
 	id: "unhelpful-thinking-habits.md";
   slug: "unhelpful-thinking-habits";
