@@ -4,6 +4,7 @@ declare module 'astro:content' {
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
 			remarkPluginFrontmatter: Record<string, any>;
+			components: import('astro').MDXInstance<{}>['components'];
 		}>;
 	}
 }
@@ -151,6 +152,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"work": {
+"conditional-form-pattern.mdx": {
+	id: "conditional-form-pattern.mdx";
+  slug: "conditional-form-pattern";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
 "isac-v1-fitbit.md": {
 	id: "isac-v1-fitbit.md";
   slug: "isac-v1-fitbit";

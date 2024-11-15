@@ -1,0 +1,1 @@
+import"./hoisted.Clzocc0v.js";document.getElementById("scroll-to-downloads")?.addEventListener("click",o=>{o.preventDefault(),document.getElementById("downloads")?.scrollIntoView({behavior:"smooth"})});
