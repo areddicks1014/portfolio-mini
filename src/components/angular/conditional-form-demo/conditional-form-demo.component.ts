@@ -19,7 +19,7 @@ interface UniverseOption {
   selector: 'app-conditional-form-demo',
   standalone: true,
   imports: [MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, CommonModule, MatCardModule, MatButtonModule],
-  styleUrl: "conditional-form-demo.scss",
+  styleUrls: ["conditional-form-demo.scss", "../mat-styles.scss"],
   templateUrl: "conditional-form-demo.html",
 })
 export class ConditionalFormDemo implements OnInit, OnDestroy {
