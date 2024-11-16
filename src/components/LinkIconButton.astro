@@ -30,7 +30,7 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
       flex-direction: column;
     
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: var(--link-hover);
         font-weight: bold;
     
@@ -72,7 +72,7 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
         }
       }
     
-      &:focus {
+      &:active, &:focus-visible {
         .icon {
           border: 2px solid var(--link-active-hover);
         }
@@ -93,7 +93,7 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
       }
     
       &:hover .label,
-      &:focus .label {
+      &:focus-visible .label {
         font-weight: bold;
     
         &.reveal {
@@ -103,7 +103,7 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
       }
     
       &:hover:active .label,
-      &:focus:active .label {
+      &:focus-visible:active .label {
         font-weight: bold;
         color: var(--link-active-hover);
     

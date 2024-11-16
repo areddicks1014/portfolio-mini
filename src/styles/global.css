@@ -303,7 +303,7 @@ img {
 a {
 	color: var(--link-color);
 }
-a:hover, a:focus {
+a:hover, a:focus-visible {
 	color: var(--link-hover);
 }
 a:active {
@@ -432,7 +432,7 @@ h5 {
 	}
   
 	/* Target buttons on hover and apply opposite box-shadow */
-	:where(.interactive.special:hover, .interactive.special:active, .interactive.special:focus) {
+	:where(.interactive.special:hover, .interactive.special:active, .interactive.special:focus-visible) {
 	  text-shadow: calc(
 		  0px - (clamp(-1, var(--magnet-x), 1) * var(--padding-x, 0.25rem))
 		)

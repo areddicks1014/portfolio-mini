@@ -19,16 +19,7 @@ $dark-theme: mat.define-theme(
   )
 );
 
-@mixin create-dark-theme() {
-  @include mat.all-component-themes($dark-theme);
-}
-
-@mixin create-light-theme() {
-  @include mat.all-component-themes($light-theme);
-}
-
 body {
-  
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 30px;
@@ -39,7 +30,7 @@ html {
   @include mat.all-component-themes($theme);
   height: 100%;
   &.theme-dark {
-    @include create-dark-theme();
+    @include mat.all-component-themes($dark-theme);
   }
 }
 
