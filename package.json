@@ -29,6 +29,7 @@
     "@angular/platform-server": "^18.2.10",
     "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.8",
+    "@astrojs/starlight": "^0.29.0",
     "astro": "^4.15.4",
     "astro-icon": "^1.1.1",
     "rxjs": "^7.8.1",

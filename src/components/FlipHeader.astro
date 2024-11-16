@@ -67,10 +67,12 @@ const {
         switch (theme) {
           case Theme.Light:
             document.documentElement.classList.remove("theme-dark");
+            document.documentElement.setAttribute('data-theme', 'github-light');
             localStorage.setItem("theme", Theme.Light);
             break;
-          case Theme.Dark:
-            document.documentElement.classList.add("theme-dark");
+            case Theme.Dark:
+              document.documentElement.classList.add("theme-dark");
+              document.documentElement.setAttribute('data-theme', 'github-dark');
             localStorage.setItem("theme", Theme.Dark);
             break;
           default:
