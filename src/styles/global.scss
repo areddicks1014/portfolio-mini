@@ -1,4 +1,6 @@
 /* Global variables */
+@use '@angular/material' as mat;
+
 :root {
     /* these stay here to keep animation speed correct */
 	--padding-x: 6px;
@@ -272,6 +274,38 @@
 	);
 	font-size: var(--fluid-type) !important;
   }
+
+// start angular material theme
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+  )
+);
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+  )
+);
+
+html {
+	@include mat.all-component-themes($theme);
+	&.theme-dark {
+		@include mat.all-component-themes($dark-theme);
+	}
+}
+  
+@include mat.core();
+@include mat.color-variants-backwards-compatibility($theme);
+
+// end angular material theme
 
 html,
 body {
