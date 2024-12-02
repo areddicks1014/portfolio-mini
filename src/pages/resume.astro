@@ -142,6 +142,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </ul>
       <hr class="divider" />
       <h3>Education</h3>
+      <h4>Certificates</h4>
+      <h5>Google UX Design Professional Certificate (Dec 2024)</h5>
+      <ul class="list-style-none">
+        <li><Icon name="mdi:verified" /> Verified by <a
+          class="interactive"
+          href="https://www.credly.com/badges/e96203a7-420b-42fd-8fcc-360bf11e41b8/public_url"
+          target="_blank"
+          rel="noopener"> Credly <Icon name="mdi:external-link" /></a
+        > and <a
+        class="interactive"
+        href="https://coursera.org/verify/professional-cert/63CU08X3N7XZ"
+        target="_blank"
+        rel="noopener"> Coursera <Icon name="mdi:external-link" /></a
+      ></li>
+      </ul>
       <h4>Arkansas Tech University</h4>
       <h5>(Aug 2010 - 2016)</h5>
       <ul>
@@ -153,11 +168,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           database as well as an intuitive and responsive UX/UI design with an
           interactive map.
         </li>
-      </ul>
-      <h4>Certificates</h4>
-      <h5>(2024 - In Progress)</h5>
-      <ul>
-        <li>Google UX Design Professional Certificate</li>
       </ul>
       <hr class="divider" />
       <h3>Volunteering</h3>
@@ -182,12 +192,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <LinkIconButton
           label="Docx"
           icon="mdi:file-document"
-          link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5d.docx?alt=media&token=12f3eafd-69b3-4735-94a8-efdbb50d7eb2"
+          link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5d.docx?alt=media&token=5892ab0a-04a4-40e5-afcd-bafa7aa36c88"
         />
         <LinkIconButton
           label="PDF"
           icon="mdi:adobe-acrobat"
-          link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5d.pdf?alt=media&token=2598a463-19f6-4a83-891c-0c056bbee204"
+          link="https://firebasestorage.googleapis.com/v0/b/augmented-alex-mini.appspot.com/o/files%2Fresume-alex-reddicks-v5d.pdf?alt=media&token=75bb7219-e80d-4f44-a0bf-a4ef7e4dbc56"
           external
         />
       </div>
@@ -224,6 +234,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     margin: -0.5rem auto auto auto;
     ul {
       font-size: var(--text-lg);
+      &.list-style-none {
+        margin-top: 0.25rem;
+        list-style: none;
+        li {
+          margin-left: -1.35rem;
+          svg{
+            vertical-align: text-bottom;
+          }
+        }
+      }
     }
     a {
       font-weight: 500;

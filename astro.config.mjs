@@ -32,6 +32,7 @@ export default defineConfig({
           "text-box",
           "code",
           "watch-variant",
+          "verified"
         ],
       },
     }),
