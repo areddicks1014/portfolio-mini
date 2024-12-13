@@ -4,15 +4,22 @@ import FlipHeader from "../components/FlipHeader.astro"
 import LinkIconButton from "../components/LinkIconButton.astro"
 import SubHeader from "../components/SubHeader.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
+import { Image } from "astro:assets"
+import augmentedAlexProfilePhoto from "../images/augmented-alex-profile-photo-v2.jpg";
+import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg";
 ---
 
-<BaseLayout>
+<BaseLayout title="augmented.alex - about">
     <main>
         <div class="header">
             <FlipHeader/>
             <SubHeader subheading="about">
                 <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/"/>
             </SubHeader>
+        </div>
+        <div class="profile-photo">
+            <Image class="dark" src={augmentedAlexProfilePhoto} alt="Profile photo of Alex."/>
+            <Image class="light" src={alexReddicksProfilePhoto} alt="Profile photo of Alex."/>
         </div>
         <div class="text-body">
             <p class="summary">I am a UI/UX focused software engineer with experience in full-stack development that is passionate about crafting intuitive, accessible digital experiences. With a sharp eye for detail and a love for micro-interactions, I create experiences that are a joy to use. I enjoy learning and collaborating on projects that improve people's lives and well-being.</p>
@@ -33,6 +40,12 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 </BaseLayout>
 
 <style lang="scss">
+    html[data-theme="github-light"] .dark {
+        display: none;
+    }
+    html[data-theme="github-dark"] .light {
+        display: none;
+    }
     main {
 		margin: auto;
 		padding: 1rem;
@@ -45,6 +58,14 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 		align-items: center;
 		align-content: center;
 	}
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+        margin: 1rem auto;
+        border-radius: 100px;
+        overflow: hidden;
+        shape-outside: circle();
+    }
     .text-body {
         max-width: 600px;
         margin: auto;
