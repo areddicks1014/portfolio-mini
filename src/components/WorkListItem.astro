@@ -14,7 +14,7 @@ const { title, description, tags, view, details, code } = Astro.props;
 ---
 
 <div class="work-item">
-  <h3 class="title">{title}</h3>
+  <a class="interactive" href={details}><h3 class="title">{title}</h3></a>
   <p class="description">{description}</p>
   <div class="footer">
     <div class="tags">
@@ -71,6 +71,14 @@ const { title, description, tags, view, details, code } = Astro.props;
     &:hover {
       border: 2px solid var(--gray-700);
     }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
     .title {
       font-size: var(--text-2xl);
     }
@@ -122,3 +130,4 @@ const { title, description, tags, view, details, code } = Astro.props;
     }
   }
 </style>
+<script src="../utilities/magnetism.ts"></script>
