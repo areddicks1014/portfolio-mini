@@ -14,6 +14,7 @@
 		
 	/* Colors */
 	--gray-0: #000000;
+	--gray-0-rgb: 0, 0, 0;
 	--gray-50: #191c1b;
 	--gray-100: #2d3130;
 	--gray-200: #393c3b;
@@ -26,7 +27,7 @@
 	--gray-900: #f8faf7;
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999-rgb:0, 0, 0;
+	--gray-999-rgb: 255, 255, 255;
 	--gray-999: #ffffff;
 
 	--colors-holoBlue: #33b5e5;
@@ -204,11 +205,14 @@
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
 	--motion-transition: 0.3s ease-in-out;
+
+	--starlight-image-zoom-backdrop-bg: rgba(var(--gray-999-rgb), 0.75);
 }
 
 :root.theme-dark {
 
 	--gray-0: #ffffff;
+	--gray-0-rgb: 255, 255, 255;
 	--gray-50: #f8faf7;
 	--gray-100: #e0e3e1;
 	--gray-200: #c4c7c5;
@@ -220,7 +224,7 @@
 	--gray-800: #2d3130;
 	--gray-900: #191c1b;
 	--gray-999-basis: 225, 31%, 5%;
-	--gray-999-rgb:255, 255, 255;
+	--gray-999-rgb: 0, 0, 0;
 	--gray-999: #000000;
 
 	--accent-light: var(--colors-beamBlue);
@@ -427,6 +431,28 @@ h5 {
 	margin: 1rem;
 	border-color: var(--gray-700);
 }
+
+starlight-image-zoom-zoomable {
+	width: unset !important;
+}
+.starlight-image-zoom-dialog {
+	.starlight-image-zoom-control {
+		background-color: var(--gray-999) !important;
+		color: var(--accent-regular);
+		border: 2px solid var(--accent-regular) !important;
+	}
+	figure {
+		figcaption {
+			color: var(--accent-text-over);
+			
+			background-color: var(--accent-subtle-overlay) !important;
+			border-top: 1px solid var(--accent-subtle-overlay) !important;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.33);
+			text-align: center;
+		}
+	}
+}
+
 
 @layer magnetism {
 	:root {

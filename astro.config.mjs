@@ -36,7 +36,6 @@ export default defineConfig({
       },
     }),
     expressiveCode(),
-    starlightImageZoom(),
     mdx({
       syntaxHighlight: "prism",
     }),
@@ -48,12 +47,13 @@ export default defineConfig({
     starlight({
       title: "augmented-alex",
       expressiveCode: {
-        // Replace the default themes with a custom set of bundled themes:
-        // "dracula" (a dark theme) and "solarized-light"
         themes: ['github-dark', 'github-light']
       },
       customCss: [
         '/src/styles/global.scss'
+      ],
+      plugins: [
+        starlightImageZoom(),
       ]
     }),
   ],

@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import FlipHeader from "../../components/FlipHeader.astro";
 import LinkIconButton from "../../components/LinkIconButton.astro";
 import SubHeader from "../../components/SubHeader.astro";
+import ImageZoom from 'starlight-image-zoom/components/ImageZoom.astro';
 
 interface Props {
   entry: CollectionEntry<"work">;
@@ -23,11 +24,11 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-
 <BaseLayout
-  title={"augmented.alex - " + entry.data.title}
-  description={entry.data.description}
+title={"augmented.alex - " + entry.data.title}
+description={entry.data.description}
 >
+  <ImageZoom />
     <main>
         <div class="header">
             <FlipHeader/>
@@ -112,4 +113,5 @@ const { Content } = await entry.render();
       }
     }
   }
+  
 </style>
