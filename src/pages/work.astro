@@ -19,13 +19,14 @@ const workEntries = await getCollection('work');
         </div>
         <div class="text-body">
             {
-                workEntries.map((entry: any) => (
+                workEntries.map((entry: any, index: number) => (
                     <WorkListItem title={entry.data.title} 
                         description={entry.data.description}
                         tags={entry.data.tags} 
                         view={entry.data.viewLink}
                         details={'/work/' + entry.slug}
-                        code={entry.data.codeLink} />
+                        code={entry.data.codeLink} 
+                        index={index} />
                 ))
             }
         </div>
