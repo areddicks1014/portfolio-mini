@@ -1,88 +1,170 @@
 ---
-import { Icon } from "astro-icon/components"
-import FlipHeader from "../components/FlipHeader.astro"
-import LinkIconButton from "../components/LinkIconButton.astro"
-import SubHeader from "../components/SubHeader.astro"
-import BaseLayout from "../layouts/BaseLayout.astro"
-import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components";
+import FlipHeader from "../components/FlipHeader.astro";
+import LinkIconButton from "../components/LinkIconButton.astro";
+import SubHeader from "../components/SubHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import augmentedAlexProfilePhoto from "../images/augmented-alex-profile-photo-v2.jpg";
 import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg";
 ---
 
 <BaseLayout title="augmented.alex - about">
-    <main>
-        <div class="header">
-            <FlipHeader/>
-            <SubHeader subheading="about">
-                <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/"/>
-            </SubHeader>
-        </div>
-        <div class="profile-photo">
-            <Image class="dark" src={augmentedAlexProfilePhoto} alt="Profile photo of Alex."/>
-            <Image class="light" src={alexReddicksProfilePhoto} alt="Profile photo of Alex."/>
-        </div>
-        <div class="text-body">
-            <p class="summary">I am a UI/UX focused software engineer with experience in full-stack development that is passionate about crafting intuitive, accessible digital experiences. With a sharp eye for detail and a love for micro-interactions, I create experiences that are a joy to use. I enjoy learning and collaborating on projects that improve people's lives and well-being.</p>
-            <br><hr><br>
-            <p class="summary">This website, much like myself, is a work in progress. This could be considered the seed of my <a href="https://maggieappleton.com/garden-history" target="_blank" rel="noopener" class="interactive">Digital Garden <Icon name="mdi:external-link"></Icon></a>, where I will be building and learning in public. As you visit (and re-visit) this space, things will grow and evolve as my design and engineering skills do.</p>
-        </div>
-        <div class="social-links">
-            <h3>where to find me on the web</h3>
-            <div class="flex-center">
-                <LinkIconButton label="Email" icon="mdi:email" link="mailto:areddicks1014@gmail.com" external/>
-                <LinkIconButton label="LinkedIn" icon="mdi:linkedin" link="https://www.linkedin.com/in/areddicks1014/" external/>
-                <LinkIconButton label="Codepen" icon="mdi:codepen" link="https://codepen.io/augmented-alex" external/>
-                <LinkIconButton label="Fitbit" icon="mdi:watch-variant" link="https://gallery.fitbit.com/developer/ab8c88ee-3f5b-47f2-8c70-22e4d6d26f3c" external/>
-                <LinkIconButton label="Github" icon="mdi:github" link="https://github.com/areddicks1014" external/>
-            </div>
-        </div>
-    </main>
+  <main>
+    <div class="header">
+      <FlipHeader />
+      <SubHeader subheading="about">
+        <LinkIconButton
+          slot="left"
+          reveal
+          label="back"
+          icon="mdi:arrow-back"
+          link="/"
+        />
+      </SubHeader>
+    </div>
+    <div class="profile-photo">
+      <Image
+        class="dark"
+        src={augmentedAlexProfilePhoto}
+        alt="Profile photo of Alex."
+      />
+      <Image
+        class="light"
+        src={alexReddicksProfilePhoto}
+        alt="Profile photo of Alex."
+      />
+    </div>
+    <div class="text-body">
+      <p class="summary">
+        I am a UI/UX focused software engineer with experience in full-stack
+        development that is passionate about crafting intuitive, accessible
+        digital experiences. With a sharp eye for detail and a love for
+        micro-interactions, I create experiences that are a joy to use. I enjoy
+        learning and collaborating on projects that improve people's lives and
+        well-being.
+      </p>
+      <br /><hr /><br />
+      <p class="summary">
+        This website, much like myself, is a work in progress. This could be
+        considered the seed of my <a
+          href="https://maggieappleton.com/garden-history"
+          target="_blank"
+          rel="noopener"
+          class="interactive"
+          >Digital Garden <Icon name="mdi:external-link" /></a
+        >, where I will be building and learning in public. As you visit (and
+        re-visit) this space, things will grow and evolve as my design and
+        engineering skills do.
+      </p>
+    </div>
+    <div class="social-links">
+      <h3>where to find me on the web</h3>
+      <div class="flex-center">
+        <LinkIconButton
+          label="Email"
+          icon="mdi:email"
+          link="mailto:areddicks1014@gmail.com"
+          external
+        />
+        <LinkIconButton
+          label="LinkedIn"
+          icon="mdi:linkedin"
+          link="https://www.linkedin.com/in/areddicks1014/"
+          external
+        />
+        <LinkIconButton
+          label="Codepen"
+          icon="mdi:codepen"
+          link="https://codepen.io/augmented-alex"
+          external
+        />
+        <LinkIconButton
+          label="Fitbit"
+          icon="mdi:watch-variant"
+          link="https://gallery.fitbit.com/developer/ab8c88ee-3f5b-47f2-8c70-22e4d6d26f3c"
+          external
+        />
+        <LinkIconButton
+          label="Github"
+          icon="mdi:github"
+          link="https://github.com/areddicks1014"
+          external
+        />
+      </div>
+    </div>
+  </main>
 </BaseLayout>
 
 <style lang="scss">
-    html[data-theme="github-light"] .dark {
-        display: none;
+  @-webkit-keyframes ScaleIn {
+    0% {
+      transform: scale(0.95) translateY(3px);
     }
-    html[data-theme="github-dark"] .light {
-        display: none;
+    100% {
+      transform: scale(1) translate(0px);
     }
-    main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-	}
-	.header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		align-content: center;
-	}
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-        margin: 1rem auto;
-        border-radius: 100px;
-        overflow: hidden;
-        shape-outside: circle();
+  }
+  @keyframes ScaleIn {
+    0% {
+      transform: scale(0.95) translateY(3px);
     }
-    .text-body {
-        max-width: 600px;
-        margin: auto;
+    100% {
+      transform: scale(1) translateY(0px);
     }
-    .summary {
-        font-size: var(--text-lg);
-        a {
-            display: inline-block;
+  }
+  html[data-theme="github-light"] .dark {
+    display: none;
+  }
+  html[data-theme="github-dark"] .light {
+    display: none;
+  }
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    margin: 1rem auto;
+    border-radius: 100px;
+    overflow: hidden;
+    shape-outside: circle();
+    animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+  }
+  .text-body {
+    max-width: 600px;
+    margin: auto;
+    > * {
+      animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+      @for $i from 1 through 100 {
+        &:nth-child(#{$i}n) {
+          animation-delay: #{$i * 0.04}s;
         }
+      }
     }
-    .social-links {
-        text-align: center;
-        margin-top: 1rem;
+  }
+  .summary {
+    font-size: var(--text-lg);
+    a {
+      display: inline-block;
     }
-    .social-links .flex-center {
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin: 1rem 0;
-    }
+  }
+  .social-links {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .social-links .flex-center {
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
 </style>

@@ -87,10 +87,11 @@ const { title, description, tags, view, details, code, index } = Astro.props;
   }
 }
   .fade-in-animation {
-    animation: FadeIn 0.2s cubic-bezier(0.2, 0, 0, 1) both;
+    animation: FadeIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
   }
 
   .work-item {
+    background: rgba(var(--gray-999-rgb), 0.66);
     border: 2px solid var(--gray-800);
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 1rem;

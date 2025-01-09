@@ -35,8 +35,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h5>Software Engineer II (April 2018 - September 2024)</h5>
       <ul>
         <li>Front-end Lead on 'Platform FAQ' Angular web application</li>
-        <li>Worked on the Design System team where I streamlined Azure DevOps CI/CD pipelines for icons, updated documentation, added custom functionalities for our Angular and PrimeNg components</li>
-        <li>Conducted design research that led to the company-wide initiative for our team to assist in updating all product teams to the latest Design System and Angular versions, how to measure product team compliance, and ways to ensure visibility on progress to the stakeholders</li>
+        <li>
+          Worked on the Design System team where I streamlined Azure DevOps
+          CI/CD pipelines for icons, updated documentation, added custom
+          functionalities for our Angular and PrimeNg components
+        </li>
+        <li>
+          Conducted design research that led to the company-wide initiative for
+          our team to assist in updating all product teams to the latest Design
+          System and Angular versions, how to measure product team compliance,
+          and ways to ensure visibility on progress to the stakeholders
+        </li>
         <li>Instructor for internal Angular NgRx class</li>
         <li>Helped create 'Tracking', 'Yards' Angular web applications</li>
       </ul>
@@ -76,7 +85,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             rel="noopener"
             >Unhelpful Thinking Habits (2017) <Icon
               name="mdi:external-link"
-            /></a>
+            /></a
+          >
         </li>
         <li>
           <a
@@ -84,7 +94,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             href="https://patios-n-stuff.firebaseapp.com/"
             target="_blank"
             rel="noopener"
-            >Patios-N-Stuff (2017) <Icon name="mdi:external-link" /></a>
+            >Patios-N-Stuff (2017) <Icon name="mdi:external-link" /></a
+          >
         </li>
         <li>
           <a
@@ -92,7 +103,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             href="https://areddicks1014.firebaseapp.com/"
             target="_blank"
             rel="noopener"
-            >Old Portfolio Site (2017) <Icon name="mdi:external-link" /></a>
+            >Old Portfolio Site (2017) <Icon name="mdi:external-link" /></a
+          >
         </li>
       </ul>
       <h4>Fitbit/Pebble</h4>
@@ -145,17 +157,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h4>Certificates</h4>
       <h5>Google UX Design Professional Certificate (Dec 2024)</h5>
       <ul class="list-style-none">
-        <li><Icon name="mdi:verified" /> Verified by <a
-          class="interactive"
-          href="https://www.credly.com/badges/e96203a7-420b-42fd-8fcc-360bf11e41b8/public_url"
-          target="_blank"
-          rel="noopener"> Credly <Icon name="mdi:external-link" /></a
-        > and <a
-        class="interactive"
-        href="https://coursera.org/verify/professional-cert/63CU08X3N7XZ"
-        target="_blank"
-        rel="noopener"> Coursera <Icon name="mdi:external-link" /></a
-      ></li>
+        <li>
+          <Icon name="mdi:verified" /> Verified by <a
+            class="interactive"
+            href="https://www.credly.com/badges/e96203a7-420b-42fd-8fcc-360bf11e41b8/public_url"
+            target="_blank"
+            rel="noopener"
+          >
+            Credly <Icon name="mdi:external-link" /></a
+          > and <a
+            class="interactive"
+            href="https://coursera.org/verify/professional-cert/63CU08X3N7XZ"
+            target="_blank"
+            rel="noopener"
+          >
+            Coursera <Icon name="mdi:external-link" /></a>
+        </li>
       </ul>
       <h4>Arkansas Tech University</h4>
       <h5>(Aug 2010 - 2016)</h5>
@@ -206,6 +223,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style lang="scss">
+  @-webkit-keyframes ScaleIn {
+    0% {
+      transform: scale(0.95) translateY(3px);
+    }
+    100% {
+      transform: scale(1) translate(0px);
+    }
+  }
+  @keyframes ScaleIn {
+    0% {
+      transform: scale(0.95) translateY(3px);
+    }
+    100% {
+      transform: scale(1) translateY(0px);
+    }
+  }
   main {
     margin: auto;
     padding: 1rem;
@@ -232,6 +265,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .text-body {
     max-width: 600px;
     margin: -0.5rem auto auto auto;
+    > * {
+      animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+      @for $i from 0 through 100 {
+        &:nth-child(#{$i}n) {
+          animation-delay: #{$i * 0.04}s;
+        }
+      }
+    }
     ul {
       font-size: var(--text-lg);
       &.list-style-none {
@@ -239,7 +280,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         list-style: none;
         li {
           margin-left: -1.35rem;
-          svg{
+          svg {
             vertical-align: text-bottom;
           }
         }
