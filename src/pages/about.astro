@@ -46,7 +46,7 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
       </p>
       <br /><hr /><br />
       <p class="summary">
-        This website, much like myself, is a work in progress. This could be
+        This website is a continuous work in progress and could be
         considered the seed of my <a
           href="https://maggieappleton.com/garden-history"
           target="_blank"
@@ -113,6 +113,11 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
       transform: scale(1) translateY(0px);
     }
   }
+  @keyframes bg-fill {
+    to {
+      backdrop-filter: blur(2rem);
+    }
+  }
   html[data-theme="github-light"] .dark {
     display: none;
   }
@@ -130,6 +135,13 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
     flex-direction: column;
     align-items: center;
     align-content: center;
+    z-index: 10;
+    position: sticky;
+    top: -100px;
+    backdrop-filter: blur(0);
+    animation: bg-fill linear both;
+    animation-timeline: scroll();
+    animation-range: 10vh 50vh; /* adjust vibes here */
   }
   .profile-photo {
     width: 200px;

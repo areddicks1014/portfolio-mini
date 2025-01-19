@@ -34,6 +34,11 @@ const workEntries = await getCollection('work');
 </BaseLayout>
 
 <style lang="scss">
+    @keyframes bg-fill {
+    to {
+      backdrop-filter: blur(2rem);
+    }
+  }
     main {
 		margin: auto;
 		padding: 1rem;
@@ -54,6 +59,13 @@ const workEntries = await getCollection('work');
 		flex-direction: column;
 		align-items: center;
 		align-content: center;
+        z-index: 10;
+        position: sticky;
+        top: -100px;
+        backdrop-filter: blur(0);
+        animation: bg-fill linear both;
+        animation-timeline: scroll();
+        animation-range: 10vh 50vh; /* adjust vibes here */
 	}
     .text-body {
         max-width: 600px;
