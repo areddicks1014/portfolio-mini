@@ -40,9 +40,7 @@ const workEntries = await getCollection('work');
     }
   }
     main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
+		margin: 1rem auto;
 		max-width: calc(100% - 2rem);
 	}
     h3 {
@@ -55,6 +53,7 @@ const workEntries = await getCollection('work');
         color: var(--gray-300);
     }
 	.header {
+        margin: 0 -2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

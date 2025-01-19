@@ -257,9 +257,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
   main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
+    margin: 1rem auto;
     max-width: calc(100% - 2rem);
   }
   h3 {
@@ -291,6 +289,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: var(--gray-300);
   }
   .header {
+    margin: 0 -2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,6 +305,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .text-body {
     max-width: 600px;
     margin: -0.5rem auto auto auto;
+    padding: 0 1rem;
+    text-wrap: pretty;
     .resume-section {
       position: relative;
       > * {
@@ -319,6 +320,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     ul {
       font-size: var(--text-lg);
+      text-wrap: balance;
       &.list-style-none {
         margin-top: 0.25rem;
         list-style: none;
