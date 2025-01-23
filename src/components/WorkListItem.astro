@@ -13,7 +13,7 @@ interface Props {
 
 const { title, description, tags, view, details, code, index } = Astro.props;
 ---
-<div class="fade-in-animation" style={{animationDelay: (index ?? 1) / 25 + "s"}}>
+<div class="fade-in-animation" style={{animationDelay: (index ?? 1) / 10 + "s"}}>
   <div class="work-item">
     <a class="interactive" href={details}><h3 class="title">{title}</h3></a>
     <p class="description">{description}</p>
@@ -68,26 +68,36 @@ const { title, description, tags, view, details, code, index } = Astro.props;
 <style lang="scss">
   @-webkit-keyframes FadeIn { 
   0% {
-    opacity: 0.5;
-    -webkit-transform: scale(.75);
+    opacity: 0.3;
+    -webkit-transform: scale(.95) translateY(3px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1) translateY(0px);
   }
 }
   @keyframes FadeIn { 
   0% {
-    opacity: 0.5;
-    transform: scale(.75);
+    opacity: 0.3;
+    transform: scale(.90) translateY(3px);
+    border: 2px transparent;
+  }
+  // 10% {
+  //   opacity: 0.8;
+  // }
+  // 30% {
+  //   opacity: 0.5;
+  // }
+  30% {
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0px);
   }
 }
   .fade-in-animation {
-    animation: FadeIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+    animation: FadeIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
   }
 
   .work-item {
@@ -95,8 +105,8 @@ const { title, description, tags, view, details, code, index } = Astro.props;
     border: 2px solid var(--gray-800);
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 1rem 0.5rem;
-    -webkit-transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
     &:hover {
       border: 2px solid var(--gray-700);
       background-color: var(--gray-800);

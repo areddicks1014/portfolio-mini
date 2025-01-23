@@ -149,7 +149,7 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
     border-radius: 100px;
     overflow: hidden;
     shape-outside: circle();
-    animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+    animation: ScaleIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
   }
   .text-body {
     max-width: 600px;
@@ -157,10 +157,10 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
     padding: 1rem 0.5rem;
     text-wrap: pretty;
     > * {
-      animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+      animation: ScaleIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
       @for $i from 1 through 100 {
         &:nth-child(#{$i}n) {
-          animation-delay: #{$i * 0.04}s;
+          animation-delay: #{$i * 0.08}s;
         }
       }
     }

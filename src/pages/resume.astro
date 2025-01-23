@@ -247,6 +247,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     0% {
       transform: scale(0.95) translateY(3px);
     }
+  //   10% {
+  //   opacity: 0.8;
+  // }
+  // 30% {
+  //   opacity: 0.5;
+  // }
     100% {
       transform: scale(1) translateY(0px);
     }
@@ -310,10 +316,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .resume-section {
       position: relative;
       > * {
-        animation: ScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1) both;
+        animation: ScaleIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
         @for $i from 0 through 100 {
           &:nth-child(#{$i}n) {
-            animation-delay: #{$i * 0.04}s;
+            animation-delay: #{$i * 0.08}s;
           }
         }
       }
