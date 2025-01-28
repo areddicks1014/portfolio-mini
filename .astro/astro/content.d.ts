@@ -166,13 +166,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"isac-v1-pebble.md": {
-	id: "isac-v1-pebble.md";
+"isac-v1-pebble.mdx": {
+	id: "isac-v1-pebble.mdx";
   slug: "isac-v1-pebble";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "old-portfolio-site.md": {
 	id: "old-portfolio-site.md";
   slug: "old-portfolio-site";
