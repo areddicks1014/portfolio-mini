@@ -24,6 +24,7 @@ export default defineConfig({
           "linkedin",
           "codepen",
           "download",
+          "dribbble",
           "file-document",
           "adobe-acrobat",
           "external-link",
