@@ -12,6 +12,7 @@ codeLink: "https://github.com/areddicks1014/unhelpful-thinking-habits"
 ---
 
 ### Description:
+<br />
 My counselor at the time noticed that I seemed to default to certain ways of thinking about myself. She gave me a two-sided handout with useful and (most importantly) actionable information. However, the inconvenience of having to carry around a sheet of paper made it less useful or convenient.
 <br/><br/>
 Since I know I won't be carrying it around with me, I bet others won't either. So I made it into a small PWA (Progressive Web App) using **Polymer**. It will also be *open-source* so that others can see how it's made and learn from it. Feedback is always welcome.

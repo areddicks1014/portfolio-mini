@@ -201,6 +201,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
+"ux-engineer-wordmark.mdx": {
+	id: "ux-engineer-wordmark.mdx";
+  slug: "ux-engineer-wordmark";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
 };
 
 	};

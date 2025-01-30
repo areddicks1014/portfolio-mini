@@ -14,6 +14,7 @@ codeLink: "https://github.com/areddicks1014/patios-n-stuff"
 ---
 
 ### Description
+<br />
 A demo site based off of one I created for a previous job that ended up not being used. *The company "Patios-N-Stuff" is made up by me and any similarities to a real business is coincidence.*
 
 <br><br>

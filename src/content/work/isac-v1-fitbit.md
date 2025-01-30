@@ -10,6 +10,7 @@ codeLink: "https://github.com/areddicks1014/ISAC_V1"
 ---
 
 ### Description from Fitbit Gallery:
+<br />
 ISAC (Intelligent System Analytic Computer) is a computer or digital assistant that is used by a SHD Agent in the game The Division.
 <br/><br/>
 

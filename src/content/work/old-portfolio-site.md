@@ -12,6 +12,7 @@ codeLink: "https://github.com/areddicks1014/portfolio-pwa"
 ---
 
 ### Description:
+<br />
 This is my old personal portfolio site built using Polymer and Web Components as a Progressive Web App. 
 
 <br><br>
