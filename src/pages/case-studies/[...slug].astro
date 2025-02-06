@@ -7,15 +7,15 @@ import SubHeader from "../../components/SubHeader.astro";
 import ImageZoom from 'starlight-image-zoom/components/ImageZoom.astro';
 
 interface Props {
-  entry: CollectionEntry<"work">;
+  entry: CollectionEntry<"case-studies">;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-  const work = await getCollection("work");
-  return work.map((entry: any) => ({
+  const caseStudies = await getCollection("case-studies");
+  return caseStudies.map((entry: any) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -33,13 +33,13 @@ description={entry.data.description}
         <div class="header">
             <FlipHeader/>
             <SubHeader subheading={entry.data.title}>
-                <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/work"/>
+                <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/case-studies"/>
                 <LinkIconButton slot="right" reveal label="home" icon="mdi:home" link="/"/>
             </SubHeader>
         </div>
         <div class="text-body">
             <hr class="divider"/>
-            <div class="work-info">
+            <div class="case-study-info">
                 <!-- view icon link button -->
                 { entry.data.viewLink ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
                 <div class="tags">
@@ -68,7 +68,7 @@ description={entry.data.description}
 		align-items: center;
 		align-content: center;
 	}
-    .work-info {
+    .case-study-info {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -83,7 +83,10 @@ description={entry.data.description}
     .text-body {
         max-width: 700px;
         margin: auto;
-    }
+        Content {
+          scroll-behavior: smooth;
+        }
+      }
   .tags {
     display: flex;
     align-items: center;

@@ -9,14 +9,28 @@
 	/* Humane Colors */
 	// --colors-dark-primary-laser: #08ebab;
 	--colors-beamBlue200: #007062;
+	--colors-beamBlue200-rgb: rgb(0, 112, 98);
 	--colors-beamBlue: #00FFE0;
+	--colors-beamBlue-rgb: rgb(0, 255, 224);
 	--colors-beamBlue10: #E8FFFB;
+	--colors-beamBlue10-rgb: rgb(232, 255, 251);
 
 	/* Holo Colors */
 	--colors-holoBlue: #33b5e5;
+	--colors-holoBlue-rgb: rgb(51, 181, 229);
 	--colors-holoBlueDark: #2483a6;
+	--colors-holoBlueDark-rgb: rgb(36, 131, 166);
 	--colors-holoBlueLight: #35c0f2;
-		
+	--colors-holoBlueLight-rgb: rgb(53, 192, 242);
+
+	// JBH UX Colors
+	--colors-jbh-primary: #005dba;
+	--colors-jbh-primary-rgb: rgb(0, 93, 186);
+	--colors-jbh-secondary: #4953A3;
+	--colors-jbh-secondary-rgb: rgb(73, 83, 163);
+	--colors-jbh-accent: #FDDA00;
+	--colors-jbh-accent-rgb: rgb(253, 218, 0);
+
 	/* Colors */
 	--gray-0: #000000;
 	--gray-0-rgb: 0, 0, 0;
@@ -37,8 +51,11 @@
 
 	/* Accent Colors */
 	--accent-light: var(--colors-beamBlue200);
+	--accent-ligh-rgbt: var(--colors-beamBlue200-rgb);
 	--accent-regular: var(--colors-holoBlue);
+	--accent-regular-rgb: var(--colors-holoBlue-rgb);
 	--accent-dark: var(--colors-holoBlueDark);
+	--accent-dark-rgb: var(--colors-holoBlueDark-rgb);
 
 	/* --accent-light: #35C0F2;
 	--accent-regular: #33b5e5;
@@ -51,6 +68,17 @@
 	--link-hover: var(--accent-regular);
 	--link-active: var(--accent-dark);
 	--link-active-hover: var(--accent-light);
+
+	// Panel Background Colors
+	--panel-bg-blur: blur(2rem);
+	--panel-bg-light: rgba(var(--gray-999-rgb), 0.33);
+	--panel-on-light: var(--gray-0);
+	--panel-bg-dark: rgba(var(--gray-0-rgb), 0.33);
+	--panel-on-dark: var(--gray-999);
+	--panel-bg-primary: rgba(var(--accent-dark-rgb), 0.66);
+	--panel-on-primary: var(--gray-0);
+	--panel-bg-accent: rgba(var(--accent-light-rgb), 0.66);
+	--panel-on-accent: var(--gray-0);
 
 	/* Gradients */
 	--gradient-stop-1: var(--colors-beamBlue);
@@ -113,6 +141,32 @@
 	--font-ratio-max: 1.33;
 	--font-width-min: 320;
 	--font-width-max: 1500;
+
+	/* Text size and line height */
+	--sl-text-2xs: 0.75rem; /* 12px */
+	--sl-text-xs: 0.8125rem; /* 13px */
+	--sl-text-sm: 0.875rem; /* 14px */
+	--sl-text-base: 1rem; /* 16px */
+	--sl-text-lg: 1.125rem; /* 18px */
+	--sl-text-xl: 1.25rem; /* 20px */
+	--sl-text-2xl: 1.5rem; /* 24px */
+	--sl-text-3xl: 1.8125rem; /* 29px */
+	--sl-text-4xl: 2.1875rem; /* 35px */
+	--sl-text-5xl: 2.625rem; /* 42px */
+	--sl-text-6xl: 4rem; /* 64px */
+
+	--sl-text-body: var(--sl-text-base);
+	--sl-text-body-sm: var(--sl-text-xs);
+	--sl-text-code: var(--sl-text-sm);
+	--sl-text-code-sm: var(--sl-text-xs);
+	--sl-text-h1: var(--sl-text-4xl);
+	--sl-text-h2: var(--sl-text-3xl);
+	--sl-text-h3: var(--sl-text-2xl);
+	--sl-text-h4: var(--sl-text-xl);
+	--sl-text-h5: var(--sl-text-lg);
+
+	--sl-line-height: 1.75;
+	--sl-line-height-headings: 1.2;
 
 
 	@font-face {
@@ -231,8 +285,11 @@
 	--gray-999: #000000;
 
 	--accent-light: var(--colors-beamBlue);
+	--accent-light-rgb: var(--colors-beamBlue-rgb);
 	--accent-regular: var(--colors-holoBlue);
+	--accent-regular-rgb: var(--colors-holoBlue-rgb);
 	--accent-dark: var(--colors-holoBlueDark);
+	--accent-dark-rgb: var(--colors-holoBlueDark-rgb);
 	/* --accent-light: #2483A6;
 	--accent-regular: #33b5e5;
 	--accent-dark: #35C0F2; */

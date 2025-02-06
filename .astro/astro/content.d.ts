@@ -151,7 +151,16 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"work": {
+		"case-studies": {
+"dsr-research.mdx": {
+	id: "dsr-research.mdx";
+  slug: "dsr-research";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
+};
+"work": {
 "conditional-form-pattern.mdx": {
 	id: "conditional-form-pattern.mdx";
   slug: "conditional-form-pattern";

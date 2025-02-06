@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" property="og:description" content="The goal is to improve the Design System Review (DSR) and their progress through the review process,  making it more transparent and efficient for all stakeholders."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.16.9"><link rel="icon" type="image/svg+xml" href="/augmented-alex-logo.svg"><title>augmented.alex - Streamlining Design System Review with Improved Status Tracking</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><style>.interactive-header:where(.astro-7rkvuypl){cursor:pointer;text-align:center;user-select:none;transition:all .2s;text-wrap:balance;margin:auto;min-height:100px;--font-level: 5}.flipping:where(.astro-7rkvuypl){opacity:0;transform:translateY(-10px)}h1:where(.astro-7rkvuypl){text-align:center}.subheader-container:where(.astro-4qbqxsna){display:flex;align-items:flex-end;justify-content:center;min-height:75px}.subheader-container:has(.link-icon-button span.reveal){min-height:100px;margin-bottom:-.5rem}.subheader-container:where(.astro-4qbqxsna) h2:where(.astro-4qbqxsna){min-height:75px;text-align:center}.subheader-container:has(.link-icon-button span.reveal) h2:where(.astro-4qbqxsna){min-height:100px}.spacer:where(.astro-4qbqxsna){display:flex;justify-content:center;align-items:baseline;width:67px;height:75px;background:transparent}.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}body{background-image:radial-gradient(circle at 1px 1px,var(--gray-700) 1px,transparent 0);background-size:60px 60px}code{font-family:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace}
+</style>
+<link rel="stylesheet" href="/_astro/index.6teSSgbT.css">
+<style>.link-icon-button:where(.astro-xtz3lnuc){color:var(--link-color);padding:var(--padding-x) var(--padding-y);text-decoration:none;flex-direction:column}.link-icon-button:where(.astro-xtz3lnuc):hover,.link-icon-button:where(.astro-xtz3lnuc):focus-visible{color:var(--link-hover);font-weight:700}.link-icon-button:where(.astro-xtz3lnuc):hover:active,.link-icon-button:where(.astro-xtz3lnuc):focus-visible:active{color:var(--link-active-hover)}.link-icon-button:where(.astro-xtz3lnuc).above{flex-direction:column-reverse}.link-icon-button:where(.astro-xtz3lnuc) .icon:where(.astro-xtz3lnuc){border-radius:35px;transition:border .2s,color .2s;border:2px solid transparent;height:55px;width:55px;padding:5px}.link-icon-button:where(.astro-xtz3lnuc) .icon:where(.astro-xtz3lnuc).secondary{border-style:dashed}.link-icon-button:where(.astro-xtz3lnuc) .icon:where(.astro-xtz3lnuc).small{height:35px;width:35px}.link-icon-button:where(.astro-xtz3lnuc):hover .icon:where(.astro-xtz3lnuc){border:2px solid var(--link-hover)}.link-icon-button:where(.astro-xtz3lnuc):hover .icon:where(.astro-xtz3lnuc).secondary{border-style:dashed}.link-icon-button:where(.astro-xtz3lnuc):hover.reveal{color:var(--link-hover);transform:scale(1) translateY(0)}.link-icon-button:where(.astro-xtz3lnuc):active .icon:where(.astro-xtz3lnuc),.link-icon-button:where(.astro-xtz3lnuc):focus-visible .icon:where(.astro-xtz3lnuc){border:2px solid var(--link-active-hover)}.link-icon-button:where(.astro-xtz3lnuc) .label:where(.astro-xtz3lnuc){font-family:var(--font-brand);font-weight:600;transition:all .2s}.link-icon-button:where(.astro-xtz3lnuc) .label:where(.astro-xtz3lnuc).reveal{transform:scale(.25) translateY(-20px);color:transparent}.link-icon-button:where(.astro-xtz3lnuc) .label:where(.astro-xtz3lnuc).above{transform:scale(.25) translateY(20px)}.link-icon-button:where(.astro-xtz3lnuc):hover .label:where(.astro-xtz3lnuc),.link-icon-button:where(.astro-xtz3lnuc):focus-visible .label:where(.astro-xtz3lnuc){font-weight:700}.link-icon-button:where(.astro-xtz3lnuc):hover .label:where(.astro-xtz3lnuc).reveal,.link-icon-button:where(.astro-xtz3lnuc):focus-visible .label:where(.astro-xtz3lnuc).reveal{color:var(--link-hover);transform:scale(1) translateY(0)}.link-icon-button:where(.astro-xtz3lnuc):hover:active .label:where(.astro-xtz3lnuc),.link-icon-button:where(.astro-xtz3lnuc):focus-visible:active .label:where(.astro-xtz3lnuc){font-weight:700;color:var(--link-active-hover)}.link-icon-button:where(.astro-xtz3lnuc):hover:active .label:where(.astro-xtz3lnuc).reveal,.link-icon-button:where(.astro-xtz3lnuc):focus-visible:active .label:where(.astro-xtz3lnuc).reveal{color:var(--link-active-hover)}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+main:where(.astro-5lfdhrch){margin:auto;padding:1rem;width:800px;max-width:calc(100% - 2rem)}.header:where(.astro-5lfdhrch){display:flex;flex-direction:column;align-items:center;align-content:center}.case-study-info:where(.astro-5lfdhrch){display:flex;justify-content:space-between;align-items:flex-end;margin:-1.5rem 1rem 0}.case-study-info:where(.astro-5lfdhrch) .small-spacer:where(.astro-5lfdhrch){width:47px;height:71px;background:transparent;padding:var(--padding-x) var(--padding-y)}.text-body:where(.astro-5lfdhrch){max-width:700px;margin:auto}.text-body:where(.astro-5lfdhrch) Content:where(.astro-5lfdhrch){scroll-behavior:smooth}.tags:where(.astro-5lfdhrch){display:flex;align-items:center;gap:.5rem;margin:.5rem;overflow-x:auto}.tags:where(.astro-5lfdhrch)::-webkit-scrollbar{height:2px}.tags:where(.astro-5lfdhrch)::-webkit-scrollbar-track{background:transparent}.tags:where(.astro-5lfdhrch)::-webkit-scrollbar-thumb{background:var(--gray-600)}.tags:where(.astro-5lfdhrch)::-webkit-scrollbar-thumb:hover{background:var(--gray-500)}.tags:where(.astro-5lfdhrch) .tag:where(.astro-5lfdhrch){border:2px solid var(--gray-700);border-radius:35px;padding:0 .75rem;white-space:nowrap}.tags:where(.astro-5lfdhrch) .tag:where(.astro-5lfdhrch):hover,.tags:where(.astro-5lfdhrch) .tag:where(.astro-5lfdhrch):focus-visible{cursor:default;border:2px solid var(--gray-600)}.tags:where(.astro-5lfdhrch) .tag:where(.astro-5lfdhrch).status{color:var(--gray-999);background-color:var(--gray-200);border:2px solid var(--gray-200);border-radius:8px;font-weight:500}
+dialog:where(.astro-vjux6bgf){background:transparent;border:0;height:100vh;height:100dvh;margin:0;max-height:none;max-width:none;overflow:hidden;padding:0;position:fixed;width:100vw;width:100dvw}dialog:where(.astro-vjux6bgf)::backdrop{background:var(--starlight-image-zoom-backdrop-bg, var(--sl-color-black));opacity:0}.starlight-image-zoom-opened dialog:where(.astro-vjux6bgf)::backdrop{opacity:1}figure:where(.astro-vjux6bgf){cursor:zoom-out;height:100%;position:relative;width:100%}figure:where(.astro-vjux6bgf) figcaption{background-color:color-mix(in srgb,var(--sl-color-bg-nav),transparent 10%);border-top:1px solid var(--sl-color-hairline);cursor:initial;inset:auto 0 0;opacity:0;padding:var(--sl-nav-pad-y) var(--sl-nav-pad-x);position:absolute}@media (prefers-reduced-transparency){figure:where(.astro-vjux6bgf) figcaption{background-color:var(--sl-color-bg-nav)}}.starlight-image-zoom-opened figure:where(.astro-vjux6bgf) figcaption{opacity:1}button:where(.astro-vjux6bgf){cursor:zoom-out;opacity:0;z-index:1}.starlight-image-zoom-opened button:where(.astro-vjux6bgf){opacity:1}@media (prefers-reduced-motion: no-preference){button:where(.astro-vjux6bgf),dialog:where(.astro-vjux6bgf)::backdrop,figure:where(.astro-vjux6bgf) figcaption{transition:opacity var(--starlight-image-zoom-animation-duration)}}:root{--starlight-image-zoom-animation-duration: .3s}starlight-image-zoom-zoomable{display:inline-block;position:relative;width:100%}starlight-image-zoom-zoomable img{cursor:zoom-in}starlight-image-zoom-zoomable button{cursor:zoom-in}starlight-image-zoom-zoomable button:not(:focus):not(:focus-within){border:none;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}.starlight-image-zoom-control{background-color:var(--sl-color-bg-nav);border:2px solid var(--sl-color-gray-2);border-radius:50%;display:grid;height:44px;inset:20px auto auto 20px;margin-top:0!important;padding:10px;place-items:center;position:absolute;width:44px}:is(.starlight-image-zoom-opened,.starlight-image-zoom-transition) .starlight-image-zoom-control{inset:20px 20px auto auto}.starlight-image-zoom-source{visibility:hidden}.starlight-image-zoom-image{cursor:zoom-out}@media (prefers-reduced-motion: no-preference){.starlight-image-zoom-image{transition:transform var(--starlight-image-zoom-animation-duration) cubic-bezier(.4,0,.2,1)}}
+</style><script type="module" src="/_astro/hoisted.R9KyW4Sh.js"></script>
+<script type="module" src="/_astro/page.DlXkxCA4.js"></script><style>[data-astro-transition-scope="astro-kll7276u-1"] { view-transition-name: Streamlining_20Design_20System_20Review_20with_20Improved_20Status_20Tracking; }@layer astro { ::view-transition-old(Streamlining_20Design_20System_20Review_20with_20Improved_20Status_20Tracking) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(Streamlining_20Design_20System_20Review_20with_20Improved_20Status_20Tracking) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(Streamlining_20Design_20System_20Review_20with_20Improved_20Status_20Tracking) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(Streamlining_20Design_20System_20Review_20with_20Improved_20Status_20Tracking) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-kll7276u-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-kll7276u-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-kll7276u-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-kll7276u-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-kll7276u-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-kll7276u-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-kll7276u-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-kll7276u-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class="mat-typography">  <starlight-image-zoom class="astro-vjux6bgf"> <template class="astro-vjux6bgf"> <dialog class="starlight-image-zoom-dialog astro-vjux6bgf"> <button aria-label="Unzoom image" class="starlight-image-zoom-control astro-vjux6bgf"> <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" class="astro-vjux6bgf"> <use href="#starlight-image-zoom-icon-unzoom" class="astro-vjux6bgf"></use> </svg> </button> <figure class="astro-vjux6bgf"></figure> </dialog> </template> <svg xmlns="http://www.w3.org/2000/svg" style="display:none" class="astro-vjux6bgf"> <symbol id="starlight-image-zoom-icon-zoom" viewBox="0 0 24 24" class="astro-vjux6bgf"> <path d="M9.79 12.79 4 18.59V17a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.38 1 1 0 0 0 .54.54A1 1 0 0 0 3 22h4a1 1 0 0 0 0-2H5.41l5.8-5.79a1 1 0 0 0-1.42-1.42ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-4a1 1 0 0 0 0 2h1.59l-5.8 5.79a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L20 5.41V7a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z" class="astro-vjux6bgf"></path> </symbol> <symbol id="starlight-image-zoom-icon-unzoom" viewBox="0 0 24 24" class="astro-vjux6bgf"> <path d="M21.71 2.29a1 1 0 0 0-1.42 0l-5.79 5.8V6.5a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.38 1 1 0 0 0 .54.54 1 1 0 0 0 .38.08h4a1 1 0 0 0 0-2h-1.59l5.8-5.79a1 1 0 0 0 0-1.42ZM10.88 12.58a1 1 0 0 0-.38-.08h-4a1 1 0 0 0 0 2h1.59l-5.8 5.79a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.79-5.8v1.59a1 1 0 0 0 2 0v-4a1 1 0 0 0-.08-.38 1 1 0 0 0-.54-.54Z" class="astro-vjux6bgf"></path> </symbol> </svg> </starlight-image-zoom>    <main class="astro-5lfdhrch"> <div class="header astro-5lfdhrch"> <flip-header data-first="Alex Reddicks" data-second="augmented.alex" class="astro-7rkvuypl"> <h1 class="interactive-header text-gradient-accent interactive fluid animated-text-gradient astro-7rkvuypl"></h1> </flip-header>   <script>
+  function applyTheme() {
+    localStorage.theme === "dark"
+      ? document.documentElement.classList.add("theme-dark")
+      : document.documentElement.classList.remove("theme-dark");
+  }
+  document.addEventListener("astro:after-swap", applyTheme);
+  applyTheme();
+</script>  <div class="subheader-container astro-4qbqxsna"> <a href="/case-studies" target="_self" rel="noreferrer" class="interactive link-icon-button flex-center astro-xtz3lnuc"> <svg width="1em" height="1em" class="icon astro-xtz3lnuc" data-icon="mdi:arrow-back">   <symbol id="ai:mdi:arrow-back" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11v2H8l5.5 5.5l-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5L8 11z"/></symbol><use href="#ai:mdi:arrow-back"></use>  </svg> <span aria-label="back" class="label reveal astro-xtz3lnuc">back</span> </a>   <h2 class="subheading astro-4qbqxsna" data-astro-transition-scope="astro-kll7276u-1">Streamlining Design System Review with Improved Status Tracking</h2> <a href="/" target="_self" rel="noreferrer" class="interactive link-icon-button flex-center astro-xtz3lnuc"> <svg width="1em" height="1em" class="icon astro-xtz3lnuc" data-icon="mdi:home">   <symbol id="ai:mdi:home" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></symbol><use href="#ai:mdi:home"></use>  </svg> <span aria-label="home" class="label reveal astro-xtz3lnuc">home</span> </a>   </div>   </div> <div class="text-body astro-5lfdhrch"> <hr class="divider astro-5lfdhrch"> <div class="case-study-info astro-5lfdhrch"> <!-- view icon link button --> <span class="small-spacer astro-5lfdhrch"></span> <div class="tags astro-5lfdhrch"> <span class="tag status flex-center astro-5lfdhrch">In Progress</span> <span class="tag flex-center astro-5lfdhrch">UX</span><span class="tag flex-center astro-5lfdhrch">Research</span><span class="tag flex-center astro-5lfdhrch">Case Study</span><span class="tag flex-center astro-5lfdhrch">Design System</span> </div> <!-- code icon link button --> <span class="small-spacer astro-5lfdhrch"></span> </div> <hr class="divider astro-5lfdhrch"> <h3 id="background">Background</h3>
+<br/>
+<p>The current Design System Request (DSR) process lacks transparency and efficiency, causing significant issues for designers, developers, managers, and product owners.
+Users are frustrated by scattered information across multiple channels, with no single source of truth for request status.
+The lack of a formal review process and clear statuses makes it difficult for teams to manage their work effectively.
+The research was conducted through user interviews, scenario-based questions, and analysis of existing DSR documentation to develop user-centered solutions.</p>
+<hr class="divider"/>
+<h3 id="table-of-contents">Table of Contents</h3>
+<br/>
+<ul>
+<li><a href="#project-goal-and-objectives">Project Goal and Objectives</a></li>
+<li><a href="#my-roles">My Roles</a></li>
+<li><a href="#target-users">Target Users</a></li>
+<li><a href="#research-methodology">Research Methodology</a></li>
+<li><a href="#themes">Themes</a></li>
+<li><a href="#key-insights">Key Insights</a></li>
+<li><a href="#recommendations">Recommendations</a></li>
+<li><a href="#outcomes">Outcomes</a></li>
+<li><a href="#impact">Impact</a></li>
+<li><a href="#what-i-learned">What I Learned</a></li>
+</ul>
+<hr class="divider"/>
+<h3 id="project-goal-and-objectives">Project Goal and Objectives</h3>
+<br/>
+<h4 id="goal">Goal</h4>
+<br/>
+<p>To improve the Design System Review (DSR) and their progress through the review process,
+making it more transparent and efficient for all stakeholders.</p>
+<h4 id="objectives">Objectives</h4>
+<br/>
+<ul>
+<li>Identify and document pain points in the existing DSR status tracking process.</li>
+<li>Understand user needs and expectations regarding status updates, timelines, and communication.</li>
+<li>Synthesize research data into actionable recommendations for a user-centered status tracking solution.</li>
+<li>Provide a plan for iterative improvement based on user feedback.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="my-roles">My Roles</h3>
+<br/>
+<ul>
+<li><strong>UX Researcher</strong>: Conducted user research to identify areas for improvement.</li>
+<li><strong>Collaborator</strong>: Work with stakeholders across design, development, and product teams to gather and incorporate insights.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="target-users">Target Users</h3>
+<br/>
+<p>Designers, developers, managers, and product owners who rely on the design system and need to track the status of Design System Requests.</p>
+<hr class="divider"/>
+<h3 id="research-methodology">Research Methodology</h3>
+<br/>
+<ul>
+<li><strong>User Interviews:</strong> Conducted in-depth interviews with designers, developers, and managers
+using open-ended questions and prompts to understand the users’ experiences with the existing status tracking process.</li>
+<li><strong>Scenario-Based Questions:</strong> Used scenario-based questions during interviews to understand how users currently manage multiple requests,
+track stalled items, and find details from past reviews.</li>
+<li><strong>Thematic Analysis:</strong> Analyzed interview transcripts to identify recurring themes, patterns, and user pain points.</li>
+<li><strong>Documentation Review:</strong> Examined existing DSR process documentation to identify gaps and areas for clarification.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="themes">Themes</h3>
+<br/>
+<ul>
+<li><strong>Process Frustration:</strong> Many users expressed frustration with the current system due to its lack of transparency and efficiency.</li>
+<li><strong>Information Overload:</strong> Users felt overwhelmed by scattered information and a lack of a single source of truth.</li>
+<li><strong>Time Sensitivity:</strong> Users emphasized the need for timely updates and status notifications to manage their work effectively.</li>
+<li><strong>Need for Formalization:</strong> Users wanted a formal and more consistent review and feedback process.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="key-insights">Key Insights</h3>
+<br/>
+<ul>
+<li><strong>Lack of Centralized Tracking:</strong> The most significant finding was the lack of a central system, leading to confusion and inefficiency.</li>
+<li><strong>Desire for Clear Status Definitions:</strong>  Users needed specific and easily understandable status labels, as well as clear definitions of what the various states mean.</li>
+<li><strong>Importance of Timelines:</strong> There was a consistent request for a timeline view for each request, showing its progression and estimated completion time.</li>
+<li><strong>Workflow Issues:</strong> Users reported difficulties understanding the current review process, particularly for mobile vs. web requests.</li>
+<li><strong>Need for Improved Communication:</strong> Users wanted improved methods of communication, including being notified when the status of items changes and clear communication of the types of assistance offered.</li>
+<li><strong>Mobile and Web Differentiation:</strong> Participants noted that the mobile process and the web process seemed very different.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="recommendations">Recommendations</h3>
+<br/>
+<ul>
+<li>Establish a centralized DSR status tracking system, preferably in ADO, to increase visibility.</li>
+<li>Define and implement clear status definitions for tracking.</li>
+<li>Integrate a timeline view for each request to show progress.</li>
+<li>Incorporate regular status meetings to address questions and manage expectations.</li>
+<li>Develop a formal review and feedback process.</li>
+<li>Regularly evaluate the process, gathering user feedback for continuous improvement.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="outcomes">Outcomes</h3>
+<br/>
+<ul>
+<li><strong>Improved Transparency:</strong> The new system provides a clear view of each DSR.</li>
+<li><strong>Increased Efficiency:</strong>  The improved workflow helps reduce confusion and time spent creating and tracking DSRs.</li>
+<li><strong>Better Collaboration:</strong>  The central platform for the process improved collaboration between the designers and developers.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="impact">Impact</h3>
+<br/>
+<ul>
+<li><strong>Actionable Recommendations:</strong> The research generated clear, actionable recommendations for improving the DSR status tracking system.</li>
+<li><strong>User-Focused Design:</strong> Emphasis on a user-focused approach guided us towards solutions that meet real needs.</li>
+<li><strong>Iterative Improvement:</strong> By gathering research during the design process, we will be able to make iterative improvements over time based on continuous user feedback.</li>
+</ul>
+<hr class="divider"/>
+<h3 id="what-i-learned">What I Learned</h3>
+<br/>
+<ul>
+<li><strong>Importance of User Research:</strong> User interviews and testing are crucial to identifying pain points and designing effective solutions.</li>
+<li><strong>Value of Centralized Systems:</strong> Having a centralized system greatly improved team collaboration and transparency.</li>
+<li><strong>Clear Communication:</strong> Clear and concise communication regarding the process is critical to a successful workflow.</li>
+</ul> </div> </main>  </body></html> 

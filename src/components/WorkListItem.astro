@@ -9,9 +9,10 @@ interface Props {
   details?: string;
   code?: string;
   index?: number;
+  status?: string;
 }
 
-const { title, description, tags, view, details, code, index } = Astro.props;
+const { title, description, tags, view, details, code, index, status } = Astro.props;
 ---
 <div class="fade-in-animation" style={{animationDelay: (index ?? 1) / 10 + "s"}}>
   <div class="work-item">
@@ -19,6 +20,7 @@ const { title, description, tags, view, details, code, index } = Astro.props;
     <p class="description">{description}</p>
     <div class="footer">
       <div class="tags">
+        {status ? <span class="tag status flex-center">{status}</span> : () => null}
         {tags?.map((tag) => <span class="tag flex-center">{tag}</span>)}
       </div>
       <div class="actions">
@@ -109,8 +111,11 @@ const { title, description, tags, view, details, code, index } = Astro.props;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
     &:hover {
       border: 2px solid var(--gray-700);
-      background-color: var(--gray-800);
+      background-color: var(--gray-900);
       transform: translate3d(0, -3px, 3px);
+      html.theme-dark & {
+        background-color: var(--gray-800);
+      }
     }
     a {
       display: inline-block;
@@ -161,6 +166,13 @@ const { title, description, tags, view, details, code, index } = Astro.props;
           &:focus-visible {
             cursor: default;
             border: 2px solid var(--gray-600);
+          }
+          &.status {
+            color: var(--gray-999);
+            background-color: var(--gray-200);
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-weight: 500;
           }
         }
       }

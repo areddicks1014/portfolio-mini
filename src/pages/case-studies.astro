@@ -6,25 +6,25 @@ import WorkListItem from "../components/WorkListItem.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 
-const workEntries = await getCollection('work');
+const caseStudyEntries = await getCollection('case-studies');
 ---
 
-<BaseLayout title="augmented.alex - work">
+<BaseLayout title="augmented.alex - case studies">
     <main>
         <div class="header">
             <FlipHeader/>
-            <SubHeader subheading="work">
+            <SubHeader subheading="case studies">
                 <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/"/>
             </SubHeader>
         </div>
         <div class="text-body">
             {
-                workEntries.map((entry: any, index: number) => (
+                caseStudyEntries.map((entry: any, index: number) => (
                     <WorkListItem title={entry.data.title} 
                         description={entry.data.description}
                         tags={entry.data.tags} 
                         view={entry.data.viewLink}
-                        details={'/work/' + entry.slug}
+                        details={'/case-studies/' + entry.slug}
                         code={entry.data.codeLink} 
                         index={index}
                         status={entry.data.status} />
