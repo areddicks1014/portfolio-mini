@@ -145,18 +145,20 @@ const { title, description, tags, view, details, code, index, status } = Astro.p
         padding: 0 0.3rem;
         margin-left: -0.3rem;
         -webkit-mask: linear-gradient(90deg, #0000, #000 1% 98%, #0000);
-        &::-webkit-scrollbar {
-          height: 2px;
-        }
-        &::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        &::-webkit-scrollbar-thumb {
-          background: var(--gray-600);
-        }
-        &::-webkit-scrollbar-thumb:hover {
-          background: var(--gray-500);
-        }
+        scrollbar-width: thin;
+        scrollbar-color: var(--gray-600);
+        // &::-webkit-scrollbar {
+        //   height: 2px;
+        // }
+        // &::-webkit-scrollbar-track {
+        //   background: transparent;
+        // }
+        // &::-webkit-scrollbar-thumb {
+        //   background: var(--gray-600);
+        // }
+        // &::-webkit-scrollbar-thumb:hover {
+        //   background: var(--gray-500);
+        // }
         .tag {
           border: 2px solid var(--gray-700);
           border-radius: 35px;

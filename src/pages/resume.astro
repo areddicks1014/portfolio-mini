@@ -364,12 +364,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 </style>
 <script src="../utilities/magnetism.ts"></script>
-<script>
-  document
-    .getElementById("scroll-to-downloads")
-    ?.addEventListener("click", (event) => {
-      event.preventDefault();
-      const downloadsSection = document.getElementById("downloads");
-      downloadsSection?.scrollIntoView({ behavior: "smooth" });
-    });
-</script>
