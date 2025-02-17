@@ -51,7 +51,7 @@
 
 	/* Accent Colors */
 	--accent-light: var(--colors-beamBlue200);
-	--accent-ligh-rgbt: var(--colors-beamBlue200-rgb);
+	--accent-light-rgb: var(--colors-beamBlue200-rgb);
 	--accent-regular: var(--colors-holoBlue);
 	--accent-regular-rgb: var(--colors-holoBlue-rgb);
 	--accent-dark: var(--colors-holoBlueDark);
@@ -102,6 +102,11 @@
 	// );
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 	--gradient-bg: linear-gradient(to right, var(--accent-light) 0%, var(--accent-regular) 30%, var(--gray-999) 40%, var(--gray-999) 60%, var(--accent-regular) 70%, var(--accent-light) 100%);
+
+
+	// Text Shadows
+	--text-shadow-lg: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 0 rgba(255, 255, 255, 0.11);
+	--text-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.11);
 
 	/* Shadows */
 	--shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
@@ -542,7 +547,8 @@ h5 {
 
 .divider {
 	margin: 1rem;
-	border-color: var(--gray-700);
+	border-color: rgba(var(--gray-0-rgb), 0.33);
+	border-style: solid;
 }
 
 starlight-image-zoom-zoomable {

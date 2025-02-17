@@ -27,7 +27,8 @@ const caseStudyEntries = await getCollection('case-studies');
                         details={'/case-studies/' + entry.slug}
                         code={entry.data.codeLink} 
                         index={index}
-                        status={entry.data.status} />
+                        status={entry.data.status}
+                        background={entry.data.background} />
                 ))
             }
         </div>

@@ -7,26 +7,19 @@ tags:
 - "Case Study"
 - "Design System"
 status: "In Progress"
+background: "url(/images/JBH-bg-1a.svg)"
 ---
 
 import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import Panel from '../../components/Panel.astro';
 
+<br />
 ### Streamlining Design System Request Process with Improved Status Tracking
-<br />
 
-<hr class="divider" />
+<br /><br />
 
-### Background
-<br />
-The current Design System Request (DSR) process lacks transparency and efficiency, causing significant issues for designers, developers, managers, and product owners. 
-Users are frustrated by scattered information across multiple channels, with no single source of truth for request status. 
-The lack of a formal review process and clear statuses makes it difficult for teams to manage their work effectively. 
-The research was conducted through user interviews, scenario-based questions, and analysis of existing DSR documentation to develop user-centered solutions.
-
-<hr class="divider" />
-
-### Table of Contents
-<br />
+<Panel headerText="Table of Contents" headerSize="3" backgroundColor="var(--gray-999-rgb)">
 - [Project Goal and Objectives](#project-goal-and-objectives)
 - [My Roles](#my-roles)
 - [Target Users](#target-users)
@@ -37,100 +30,89 @@ The research was conducted through user interviews, scenario-based questions, an
 - [Outcomes](#outcomes)
 - [Impact](#impact)
 - [What I Learned](#what-i-learned)
-
-<hr class="divider" />
-
-### Project Goal and Objectives
+</Panel>
 <br />
-#### Goal
-<br />
-To improve Design System Requests (DSR) and their progress through the review process, 
-making it more transparent and efficient for all stakeholders.
 
-#### Objectives 
-<br />
-- Identify and document pain points in the existing DSR status tracking process.
-- Understand user needs and expectations regarding status updates, timelines, and communication.
-- Synthesize research data into actionable recommendations for a user-centered status tracking solution.
-- Provide a plan for iterative improvement based on user feedback.
+<Panel headerText='Project Goal and Objectives' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Goal' headerSize='4' inside backgroundColor='var(--gray-999-rgb)'>
+        To improve Design System Requests (DSR) and their progress through the review process, making it more transparent and efficient for all stakeholders.
+    </Panel>
 
-<hr class="divider" />
-
-### My Roles
+    <Panel headerText='Objectives' headerSize='4' inside backgroundColor='var(--gray-999-rgb)'>
+        - Identify and document pain points in the existing DSR status tracking process.
+        - Understand user needs and expectations regarding status updates, timelines, and communication.
+        - Synthesize research data into actionable recommendations for a user-centered status tracking solution.
+        - Provide a plan for iterative improvement based on user feedback.
+    </Panel>
+</Panel>
 <br />
+
+<Panel headerText='My Roles' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **UX Researcher**: Conducted user research to identify areas for improvement.
 - **Collaborator**: Work with stakeholders across design, development, and product teams to gather and incorporate insights.
-
-<hr class="divider" />
-
-### Target Users
+</Panel>
 <br />
+
+<Panel headerText='Target Users' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 Designers, developers, managers, and product owners who rely on the design system and need to track the status of Design System Requests.
-
-<hr class="divider" />
-
-### Research Methodology 
+</Panel>
 <br />
+
+<Panel headerText='Research Methodology' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **User Interviews:** Conducted in-depth interviews with designers, developers, and managers 
 using open-ended questions and prompts to understand the users' experiences with the existing status tracking process.
 - **Scenario-Based Questions:** Used scenario-based questions during interviews to understand how users currently manage multiple requests, 
 track stalled items, and find details from past reviews. 
 - **Thematic Analysis:** Analyzed interview transcripts to identify recurring themes, patterns, and user pain points.
 - **Documentation Review:** Examined existing DSR process documentation to identify gaps and areas for clarification.
-
-<hr class="divider" />
-
-### Themes 
+</Panel>
 <br />
+
+<Panel headerText='Themes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **Process Frustration:** Many users expressed frustration with the current system due to its lack of transparency and efficiency.
 - **Information Overload:** Users felt overwhelmed by scattered information and a lack of a single source of truth.
 - **Time Sensitivity:** Users emphasized the need for timely updates and status notifications to manage their work effectively.
 - **Need for Formalization:** Users wanted a formal and more consistent review and feedback process.
-
-<hr class="divider" />
-
-### Key Insights
+</Panel>
 <br />
+
+<Panel headerText='Key Insights' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **Lack of Centralized Tracking:** The most significant finding was the lack of a central system, leading to confusion and inefficiency.
 - **Desire for Clear Status Definitions:**  Users needed specific and easily understandable status labels, as well as clear definitions of what the various states mean.
 - **Importance of Timelines:** There was a consistent request for a timeline view for each request, showing its progression and estimated completion time.
 - **Workflow Issues:** Users reported difficulties understanding the current review process, particularly for mobile vs. web requests.
 - **Need for Improved Communication:** Users wanted improved methods of communication, including being notified when the status of items changes and clear communication of the types of assistance offered.
 - **Mobile and Web Differentiation:** Participants noted that the mobile process and the web process seemed very different.
-
-<hr class="divider" />
-
-### Recommendations 
+</Panel>
 <br />
+
+<Panel headerText='Recommendations' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - Establish a centralized DSR status tracking system, preferably in ADO, to increase visibility.
 - Define and implement clear status definitions for tracking.
 - Integrate a timeline view for each request to show progress.
 - Incorporate regular status meetings to address questions and manage expectations.
 - Develop a formal review and feedback process.
 - Regularly evaluate the process, gathering user feedback for continuous improvement.
-
-<hr class="divider" />
-
-### Outcomes 
+</Panel>
 <br />
+
+<Panel headerText='Outcomes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **Improved Transparency:** The new system provides a clear view of each DSR.
 - **Increased Efficiency:**  The improved workflow helps reduce confusion and time spent creating and tracking DSRs.
 - **Better Collaboration:**  The central platform for the process improved collaboration between the designers and developers.
-
-
-<hr class="divider" />
-
-### Impact 
+</Panel>
 <br />
+
+<Panel headerText='Impact' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **Actionable Recommendations:** The research generated clear, actionable recommendations for improving the DSR status tracking system.
 - **User-Focused Design:** Emphasis on a user-focused approach guided us towards solutions that meet real needs.
 - **Iterative Improvement:** By gathering research during the design process, we will be able to make iterative improvements over time based on continuous user feedback.
-
-<hr class="divider" />
-
-### What I Learned 
+</Panel>
 <br />
+
+<Panel headerText='What I Learned' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
 - **Importance of User Research:** User interviews and testing are crucial to identifying pain points and designing effective solutions.
 - **Value of Centralized Systems:** Having a centralized system greatly improved team collaboration and transparency.
 - **Clear Communication:** Clear and concise communication regarding the process is critical to a successful workflow.
+</Panel>
 

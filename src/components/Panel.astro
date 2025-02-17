@@ -1,0 +1,95 @@
+---
+// panel layers using a stacked CSS Grid in this order from the 'top' to the 'bottom'
+// - animation (used for animating in and out)
+// - content (usually text or icons with a drop/text shadow)
+// - gradient (would accept a single color or two colors to form a gradient)
+// - highlight (used for showing hover/highlight color effects for hover/focus states and for a 'selected' state)
+// - background-image (could be the same layer as the background color using CSS background property?)
+// - background-color (takes in a single color or "light/dark", which will adapt depending on the system theme)
+// - blur (2rem)
+// the panel also has an optional 'header' section that can take in an icon and text 
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  headerText?: string;
+  headerSize?: string;
+  headerIcon?: string;
+  animation?: string;
+  gradient?: string | [string, string];
+  backgroundImage?: string;
+  backgroundColor?: string;
+  inside?: boolean;
+}
+
+const { 
+  headerText, 
+  headerSize,
+  headerIcon, 
+  animation, 
+  gradient, 
+  backgroundImage, 
+  backgroundColor,
+  inside = false,
+} = Astro.props;
+---
+
+<panel 
+  class:list={["panel", {inside: inside}]}>
+    {(headerText || headerIcon) && 
+    <div class="panel-header">
+        {headerIcon && <Icon class:list={["panel-header-icon", `size-${headerSize}`]} name={headerIcon} />}
+        {(headerText && headerSize === "3") && <h3 class="panel-text size-3">{headerText}</h3>}
+        {(headerText && headerSize === "4") && <h4 class="panel-text size-4">{headerText}</h4>}
+    </div>}
+    <div class="panel-content">
+        <slot />
+    </div>
+</panel>
+
+<style lang="scss" define:vars={{gradient, backgroundImage, backgroundColor, animation}}>
+.panel {
+  display: grid;
+  grid-template-areas: "stack";
+  backdrop-filter: blur(1rem);
+  background-color: none;
+  background-color: rgba(var(--backgroundColor), 0.11);
+  border-top: 2px solid rgba(var(--gray-0-rgb), 0.11);
+  border-bottom: 2px solid rgba(var(--gray-0-rgb), 0.11);
+  &.inside {
+    margin: 0 -1rem;
+    border-bottom: none;
+    &:first-child {
+      border-top: none;
+    }
+    .panel-header {
+      border-bottom: none;
+    }
+  }
+  .panel-header {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    gap: 0.5rem;
+    text-shadow: var(--text-shadow-lg);
+    border-bottom: 2px solid rgba(var(--gray-0-rgb), 0.11);
+  }
+  .panel-header-icon {
+    &.size-3 {
+        font-size: 2.5rem;
+    }
+    &.size-4 {
+        font-size: 2rem;
+    }
+  }
+  .panel-content {
+    padding: 1rem;
+    position: relative;
+    color: var(--gray-100);
+    text-shadow: var(--text-shadow-sm);
+    &:has(.inside) {
+      padding: 0 1rem;
+      
+    }
+  }
+}
+</style>

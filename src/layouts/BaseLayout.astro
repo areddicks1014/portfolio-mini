@@ -5,11 +5,14 @@ import '../styles/global.scss';
 interface Props {
 	title?: string;
 	description?: string;
+	class?: string;
 }
 
 const { 
 	title = 'augmented.alex', 
-	description = 'The personal web portfolio of Alex Reddicks: UX Design Engineer.' 
+	description = 'The personal web portfolio of Alex Reddicks: UX Design Engineer.',
+	class: className,
+	...rest 
 } = Astro.props;
 ---
 
@@ -30,13 +33,13 @@ const {
 		<link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<ViewTransitions/>
 	</head>
-	<body class="mat-typography">
+	<body class:list={['mat-typography', className]} {...rest}>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	body {
-		background-image: radial-gradient(circle at 1px 1px, var(--gray-700) 1px, transparent 0);
+		background-image: radial-gradient(circle at 2px 2px, var(--gray-700) 1.5px, transparent 0);
   		background-size: 60px 60px;
 	}
 	code {

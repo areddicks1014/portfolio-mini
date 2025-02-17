@@ -23,44 +23,50 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const background = entry.data.background ?? '';
 ---
 <BaseLayout
 title={"augmented.alex - " + entry.data.title}
 description={entry.data.description}
 >
   <ImageZoom />
-    <main>
+    <main class:list={[{background: background}]}>
         <div class="header">
             <FlipHeader/>
             <SubHeader subheading={entry.data.title}>
-                <LinkIconButton slot="left" reveal label="back" icon="mdi:arrow-back" link="/case-studies"/>
-                <LinkIconButton slot="right" reveal label="home" icon="mdi:home" link="/"/>
+                <LinkIconButton slot="left" reveal mono={!!background} label="back" icon="mdi:arrow-back" link="/case-studies"/>
+                <LinkIconButton slot="right" reveal mono={!!background} label="home" icon="mdi:home" link="/"/>
             </SubHeader>
         </div>
         <div class="text-body">
             <hr class="divider"/>
             <div class="case-study-info">
                 <!-- view icon link button -->
-                { entry.data.viewLink ? <LinkIconButton small reveal above label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
+                { entry.data.viewLink ? <LinkIconButton small reveal above mono={!!background} label="view" icon="mdi:eye" link={entry.data.viewLink} external/> : <span class="small-spacer"></span> }
                 <div class="tags">
-                    {entry.data.status ? <span class="tag status flex-center">{entry.data.status}</span> : ''}
+                    {entry.data.status && <span class="tag status flex-center">{entry.data.status}</span>}
                     {entry.data.tags?.map((tag: any) => <span class="tag flex-center">{tag}</span>)}
                 </div>
                 <!-- code icon link button -->
-                { entry.data.codeLink ? <LinkIconButton small reveal above label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
+                { entry.data.codeLink ? <LinkIconButton small reveal above mono={!!background} label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
             </div>
             <hr class="divider"/>
             <Content />
         </div>
+      </div>
     </main>
 </BaseLayout>
 
-<style lang="scss">
-    main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
+<style lang="scss" define:vars={{background}}>
+  main.background {
+    background: var(--background), rgba(var(--gray-999-rgb), 0.53);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+  }
+  main {
+    padding: 1rem;
 	}
 	.header {
 		display: flex;
@@ -105,23 +111,28 @@ description={entry.data.description}
     //     background: var(--gray-500);
     //   }
     .tag {
-      border: 2px solid var(--gray-700);
-      border-radius: 35px;
-      padding: 0 0.75rem;
-      white-space: nowrap;
-      &:hover,
-      &:focus-visible {
-        cursor: default;
-        border: 2px solid var(--gray-600);
-      }
-      &.status {
+          display: grid;
+          position: relative;
+          border: 2px solid rgba(var(--gray-0-rgb), 0.11);
+          border-radius: 35px;
+          padding: 0 0.75rem;
+          white-space: nowrap;
+          font-weight: 500;
+          backdrop-filter: blur(3px);
+          background-color: rgba(var(--gray-0-rgb), 0.11);
+          &:hover,
+          &:focus-visible {
+            cursor: default;
+            border: 2px solid rgba(var(--gray-0-rgb), 0.33);
+          }
+          &.status {
             color: var(--gray-999);
             background-color: var(--gray-200);
             border: 2px solid var(--gray-200);
             border-radius: 8px;
             font-weight: 500;
           }
-    }
+        }
   }
   
 </style>

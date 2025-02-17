@@ -21,6 +21,7 @@ export const caseStudyCollection = defineCollection({
         viewLink: z.optional(z.string()),
         codeLink: z.optional(z.string()),
         status: z.optional(z.string()),
+        background: z.optional(z.string()),
     }),
 });
 

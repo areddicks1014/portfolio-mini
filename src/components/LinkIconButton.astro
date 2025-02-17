@@ -10,14 +10,15 @@ interface Props {
     above?: boolean,
     secondary?: boolean,
     small?: boolean,
+    mono?: boolean,
     external?: boolean
 }
 
-const { id, link, icon, label, reveal, above, secondary, small, external = false } = Astro.props;
+const { id, link, icon, label, reveal, above, secondary, small, mono = false, external = false } = Astro.props;
 ---
 
 <a id={id} href={link ?? ''} target={external ? '_blank' : '_self'} rel={external ? 'noopener': 'noreferrer'}
-    class:list={['interactive link-icon-button flex-center', { above: above }]}>
+    class:list={['interactive link-icon-button flex-center', { above: above }, {mono: mono}]}>
     <Icon name={icon} class:list={['icon', { secondary: secondary }, { small: small }]}></Icon>
     <span aria-label={label} class:list={['label', { reveal: reveal }, { above: above }]}>{label}</span>
 </a>
@@ -28,6 +29,42 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
       padding: var(--padding-x) var(--padding-y);
       text-decoration: none;
       flex-direction: column;
+
+      &.mono {
+        color: var(--gray-0);
+        .icon {
+          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.11)) drop-shadow(0 2px 0 rgba(255, 255, 255, 0.11));
+        }
+        &:hover,
+        &:focus-visible {
+          color: var(--gray-100);
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11);
+          .icon {
+            border: 2px solid var(--gray-100);
+          }
+          .label.reveal {
+            color: var(--gray-100);
+          }
+          &:active {
+            color: var(--gray-800);
+            .icon {
+              border: 2px solid var(--gray-800);
+            }
+            .label {
+              color: var(--gray-800);
+            }
+          }
+        }
+    
+        &:active .label {
+          font-weight: bold;
+          color: var(--gray-800);
+      
+          &.reveal {
+            color: var(--gray-800);
+          }
+        }
+      }
     
       &:hover,
       &:focus-visible {
@@ -71,12 +108,12 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
           transform: scale(1, 1) translateY(0);
         }
       }
-    
       &:active, &:focus-visible {
         .icon {
           border: 2px solid var(--link-active-hover);
         }
       }
+    
     
       .label {
         font-family: var(--font-brand);
@@ -102,8 +139,7 @@ const { id, link, icon, label, reveal, above, secondary, small, external = false
         }
       }
     
-      &:hover:active .label,
-      &:focus-visible:active .label {
+      &:active .label {
         font-weight: bold;
         color: var(--link-active-hover);
     
