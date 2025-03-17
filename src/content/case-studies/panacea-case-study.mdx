@@ -1,0 +1,191 @@
+---
+title: "Panacea Mobile App"
+description: "I designed a mobile app that helps customers keep track of and diagnose issues with their houseplants."
+tags:
+- "UX"
+- "Mobile Design"
+- "Research"
+- "Case Study"
+status: "Ongoing"
+progressCurrent: "8"
+progressEnd: "12"
+background: "url(/images/panacea-bg-v1a.svg)"
+---
+
+import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import Panel from '../../components/Panel.astro';
+
+<br />
+### Mobile app that helps customers keep track of and diagnose issues with their houseplants.
+
+<br /><br />
+
+<Panel headerText="Table of Contents" headerSize="3" backgroundColor="var(--gray-999-rgb)">
+- [Project Overview](#project-overview)
+- [User Research](#user-research)
+- [Persona](#persona)
+- [User Journey Map](#user-journey-map)
+- [Paper Wireframes](#paper-wireframes)
+- [Digital Wireframes](#digital-wireframes)
+- [Low-fidelity Prototype](#low-fidelity-prototype)
+- [Usability Study](#usability-study)
+- [Mockups](#mockups)
+- [Accessibility Considerations](#accessibility-considerations)
+- [Takeaways](#takeaways)
+- [Next Steps](#next-steps)
+</Panel>
+<br />
+
+<Panel id="project-overview" headerText='Project Overview' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='The Problem' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        Seeing a houseplant that doesn't look healthy and needing to know how to remedy the plant.
+    </Panel>
+
+    <Panel headerText='The Goal' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        Design an experience that makes it easier to take care of houseplants.
+    </Panel>
+    <Panel headerText='My Roles' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+    <div class='panel-grid'>
+        <Panel headerText='UX Researcher' headerSize='5' class='inside small'>
+            Conducted user research to identify areas for improvement.
+        </Panel>
+        <Panel headerText='Collaborator' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Work with stakeholders across design, development, and product teams to gather and incorporate insights.
+        </Panel>
+    </div>
+    </Panel>
+</Panel>
+<br />
+
+<br />
+
+<Panel id="user-research" headerText='User Research' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Summary' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <div class='panel-grid'>
+            <Panel headerText='User Interviews' headerSize='5' empty class='inside small'>
+            </Panel>
+            <Panel headerText='Scenario-Based Questions' headerSize='5' backgroundColor='var(--gray-999-rgb)' empty class='inside small'>
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Pain Points' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <div class='panel-grid'>
+            <Panel headerText='Diagnosing' headerSize='5' class='inside small'>
+                Diagnosing a plant's issue can be difficult for someone who doesn't already know what to look for.
+            </Panel>
+            <Panel headerText='Scheduling' headerSize='5' class='inside small'>
+                Scheduling the watering and care timing for each plant is overwhelming.
+            </Panel>
+            <Panel headerText='Organizing' headerSize='5' class='inside small'>
+                Keeping track of each plant's individual needs by memory means that some plants may be forgotten from time to time.
+            </Panel>
+            <Panel headerText='Care' headerSize='5' class='inside small'>
+                Knowing when and how to care for each plant can be stressful if any of the plants have special needs or need medicine.
+            </Panel>
+        </div>
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="persona" headerText='Persona: Brin' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Problem statement' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        Brin is a plant-loving Nutritionist who needs an easier way to keep track of and diagnose issues with her houseplants. 
+    </Panel>
+    <Panel class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <Image src="/images/panacea-persona-brin.png" alt="Panacea Persona Brin" width="800" height="451" /> 
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="user-journey-map" headerText='User Journey Map' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    I created a user journey map of Brin's normal experience taking care of her houseplants to help identify possible pain points and improvement opportunities where Panacea could help most.
+    <br />
+    <Image src="/images/panacea-user-journey-brin.png" alt="Panacea User Journey Map for Brin" width="800" height="450" />
+</Panel>
+<br />
+
+<Panel id="paper-wireframes" headerText='Paper Wireframes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    I wanted to initially have a search bar at the bottom, but it would hide the other main pages in the 'side' menu. I kept many of the controls and primary actions near the bottom since most phones are larger and the typical user's hands are smaller.
+    <br />
+    <Image src="/images/panacea-paper-wireframe-home-1.jpg" alt="Panacea Paper Wireframe for Home page variant 1" width="325" height="600" /> 
+    <Image src="/images/panacea-paper-wireframe-home-2.jpg" alt="Panacea Paper Wireframe for Home page variant 2" width="325" height="600" /> 
+    <Image src="/images/panacea-paper-wireframe-pages.jpg" alt="Panacea Paper Wireframe for different pages" width="325" height="600" /> 
+    <Image src="/images/panacea-paper-wireframe-search.jpg" alt="Panacea Paper Wireframe for the search results page and overlay" width="325" height="600" /> 
+    <Image src="/images/panacea-paper-wireframe-add-new-plant-2.jpg" alt="Panacea Paper Wireframe for Add New Plant page variant 2" width="325" height="600" />
+    <Image src="/images/panacea-paper-wireframe-add-new-plant-3.jpg" alt="Panacea Paper Wireframe for Add New Plant page variant 3" width="325" height="600" />
+    <Image src="/images/panacea-paper-wireframe-add-new-plant-save.jpg" alt="Panacea Paper Wireframe for Add New Plant page save action" width="325" height="600" />
+</Panel>
+<br />
+
+<Panel id="digital-wireframes" headerText='Digital Wireframes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Home page' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        The Home page is meant to be simple, not too busy, and helpful for taking care of your houseplants.
+        <br />
+        <Image src="/images/panacea-digital-wireframe-home.png" alt="Panacea Digital Wireframe for the Home page" width="325" height="700" /> 
+        The top section is for plants that need care or attention today and the plant can be selected to view plant details directly. The search button at the bottom right brings up bottom modal with choice of media picker, camera, or text to search for plant type or ailment.
+    </Panel>
+    <Panel headerText='All Plants page' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        When going from one page to another, I wanted the controls placement to remain consistent. For example, the 'add', 'edit', and 'save' buttons are in the same place on the right side.
+        <br />
+        <Image src="/images/panacea-digital-wireframe-all-plants.png" alt="Panacea Digital Wireframe for the All Plants page" width="325" height="700" />
+        <Image src="/images/panacea-digital-wireframe-plant-details.png" alt="Panacea Digital Wireframe for the Plant Details page" width="325" height="700" />
+        Select a plant from the list to see its details.
+        Important controls are always at the bottom, easily within reach while holding a phone with one hand. 
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="low-fidelity-prototype" headerText='Low-fidelity prototype' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    Since the app is fairly simple, I wanted to make sure that each of the main pages was almost always accessible with the bottom tabs and that the 'back' functionality would work as expected.
+    <br />
+    <Image src="/images/panacea-lo-fi-prototype.png" alt="Panacea Low-fidelity Prototype overview" width="800" height="450" /> 
+</Panel>
+<br />
+
+<Panel id="usability-study" headerText='Usability Study' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Round 1 (low-fi) findings' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        - The search function wasn't obvious
+        - Some solutions won't cost money
+        - Buttons at the bottom were nice 
+    </Panel>
+    <Panel headerText='Round 2 (hi-fi) findings' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+        
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="mockups" headerText='Mockups' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Home page' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+    </Panel>
+    <Panel headerText='All Plants page' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+    </Panel>
+    <Panel headerText='Search' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+    </Panel>
+    <Panel headerText='Other screens' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="high-fidelity-prototype" headerText='High-fidelity prototype' headerSize='3' backgroundColor='var(--gray-999-rgb)' empty>
+    Since the app is fairly simple, I wanted to make sure that each of the main pages was almost always accessible with the bottom tabs and that the 'back' functionality would work as expected.
+    <br />
+    <Panel headerText='Overview' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+        <Image src="/images/panacea-lo-fi-prototype.png" alt="Panacea Low-fidelity Prototype overview" width="800" height="450" /> 
+    </Panel>
+    <Panel headerText='Animation' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)' empty>
+        <Image src="/images/panacea-lo-fi-prototype.png" alt="Panacea Low-fidelity Prototype overview" width="800" height="450" /> 
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="accessibility-considerations" headerText='Accessibility Considerations' headerSize='3' backgroundColor='var(--gray-999-rgb)' empty>
+</Panel>
+<br />
+
+<Panel id="takeaways" headerText='Takeaways' headerSize='3' backgroundColor='var(--gray-999-rgb)' empty>
+</Panel>
+<br />
+
+<Panel id="next-steps" headerText='Next Steps' headerSize='3' backgroundColor='var(--gray-999-rgb)' empty>
+</Panel>

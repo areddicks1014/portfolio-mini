@@ -152,9 +152,37 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"case-studies": {
+"ds-assistance-expectations-research.mdx": {
+	id: "ds-assistance-expectations-research.mdx";
+  slug: "ds-assistance-expectations-research";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
+"ds-compliance-research.mdx": {
+	id: "ds-compliance-research.mdx";
+  slug: "ds-compliance-research";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
 "dsr-research.mdx": {
 	id: "dsr-research.mdx";
   slug: "dsr-research";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
+"mping-mobile-redesign.mdx": {
+	id: "mping-mobile-redesign.mdx";
+  slug: "mping-mobile-redesign";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
+"panacea-case-study.mdx": {
+	id: "panacea-case-study.mdx";
+  slug: "panacea-case-study";
   body: string;
   collection: "case-studies";
   data: InferEntrySchema<"case-studies">

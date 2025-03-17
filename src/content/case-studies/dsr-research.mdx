@@ -6,7 +6,7 @@ tags:
 - "Research"
 - "Case Study"
 - "Design System"
-status: "In Progress"
+status: "New"
 background: "url(/images/JBH-bg-1a.svg)"
 ---
 
@@ -20,99 +20,192 @@ import Panel from '../../components/Panel.astro';
 <br /><br />
 
 <Panel headerText="Table of Contents" headerSize="3" backgroundColor="var(--gray-999-rgb)">
+- [Background](#background)
 - [Project Goal and Objectives](#project-goal-and-objectives)
 - [My Roles](#my-roles)
 - [Target Users](#target-users)
 - [Research Methodology](#research-methodology)
 - [Themes](#themes)
-- [Key Insights](#key-insights)
-- [Recommendations](#recommendations)
 - [Outcomes](#outcomes)
 - [Impact](#impact)
 - [What I Learned](#what-i-learned)
 </Panel>
 <br />
 
-<Panel headerText='Project Goal and Objectives' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-    <Panel headerText='Goal' headerSize='4' inside backgroundColor='var(--gray-999-rgb)'>
+<Panel id='background' headerText='Background' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel class='inside'>
+    The current Design System Request (DSR) process lacks transparency and efficiency, causing significant issues for designers, developers, managers, and product owners. Users are frustrated by scattered information across multiple channels, with no single source of truth for the status of their requests. The lack of a formal review process and clear statuses makes it difficult for teams to manage their work effectively. The research was conducted through user interviews, scenario-based questions, and analysis of existing DSR documentation to develop user-centered solutions.
+    </Panel>
+    <Panel headerText="What is a Design System Request?" headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+    A **Design System Request** is a formal proposal for a new component, pattern, or update to the existing design system. These requests are submitted by designers, developers, or product owners and undergo a review process to ensure quality, consistency, and usability across all products.
+    </Panel>
+    <Panel headerText="What is wrong with the process?" headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+    Design System Requests were handled by either email, messages, work items (through Azure Dev Ops), or some combination of those. This meant that there could often be duplicate requests, stalled work, missed timelines, or stakeholders left out of the loop. This also means that any context surrounding DSRs were often lost due to broken email chains, messages deleted due to company policies, or work items not being updated. Each person also had their own level of specificity when it came to the progress of each request that was being kept track of, which led to confusion if the designer, management, or stakeholders changed.
+    </Panel>
+</Panel>
+<br />
+
+<Panel id='project-goal-and-objectives' headerText='Project Goal and Objectives' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Goal' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
         To improve Design System Requests (DSR) and their progress through the review process, making it more transparent and efficient for all stakeholders.
     </Panel>
 
-    <Panel headerText='Objectives' headerSize='4' inside backgroundColor='var(--gray-999-rgb)'>
-        - Identify and document pain points in the existing DSR status tracking process.
-        - Understand user needs and expectations regarding status updates, timelines, and communication.
-        - Synthesize research data into actionable recommendations for a user-centered status tracking solution.
-        - Provide a plan for iterative improvement based on user feedback.
+    <Panel headerText='Objectives' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        - Identify and document pain points in the existing DSR status tracking process to establish a starting place for finding solutions.
+        - Understand user needs and expectations regarding status updates, timelines, and communication to properly set the scope of the problems needing to be solved.
+        -  Synthesize research data into actionable recommendations for a user-centered status tracking solution to present to stakeholders.
+        - Provide a plan for iterative continuous improvement based on user feedback so that we can prevent this type of situation from occurring in the future.
     </Panel>
 </Panel>
 <br />
 
-<Panel headerText='My Roles' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **UX Researcher**: Conducted user research to identify areas for improvement.
-- **Collaborator**: Work with stakeholders across design, development, and product teams to gather and incorporate insights.
+<Panel id='my-roles' headerText='My Roles' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <div class='panel-grid'>
+        <Panel headerText='UX Researcher' headerSize='4' class='inside small'>
+            Conducted user research to identify areas for improvement.
+        </Panel>
+        <Panel headerText='Collaborator' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Work with stakeholders across design, development, and product teams to gather and incorporate insights.
+        </Panel>
+    </div>
 </Panel>
 <br />
 
-<Panel headerText='Target Users' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-Designers, developers, managers, and product owners who rely on the design system and need to track the status of Design System Requests.
+<Panel id='target-users' headerText='Target Users' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+**Designers**, **developers**, **managers**, and **product owners** who rely on the design system and need to track the status of Design System Requests.
 </Panel>
 <br />
 
-<Panel headerText='Research Methodology' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **User Interviews:** Conducted in-depth interviews with designers, developers, and managers 
-using open-ended questions and prompts to understand the users' experiences with the existing status tracking process.
-- **Scenario-Based Questions:** Used scenario-based questions during interviews to understand how users currently manage multiple requests, 
-track stalled items, and find details from past reviews. 
-- **Thematic Analysis:** Analyzed interview transcripts to identify recurring themes, patterns, and user pain points.
-- **Documentation Review:** Examined existing DSR process documentation to identify gaps and areas for clarification.
+<Panel id='research-methodology' headerText='Research Methodology' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+<div class='panel-grid'>
+        <Panel headerText='User Interviews' headerSize='4' class='inside small'>
+            Conducted in-depth interviews with designers, developers, and managers using open-ended questions and prompts to understand the users' experiences with the existing status tracking process.
+        </Panel>
+        <Panel headerText='Scenario-Based Questions' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Used scenario-based questions during interviews to understand how users currently manage multiple requests, track stalled items, and find details from past reviews.
+        </Panel>
+        <Panel headerText='Thematic Analysis' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Analyzed interview transcripts to identify recurring themes, patterns, and user pain points.
+        </Panel>
+        <Panel headerText='Documentation Review' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Examined existing DSR process documentation to identify gaps and areas for clarification.
+        </Panel>
+    </div>
 </Panel>
 <br />
 
-<Panel headerText='Themes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **Process Frustration:** Many users expressed frustration with the current system due to its lack of transparency and efficiency.
-- **Information Overload:** Users felt overwhelmed by scattered information and a lack of a single source of truth.
-- **Time Sensitivity:** Users emphasized the need for timely updates and status notifications to manage their work effectively.
-- **Need for Formalization:** Users wanted a formal and more consistent review and feedback process.
+<Panel id='themes' headerText='Themes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Process Frustration' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        Many users expressed frustration with the current system due to its lack of transparency and efficiency.
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' class='inside small'>
+                The most significant finding was the lack of a central system, leading to confusion and inefficiency.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Establish a centralized DSR status tracking system, preferably in ADO, to increase visibility.
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Information Overload' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        Users felt overwhelmed by scattered information and a lack of a single source of truth.
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Users needed specific and easily understandable status labels, as well as clear definitions of what the various states mean.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Define and implement clear status definitions for tracking.
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Time Sensitivity' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        Users emphasized the need for timely updates and status notifications to manage their work effectively.
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                There was a consistent request for a timeline view for each request, showing its progression and estimated completion time.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Integrate a timeline and/or calendar view for each request to show progress on the Design System Requests page.
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Need for Formalization' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        Users wanted a formal and more consistent review and feedback process.
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Users reported difficulties understanding the current review process, particularly for mobile vs. web requests.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Develop a formal review and feedback process, clarifying the steps and expectations for each type of request.
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Need for Improved Communication' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Users wanted improved methods of communication, including being notified when the status of items changes and clear communication of the types of assistance offered.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Incorporate regular status meetings to address questions and manage expectations, ensuring that all stakeholders are informed and aligned.
+            </Panel>
+        </div>
+    </Panel>
+    <Panel headerText='Mobile and Web Differentiation' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside'>
+        <div class='panel-grid'>
+            <Panel headerText='Key Insight' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Participants noted that the mobile process and the web process seemed very different.
+            </Panel>
+            <Panel headerText='Recommendation' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+                Regularly evaluate the process, gathering user feedback for continuous improvement and adapting the process to meet the evolving needs of users.
+            </Panel>
+        </div>
+    </Panel>
 </Panel>
 <br />
 
-<Panel headerText='Key Insights' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **Lack of Centralized Tracking:** The most significant finding was the lack of a central system, leading to confusion and inefficiency.
-- **Desire for Clear Status Definitions:**  Users needed specific and easily understandable status labels, as well as clear definitions of what the various states mean.
-- **Importance of Timelines:** There was a consistent request for a timeline view for each request, showing its progression and estimated completion time.
-- **Workflow Issues:** Users reported difficulties understanding the current review process, particularly for mobile vs. web requests.
-- **Need for Improved Communication:** Users wanted improved methods of communication, including being notified when the status of items changes and clear communication of the types of assistance offered.
-- **Mobile and Web Differentiation:** Participants noted that the mobile process and the web process seemed very different.
+<Panel id='outcomes' headerText='Outcomes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+<div class='panel-grid'>
+        <Panel headerText='Improved Transparency' headerSize='4' class='inside small'>
+            Identified and documented pain points in the existing DSR status tracking process, leading to improved transparency, as evidenced by the establishment of a centralized tracking system.
+        </Panel>
+        <Panel headerText='Increased Efficiency' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Understood user needs and expectations, resulting in increased efficiency, demonstrated by the streamlined workflow and reduced time spent tracking DSRs.
+        </Panel>
+        <Panel headerText='Better Collaboration' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Synthesized research data into actionable recommendations, fostering better collaboration, as seen in the improved communication and alignment between designers and developers.
+        </Panel>
+        <Panel headerText='User-Focused Design' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Provided a plan for iterative improvement based on user feedback, guiding us towards a user-focused design that adapts to the evolving needs of users.
+        </Panel>
+    </div>
 </Panel>
 <br />
 
-<Panel headerText='Recommendations' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- Establish a centralized DSR status tracking system, preferably in ADO, to increase visibility.
-- Define and implement clear status definitions for tracking.
-- Integrate a timeline view for each request to show progress.
-- Incorporate regular status meetings to address questions and manage expectations.
-- Develop a formal review and feedback process.
-- Regularly evaluate the process, gathering user feedback for continuous improvement.
+<Panel id='impact' headerText='Impact' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+<div class='panel-grid'>
+        <Panel headerText='Actionable Recommendations' headerSize='4' class='inside small'>
+            The research generated clear, actionable recommendations for improving the DSR status tracking system.
+        </Panel>
+        <Panel headerText='User-Focused Design' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Emphasis on a user-focused approach guided us towards solutions that meet real needs.
+        </Panel>
+        <Panel headerText='Iterative Improvement' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            By gathering research during the design process, we will be able to make iterative improvements over time based on continuous user feedback.
+        </Panel>
+    </div>
 </Panel>
 <br />
 
-<Panel headerText='Outcomes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **Improved Transparency:** The new system provides a clear view of each DSR.
-- **Increased Efficiency:**  The improved workflow helps reduce confusion and time spent creating and tracking DSRs.
-- **Better Collaboration:**  The central platform for the process improved collaboration between the designers and developers.
-</Panel>
-<br />
-
-<Panel headerText='Impact' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **Actionable Recommendations:** The research generated clear, actionable recommendations for improving the DSR status tracking system.
-- **User-Focused Design:** Emphasis on a user-focused approach guided us towards solutions that meet real needs.
-- **Iterative Improvement:** By gathering research during the design process, we will be able to make iterative improvements over time based on continuous user feedback.
-</Panel>
-<br />
-
-<Panel headerText='What I Learned' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
-- **Importance of User Research:** User interviews and testing are crucial to identifying pain points and designing effective solutions.
-- **Value of Centralized Systems:** Having a centralized system greatly improved team collaboration and transparency.
-- **Clear Communication:** Clear and concise communication regarding the process is critical to a successful workflow.
+<Panel id='what-i-learned' headerText='What I Learned' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+<div class='panel-grid'>
+        <Panel headerText='Importance of User Research' headerSize='4' class='inside small'>
+            User interviews and testing are crucial to identifying pain points and designing effective solutions.
+        </Panel>
+        <Panel headerText='Value of Centralized Systems' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Having a centralized system greatly improved team collaboration and transparency.
+        </Panel>
+        <Panel headerText='Clear Communication' headerSize='4' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Clear and concise communication regarding the process is critical to a successful workflow.
+        </Panel>
+    </div>
 </Panel>
 

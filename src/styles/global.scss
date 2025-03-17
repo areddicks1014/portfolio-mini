@@ -2,6 +2,8 @@
 @use '@angular/material' as mat;
 
 :root {
+	interpolate-size: allow-keywords;
+
     /* these stay here to keep animation speed correct */
 	--padding-x: 6px;
 	--padding-y: 6px;
@@ -550,6 +552,13 @@ h5 {
 	border-color: rgba(var(--gray-0-rgb), 0.33);
 	border-style: solid;
 }
+
+.panel-grid {
+	display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1rem;
+	padding: 1rem 0;
+  }
 
 starlight-image-zoom-zoomable {
 	width: unset !important;

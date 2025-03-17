@@ -32,7 +32,10 @@ export default defineConfig({
           "text-box",
           "code",
           "watch-variant",
-          "verified"
+          "verified",
+          "close",
+          "progress-check",
+          "question-mark"
         ],
       },
     }),

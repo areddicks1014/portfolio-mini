@@ -9,6 +9,8 @@ export const workCollection = defineCollection({
         viewLink: z.optional(z.string()),
         codeLink: z.optional(z.string()),
         status: z.optional(z.string()),
+        progressCurrent: z.optional(z.string()),
+        progressEnd: z.optional(z.string()),
     }),
 });
 
@@ -21,6 +23,8 @@ export const caseStudyCollection = defineCollection({
         viewLink: z.optional(z.string()),
         codeLink: z.optional(z.string()),
         status: z.optional(z.string()),
+        progressCurrent: z.optional(z.string()),
+        progressEnd: z.optional(z.string()),
         background: z.optional(z.string()),
     }),
 });

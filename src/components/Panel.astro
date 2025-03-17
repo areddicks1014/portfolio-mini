@@ -11,6 +11,7 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
+  id?: string;
   headerText?: string;
   headerSize?: string;
   headerIcon?: string;
@@ -19,9 +20,13 @@ interface Props {
   backgroundImage?: string;
   backgroundColor?: string;
   inside?: boolean;
+  empty?: boolean;
+  class?: string;
+  
 }
 
 const { 
+  id,
   headerText, 
   headerSize,
   headerIcon, 
@@ -30,26 +35,35 @@ const {
   backgroundImage, 
   backgroundColor,
   inside = false,
+  empty = false,
+  class: className,
+  ...rest
 } = Astro.props;
 ---
 
 <panel 
-  class:list={["panel", {inside: inside}]}>
+  id={id}
+  class:list={[className, "panel"]} {...rest}>
     {(headerText || headerIcon) && 
     <div class="panel-header">
         {headerIcon && <Icon class:list={["panel-header-icon", `size-${headerSize}`]} name={headerIcon} />}
         {(headerText && headerSize === "3") && <h3 class="panel-text size-3">{headerText}</h3>}
         {(headerText && headerSize === "4") && <h4 class="panel-text size-4">{headerText}</h4>}
+        {(headerText && headerSize === "5") && <h5 class="panel-text size-4">{headerText}</h5>}
     </div>}
-    <div class="panel-content">
-        <slot />
-    </div>
+    
+    {empty ? 
+      <div class="empty"><Icon class="empty-icon" name="mdi:close" /></div> : 
+      <div class="panel-content">
+          <slot />
+      </div>
+    }
 </panel>
 
 <style lang="scss" define:vars={{gradient, backgroundImage, backgroundColor, animation}}>
 .panel {
-  display: grid;
-  grid-template-areas: "stack";
+  display: flex;
+  flex-direction: column;
   backdrop-filter: blur(1rem);
   background-color: none;
   background-color: rgba(var(--backgroundColor), 0.11);
@@ -64,10 +78,30 @@ const {
     .panel-header {
       border-bottom: none;
     }
+    .empty {
+      border-top: 2px solid rgba(var(--gray-0-rgb), 0.11);
+    }
+    &.small {
+      border-top: 2px solid rgba(var(--gray-0-rgb), 0.11);
+      border-bottom: 2px solid rgba(var(--gray-0-rgb), 0.11);
+      margin: 0;
+    }
+  }
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: 10rem;
+    .empty-icon {
+      font-size: 4rem;
+      color: rgba(var(--gray-0-rgb), 0.11);
+    }
   }
   .panel-header {
     display: flex;
-    align-items: flex-end;
+    height: fit-content;
     padding: 1rem;
     gap: 0.5rem;
     text-shadow: var(--text-shadow-lg);
@@ -80,6 +114,9 @@ const {
     &.size-4 {
         font-size: 2rem;
     }
+    &.size-5 {
+        font-size: 1.75rem;
+    }
   }
   .panel-content {
     padding: 1rem;
@@ -88,7 +125,6 @@ const {
     text-shadow: var(--text-shadow-sm);
     &:has(.inside) {
       padding: 0 1rem;
-      
     }
   }
 }
