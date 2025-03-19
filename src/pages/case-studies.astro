@@ -8,7 +8,6 @@ import { getCollection } from 'astro:content';
 
 const caseStudyEntries = await getCollection('case-studies');
 const sortedCaseStudyEntries = caseStudyEntries.sort((a: any, b: any) => {
-  // Compare the concatenated tag strings
   if (a.data.status < b.data.status) {
     return -1;
   }
@@ -36,6 +35,7 @@ const sortedCaseStudyEntries = caseStudyEntries.sort((a: any, b: any) => {
                         view={entry.data.viewLink}
                         details={'/case-studies/' + entry.slug}
                         code={entry.data.codeLink} 
+                        design={entry.data.designLink} 
                         index={index}
                         status={entry.data.status}
                         progressCurrent={entry.data.progressCurrent}

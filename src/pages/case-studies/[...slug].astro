@@ -49,6 +49,7 @@ description={entry.data.description}
                 </div>
                 <!-- code icon link button -->
                 { entry.data.codeLink ? <LinkIconButton small reveal above mono={!!background} label="code" icon="mdi:code" link={entry.data.codeLink} external/> : <span class="small-spacer"></span> }
+                { entry.data.designLink ? <LinkIconButton small reveal above mono={!!background} label="design" icon="mdi:design" link={entry.data.designLink} external/> : <span class="small-spacer"></span> }
             </div>
             <hr class="divider"/>
             <Content />
@@ -111,8 +112,9 @@ description={entry.data.description}
     //     background: var(--gray-500);
     //   }
     .tag {
-          display: grid;
-          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           border: 2px solid rgba(var(--gray-0-rgb), 0.11);
           border-radius: 35px;
           padding: 0 0.75rem;

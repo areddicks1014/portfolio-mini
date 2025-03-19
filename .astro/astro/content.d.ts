@@ -210,6 +210,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".mdx"] };
+"live-updates-notification-chip-concept-android.mdx": {
+	id: "live-updates-notification-chip-concept-android.mdx";
+  slug: "live-updates-notification-chip-concept-android";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
 "old-portfolio-site.md": {
 	id: "old-portfolio-site.md";
   slug: "old-portfolio-site";

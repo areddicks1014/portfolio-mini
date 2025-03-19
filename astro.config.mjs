@@ -35,8 +35,18 @@ export default defineConfig({
           "verified",
           "close",
           "progress-check",
-          "question-mark"
+          "question-mark",
+          "design",
+          "art",
+          "artboard"
         ],
+        solar: [
+          "figma-bold",
+          "figma-bold-duotone",
+          "figma-outline",
+          "figma-file-outline",
+          "figma-file-bold"
+        ]
       },
     }),
     expressiveCode(),

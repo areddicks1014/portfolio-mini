@@ -9,6 +9,7 @@ interface Props {
   view?: string;
   details?: string;
   code?: string;
+  design?: string;
   index?: number;
   status?: string;
   progressCurrent?: string;
@@ -24,6 +25,7 @@ const {
   view,
   details,
   code,
+  design,
   index,
   status,
   progressCurrent,
@@ -115,6 +117,22 @@ const {
                 label="code"
                 icon="mdi:code"
                 link={code}
+                external
+                mono={!!background}
+              />
+            ) : (
+              <span />
+            )
+          }
+          {
+            design ? (
+              <LinkIconButton
+                small
+                reveal
+                above
+                label="design"
+                icon="mdi:design"
+                link={design}
                 external
                 mono={!!background}
               />

@@ -7,6 +7,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 
 const workEntries = await getCollection('work');
+const tagSortedWorkEntries = workEntries.sort((a: any, b: any) => {
+  // Prioritize entries with status
+  if (a.data.status && !b.data.status) {
+    return -1;
+  }
+  if (!a.data.status && b.data.status) {
+    return 1;
+  }
+  // If both have status, sort by status value
+  if (a.data.status && b.data.status) {
+    if (a.data.status < b.data.status) {
+      return -1;
+    }
+    if (a.data.status > b.data.status) {
+      return 1;
+    }
+  }
+  // If neither have status or status is the same, maintain original order
+  return 0;
+});
+
 ---
 
 <BaseLayout title="augmented.alex - work">
@@ -19,13 +40,14 @@ const workEntries = await getCollection('work');
         </div>
         <div class="text-body">
             {
-                workEntries.map((entry: any, index: number) => (
+                tagSortedWorkEntries.map((entry: any, index: number) => (
                     <WorkListItem title={entry.data.title} 
                         description={entry.data.description}
                         tags={entry.data.tags} 
                         view={entry.data.viewLink}
                         details={'/work/' + entry.slug}
                         code={entry.data.codeLink} 
+                        design={entry.data.designLink} 
                         index={index}
                         status={entry.data.status} />
                 ))
