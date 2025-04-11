@@ -38,7 +38,8 @@ export default defineConfig({
           "question-mark",
           "design",
           "art",
-          "artboard"
+          "artboard",
+          "lock"
         ],
         solar: [
           "figma-bold",

@@ -40,18 +40,14 @@ const {
   class="fade-in-animation"
   style={{ animationDelay: (index ?? 1) / 10 + "s" }}
 >
-  <div
-    class:list={[className, "work-item", background && "backgroundImg"]}
+  <a
+    class="work-item interactive"
+    class:list={[className, background && "backgroundImg", status === "Upcoming" && "locked"]}
     {...rest}
+    href={status === "Upcoming" ? null : details}
   >
     <div class="header">
-      {
-        status === "Upcoming" ? (
-          <h3 class="title" transition:name={title}>{title}</h3>
-        ) : (
-          <a class="interactive" href={details}><h3 class="title" transition:name={title}>{title}</h3></a>
-        )
-      }
+      <h3 class="title" transition:name={title}>{title}</h3>
       {
         progressCurrent && progressEnd && (parseInt(progressCurrent) < parseInt(progressEnd)) ? (
           <div class="progress">
@@ -78,74 +74,38 @@ const {
         }
         {tags?.map((tag) => <span class="tag flex-center">{tag}</span>)}
       </div>
-      {
-        status === "Upcoming"
-          ? () => null 
-          : (
         <div class="actions">
           {
             view ? (
-              <LinkIconButton
-                small
-                reveal
-                above
-                label="view"
-                icon="mdi:eye"
-                link={view}
-                external
-                mono={!!background}
-              />
+              <Icon class="icon" name="mdi:eye"></Icon>
             ) : (
-              <span />
+              () => null
             )
           }
-          <LinkIconButton
-            small
-            reveal
-            above
-            label="details"
-            icon="mdi:text-box"
-            link={details}
-            mono={!!background}
-          />
           {
             code ? (
-              <LinkIconButton
-                small
-                reveal
-                above
-                label="code"
-                icon="mdi:code"
-                link={code}
-                external
-                mono={!!background}
-              />
+              <Icon class="icon" name="mdi:code"></Icon>
             ) : (
-              <span />
+              () => null
             )
           }
           {
             design ? (
-              <LinkIconButton
-                small
-                reveal
-                above
-                label="design"
-                icon="mdi:design"
-                link={design}
-                external
-                mono={!!background}
-              />
+              <Icon class="icon" name="mdi:design"></Icon>
             ) : (
-              <span />
+              () => null
+            )
+          }
+          {
+            status === "Upcoming" ? (
+              <Icon class="icon" name="mdi:lock"></Icon>
+            ) : (
+              () => null
             )
           }
         </div>
-        )
-      }
-      
     </div>
-  </div>
+  </a>
 </div>
 
 <style lang="scss" define:vars={{ background }}>
@@ -178,6 +138,8 @@ const {
   }
 
   .work-item {
+    display: block;
+    text-decoration: none;
     background-color: rgba(var(--gray-999-rgb), 0.66);
     border: 2px solid rgba(var(--gray-0-rgb), 0.11);
     padding: 0.5rem 0.5rem 0.5rem 1rem;
@@ -256,11 +218,18 @@ const {
       }
       &:hover {
         background: var(--background), rgba(var(--gray-999-rgb), 0.21);
+        background-blend-mode: overlay;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
-        background-blend-mode: overlay;
         border: 2px solid var(--gray-300);
+        // &.locked {
+        //   background: var(--background), rgba(var(--color-shd-error-red-rgb), 0.66);
+        //   background-blend-mode: screen;
+        //   background-size: cover;
+        //   background-repeat: no-repeat;
+        //   background-position: top;
+        // }
       }
       html.theme-dark &:hover {
         background: var(--background), rgba(var(--gray-999-rgb), 0.11);
@@ -268,6 +237,13 @@ const {
         background-repeat: no-repeat;
         background-position: top;
         background-blend-mode: overlay;
+        // &.locked {
+        //   background: var(--background), rgba(var(--color-shd-error-red-rgb), 0.66);
+        //   background-blend-mode: color-dodge;
+        //   background-size: cover;
+        //   background-repeat: no-repeat;
+        //   background-position: top;
+        // }
       }
       .footer {
         .tags .tag {
@@ -291,14 +267,6 @@ const {
         background-color: var(--gray-800);
       }
     }
-    a {
-      display: inline-block;
-      text-decoration: none;
-      &:hover,
-      &:focus-visible {
-        text-decoration: underline;
-      }
-    }
     .title {
       font-size: var(--text-2xl);
     }
@@ -310,6 +278,7 @@ const {
       text-shadow: var(--text-shadow-lg);
       border-bottom: 2px solid rgba(var(--gray-0-rgb), 0.11);
       .progress {
+        color: var(--gray-100);
         font-weight: 500;
         backdrop-filter: blur(3px);
         background-color: rgba(var(--gray-0-rgb), 0.11);
@@ -350,6 +319,7 @@ const {
           font-weight: 500;
           backdrop-filter: blur(3px);
           background-color: rgba(var(--gray-0-rgb), 0.11);
+          color: var(--gray-100);
           &:hover,
           &:focus-visible {
             cursor: default;
@@ -364,10 +334,16 @@ const {
           }
         }
       }
-
       .actions {
         display: flex;
-        margin-bottom: -0.5rem;
+        gap: 0.5rem;
+        margin: 0 -0.5rem -0.5rem 0;
+        padding: 0.5rem;
+        .icon {
+          filter: var(--filter-shadow-lg);
+          color: var(--gray-100);
+          font-size: 1.5rem;
+        }
       }
     }
   }
