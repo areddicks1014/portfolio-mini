@@ -34,6 +34,17 @@
 	--color-shd-error-red: #FF3000; // use white foreground
 	--color-shd-error-red-rgb: 255, 48, 0;
 
+	// Patios-N-Stuff Colors
+	--color-patios-n-stuff-primary: #21689B;
+	--color-patios-n-stuff-primary-rgb: 33, 104, 155;
+	--color-patios-n-stuff-secondary: #78BDE7;
+	--color-patios-n-stuff-secondary-rgb: 120, 189, 231;
+
+	// Unhelpful Thinking Habits Colors
+	--color-unhelpful-thinking-habits-primary: #89f7fe; // use black foreground
+	--color-unhelpful-thinking-habits-primary-rgb: 137, 247, 254;
+
+
 
 	// JBH UX Colors
 	--colors-jbh-primary: #005dba;
@@ -284,6 +295,9 @@
 	--motion-transition: 0.3s ease-in-out;
 
 	--starlight-image-zoom-backdrop-bg: rgba(var(--gray-999-rgb), 0.75);
+	.starlight-image-zoom-opened dialog::backdrop {
+		backdrop-filter: blur(3px);
+	}
 }
 
 :root.theme-dark {
@@ -472,6 +486,15 @@ a:active:hover {
 a.interactive:not(.icon-link-button) svg {
 	vertical-align: text-bottom;
 }
+a.link.interactive {
+	font-weight: 500;
+	display: inline-block;
+	text-decoration: none;
+	&:hover,
+	&:focus-visible {
+		text-decoration: underline;
+	}
+}
 
 h1,
 h2,
@@ -568,10 +591,15 @@ h5 {
 
 .panel-grid {
 	display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 1rem;
 	padding: 1rem 0;
-  }
+}
+
+.panel-gap {
+	height: 0.5rem;
+	width: 100%;
+}
 
 starlight-image-zoom-zoomable {
 	width: unset !important;
@@ -585,7 +613,7 @@ starlight-image-zoom-zoomable {
 	figure {
 		figcaption {
 			color: var(--accent-text-over);
-			
+			backdrop-filter: blur(1px);
 			background-color: var(--accent-subtle-overlay) !important;
 			border-top: 1px solid var(--accent-subtle-overlay) !important;
 			text-shadow: var(--text-shadow-lg);

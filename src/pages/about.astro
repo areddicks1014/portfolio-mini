@@ -179,8 +179,14 @@ import alexReddicksProfilePhoto from "../images/alex-reddicks-profile-photo.jpg"
   }
   .summary {
     font-size: var(--text-lg);
-    a {
+    a.link.interactive {
+      font-weight: 500;
       display: inline-block;
+      text-decoration: none;
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
     }
   }
   .social-links {

@@ -13,37 +13,33 @@ status: "New"
 ---
 
 import { Image } from 'astro:assets';
+import Panel from '../../components/Panel.astro';
+import { Icon } from "astro-icon/components";
 
-### Description
-<br />
-Live Updates ("Rich Ongoing Notifications" during beta) for Android could be extremely useful for a variety of apps and contexts. I created some mockups of basic and custom example usages for things like Fitbit exercise activities, an eclipse timer, a presidential election tracker, live football game stats, and more.
-
-<br />
-
-The 'Live Updates' feature went through many iterations behind the scenes over the course of the Android 16 Beta which changed how the chips (and eventual notifications themselves) would work. For the most part, the chips design hasn't changed very much since it's still just an icon, text, and chip background color. Hopefully in the future we can have more control over the notification chips and be able to apply more unique designs and ways of displaying useful contextual information.
-
-<br />
-
-Here are more details on the Live Updates features and Mishaal Rahman's journey of discovery for the various features and APIs on Android Authority:
-- [Android 16 could let apps show Dynamic Island-like notifications](https://www.androidauthority.com/android-16-rich-ongoing-notifications-3494349/)
-- [Here's how Google's changing notifications in Android 16 with Live Updates](https://www.androidauthority.com/android-16-live-notifications-3518375/)
-- [Here's your first real look at Live Updates in Android 16](https://www.androidauthority.com/android-16-live-updates-demo-3528456/)
-- [Google Maps is the first app to support Android 16's Live Updates feature](https://www.androidauthority.com/google-maps-live-updates-3532808/)
-- [The new Android 16 Easter egg is a showcase of Android's Live Updates feature (Update: Video)](https://www.androidauthority.com/android-16-easter-egg-3533677/)
-
-<br /><br />
-
-### Images
+<Panel id="description" headerText='Description' headerSize='3' backgroundColor='var(--color-live-updates-notification-chip-concept-android-primary-rgb)'>
+    Live Updates ("Rich Ongoing Notifications" during beta) for Android could be extremely useful for a variety of apps and contexts. I created some mockups of basic and custom example usages for things like Fitbit exercise activities, an eclipse timer, a presidential election tracker, live football game stats, and more.
+    <br />
+    The 'Live Updates' feature went through many iterations behind the scenes over the course of the Android 16 Beta which changed how the chips (and eventual notifications themselves) would work. For the most part, the chips design hasn't changed very much since it's still just an icon, text, and chip background color. Hopefully in the future we can have more control over the notification chips and be able to apply more unique designs and ways of displaying useful contextual information.
+    <br />
+    Here are more details on the Live Updates features and Mishaal Rahman's journey of discovery for the various features and APIs on Android Authority:
+    <ul>
+        <li><a class="interactive link" href="https://www.androidauthority.com/android-16-rich-ongoing-notifications-3494349/" target="_blank" rel="noopener">Android 16 could let apps show Dynamic Island-like notifications <Icon name="mdi:external-link" /></a></li>
+        <li><a class="interactive link" href="https://www.androidauthority.com/android-16-live-notifications-3518375/" target="_blank" rel="noopener">Here's how Google's changing notifications in Android 16 with Live Updates <Icon name="mdi:external-link" /></a></li>
+        <li><a class="interactive link" href="https://www.androidauthority.com/android-16-live-updates-demo-3528456/" target="_blank" rel="noopener">Here's your first real look at Live Updates in Android 16 <Icon name="mdi:external-link" /></a></li>
+        <li><a class="interactive link" href="https://www.androidauthority.com/google-maps-live-updates-3532808/" target="_blank" rel="noopener">Google Maps is the first app to support Android 16's Live Updates feature <Icon name="mdi:external-link" /></a></li>
+        <li><a class="interactive link" href="https://www.androidauthority.com/android-16-easter-egg-3533677/" target="_blank" rel="noopener">The new Android 16 Easter egg is a showcase of Android's Live Updates feature (Update: Video) <Icon name="mdi:external-link" /></a></li>
+    </ul>
+</Panel>
 <br />
 
-<Image src="/images/Basic-Live-Updates-Chip-Examples.png" alt="Basic Live Updates Chip Examples" height={325} width={600}/>
-<Image src="/images/Custom-Live-Updates-Chip-Examples.png" alt="Custom Live Updates Chip Examples" height={325} width={600}/>
-
-<br /><br />
-
-### Wireframe Sketches
+<Panel id="images" headerText='Images' headerSize='3' backgroundColor='var(--color-live-updates-notification-chip-concept-android-primary-rgb)'>
+    <Image src="/images/Basic-Live-Updates-Chip-Examples.png" alt="Basic Live Updates Chip Examples" height={325} width={600}/>
+    <div class="panel-gap"></div>
+    <Image src="/images/Custom-Live-Updates-Chip-Examples.png" alt="Custom Live Updates Chip Examples" height={325} width={600}/>
+</Panel>
 <br />
 
-<Image src="/images/android-rich-ongoing-notifications-sketch.jpg" alt="Android Rich Ongoing Notifications Wireframe Sketch" height={400} width={600}/>
-
-*Note: I will update this page with my design process for this site including sketches and commentary.*
+<Panel id="wireframes" headerText='Wireframe Sketches' headerSize='3' backgroundColor='var(--color-live-updates-notification-chip-concept-android-primary-rgb)'>
+    <Image src="/images/wireframes/android-rich-ongoing-notifications-sketch.jpg" alt="Android Rich Ongoing Notifications Wireframe Sketch" height={400} width={600}/>
+</Panel>
+<br />

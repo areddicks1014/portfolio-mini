@@ -11,38 +11,35 @@ status: "New"
 ---
 
 import { Image } from 'astro:assets';
+import Panel from '../../components/Panel.astro';
 
-### Description
-<br />
-ISAC (Intelligent System Analytic Computer) is a computer or digital assistant that is used by a SHD Agent in the game The Division.
-<br /><br />
-
-Choose a theme to match your style:
-- Tech \[Orange\]
-- Security \[Blue\]
-- Medical \[Green\]
-- Dark Zone \[Purple\]
-- Rogue \[Red\]
-- Custom \[Color Picker\]
-<br /><br />
-
-*This watch face was heavily inspired by the game The Division. I loved the UI/UX so much that I wanted to create a version for my favorite watch.*
-
-<br /><br />
-
-### Screenshots
+<Panel id="description" headerText='Description' headerSize='3' backgroundColor='var(--color-isac-v1-pebble-primary-rgb)'>
+    ISAC (Intelligent System Analytic Computer) is a computer or digital assistant that is used by a SHD Agent in the game The Division.
+    <br />
+    Choose a theme to match your style:
+    - Tech \[Orange\]
+    - Security \[Blue\]
+    - Medical \[Green\]
+    - Dark Zone \[Purple\]
+    - Rogue \[Red\]
+    - Custom \[Color Picker\]
+    <br />
+    *This watch face was heavily inspired by the game The Division. I loved the UI/UX so much that I wanted to create a version for my favorite watch.*
+</Panel>
 <br />
 
-<Image src="/screenshots/isac-v1-pebble-orange.png" alt="ISAC v1 Tech Theme (Orange) watch face screenshot" height={144} width={168}/>
-<Image src="/screenshots/isac-v1-pebble-blue.png" alt="ISAC v1 Security Theme (Blue) watch face screenshot" height={144} width={168}/>
-<Image src="/screenshots/isac-v1-pebble-green.png" alt="ISAC v1 Medical Theme (Green) watch face screenshot" height={144} width={168}/>
-<Image src="/screenshots/isac-v1-pebble-custom.png" alt="ISAC v1 Custom Theme (Pink) watch face screenshot" height={144} width={168}/>
-<Image src="/screenshots/isac-v1-pebble-red.png" alt="ISAC v1 Rogue Theme (Red) watch face screenshot" height={144} width={168}/>
+<Panel id="screenshots" headerText='Screenshots' headerSize='3' backgroundColor='var(--color-isac-v1-pebble-primary-rgb)'>
+    <div class='panel-grid'>
+        <Image src="/images/screenshots/isac-v1-pebble-orange.png" alt="ISAC v1 Tech Theme (Orange) watch face screenshot" height={144} width={168}/>
+        <Image src="/images/screenshots/isac-v1-pebble-blue.png" alt="ISAC v1 Security Theme (Blue) watch face screenshot" height={144} width={168}/>
+        <Image src="/images/screenshots/isac-v1-pebble-green.png" alt="ISAC v1 Medical Theme (Green) watch face screenshot" height={144} width={168}/>
+        <Image src="/images/screenshots/isac-v1-pebble-custom.png" alt="ISAC v1 Custom Theme (Pink) watch face screenshot" height={144} width={168}/>
+        <Image src="/images/screenshots/isac-v1-pebble-red.png" alt="ISAC v1 Rogue Theme (Red) watch face screenshot" height={144} width={168}/>
+    </div>
+</Panel>
+<br />
 
-<br /><br />
-
-### Wireframes
-
-<Image src="/wireframes/ISAC_v1_settings_wireframe.jpg" alt="ISAC v1 Settings Wireframe" height={600} width={325}/>
-
-*Note: I will update this page with my design process for this site including sketches and commentary.*
+<Panel id="wireframes" headerText='Wireframes' headerSize='3' backgroundColor='var(--color-isac-v1-pebble-primary-rgb)'>
+    <Image src="/images/wireframes/ISAC_v1_settings_wireframe.jpg" alt="ISAC v1 Settings Wireframe" height={600} width={325}/>
+</Panel>
+<br />

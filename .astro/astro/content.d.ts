@@ -187,6 +187,13 @@ declare module 'astro:content' {
   collection: "case-studies";
   data: InferEntrySchema<"case-studies">
 } & { render(): Render[".mdx"] };
+"the-patio-place-redesign.mdx": {
+	id: "the-patio-place-redesign.mdx";
+  slug: "the-patio-place-redesign";
+  body: string;
+  collection: "case-studies";
+  data: InferEntrySchema<"case-studies">
+} & { render(): Render[".mdx"] };
 };
 "work": {
 "conditional-form-pattern.mdx": {
@@ -224,13 +231,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"patios-n-stuff.md": {
-	id: "patios-n-stuff.md";
+"patios-n-stuff.mdx": {
+	id: "patios-n-stuff.mdx";
   slug: "patios-n-stuff";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "sm-miles-skill-tree-hd.mdx": {
 	id: "sm-miles-skill-tree-hd.mdx";
   slug: "sm-miles-skill-tree-hd";
@@ -238,13 +245,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".mdx"] };
-"unhelpful-thinking-habits.md": {
-	id: "unhelpful-thinking-habits.md";
+"unhelpful-thinking-habits.mdx": {
+	id: "unhelpful-thinking-habits.mdx";
   slug: "unhelpful-thinking-habits";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "ux-engineer-wordmark.mdx": {
 	id: "ux-engineer-wordmark.mdx";
   slug: "ux-engineer-wordmark";

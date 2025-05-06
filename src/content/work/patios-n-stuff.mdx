@@ -1,0 +1,64 @@
+---
+title: "Patios-N-Stuff"
+description: "A demo site based off of one I created for a previous job that was not used."
+tags:
+- "Polymer"
+- "HTML"
+- "CSS"
+- "Javascript"
+- "Firebase"
+- "Design"
+- "Wireframes"
+status: "Updated"
+viewLink: "https://patios-n-stuff.firebaseapp.com/"
+codeLink: "https://github.com/areddicks1014/patios-n-stuff"
+---
+
+import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import Panel from '../../components/Panel.astro';
+
+<Panel id="description" headerText='Description' headerSize='3' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    This is a demo site I created based off of one I created in 2017 for a previous job that ended up not being used by the client. Explore the <a class="interactive link" href="https://patios-n-stuff.firebaseapp.com/">website <Icon name="mdi:external-link" /></a> or view the <a class="interactive link" href="https://github.com/areddicks1014/patios-n-stuff">source code <Icon name="mdi:external-link" /></a> to learn more.
+    <br />
+    *Note: The company "Patios-N-Stuff" is made up by me and any similarities to a real business is coincidence.*
+</Panel>
+<br />
+
+<Panel id="case-study" headerText='Case Study' headerSize='3' backgroundColor='var(--color-patios-n-stuff-secondary-rgb)'>
+    I also have a <a class="interactive link" href="/case-studies/the-patio-place-redesign">Case Study</a> where I expand on the process for designing and building this custom website.
+</Panel>
+<br />
+
+<Panel id="screenshots" headerText='Screenshots' headerSize='3' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+<Panel headerText='Home Page' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-home-ss-1a.png" alt="The Patio Place Home Page" width="700" height="400" />
+</Panel>
+
+<Panel headerText='Design Services' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-home-design-services.png" alt="The Patio Place Design Services Home Page Section" width="700" height="400" />
+</Panel>
+
+<Panel headerText='About Page' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-home-about-us.png" alt="The Patio Place About Us Home Page Section" width="700" height="400" />
+</Panel>
+
+<Panel headerText='Patio Tips' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-patio-tips-list.png" alt="The Patio Place Patio Tips List Page" width="700" height="400" />
+    <div class="panel-gap"></div>
+    <Image src="/images/screenshots/patios-n-stuff-patio-tips-details.png" alt="The Patio Place Patio Tips Details Page" width="700" height="400" />
+</Panel>
+
+<Panel headerText='Brands Page' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-brands-info.png" alt="The Patio Place Brands Info Home Page Section" width="700" height="400" />
+    <div class="panel-gap"></div>
+    <Image src="/images/screenshots/patios-n-stuff-brands-we-carry.png" alt="The Patio Place More Brands We Carry Home Page Section" width="700" height="400" />
+</Panel>
+
+<Panel headerText='Products' headerSize='4' class='inside' backgroundColor='var(--color-patios-n-stuff-primary-rgb)'>
+    <Image src="/images/screenshots/patios-n-stuff-products.png" alt="The Patio Place Products Page" width="700" height="400" />
+    <div class="panel-gap"></div>
+    <Image src="/images/screenshots/patios-n-stuff-collection.png" alt="The Patio Place Collection Page" width="700" height="400" />
+</Panel>
+</Panel>
+<br />

@@ -264,6 +264,14 @@ const {
         background-color: var(--gray-800);
       }
     }
+    &:active {
+      border: 2px solid var(--gray-0);
+      background-color: var(--accent-regular);
+      transform: translate3d(0, -3px, 3px);
+      html.theme-dark & {
+        background-color: var(--accent-dark);
+      }
+    }
     .title {
       font-size: var(--text-2xl);
     }
