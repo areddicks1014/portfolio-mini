@@ -10,42 +10,40 @@ codeLink: "https://github.com/areddicks1014/fitbit-sm-miles-skill-tree-hd"
 ---
 
 import { Image } from 'astro:assets';
+import Panel from '../../components/Panel.astro';
+import { Icon } from "astro-icon/components";
 
-### Description from Fitbit Gallery
-<br />
-The Skill Tree design from Insomniac's Spider-Man Miles Morales game for PS4/5 is so good that I couldn't resist making a more...portable version. 
-<br /><br />
-
-The stats (starting from the bottom left and going clockwise):
-- Battery (🔋)
-    - The battery icon will turn red when at or below 25% and green while charging
-- Calories (🔥)
-- Steps (👟)
-- Active Zone Minutes (⬆️)
-- Heart Rate (💛🧡❤️)
-    - The heart will change color to correspond with the current Active Zone to match Fitbit's colors.
-
-<br /><br />
-All the credit goes to the amazing work done by Gil (@GilFromUI on Twitter) and the Insomniac team on the design work that I was inspired by.
-<hr class="divider"/>
-<br /><br />
-
-### Screenshots:
+<Panel id="description" headerText='Description' headerSize='3' backgroundColor='var(--color-sm-miles-skill-tree-hd-primary-rgb)'>
+    The Skill Tree design from Insomniac's Spider-Man Miles Morales game for PS4/5 is so good that I couldn't resist making a more...portable version. 
+    <br />
+    The stats (starting from the bottom left and going clockwise):
+    - Battery (🔋)
+        - The battery icon will turn red when at or below 25% and green while charging
+    - Calories (🔥)
+    - Steps (👟)
+    - Active Zone Minutes (⬆️)
+    - Heart Rate (💛🧡❤️)
+        - The heart will change color to correspond with the current Active Zone to match Fitbit's colors.
+    <br />
+    All the credit goes to the amazing work done by Gil (<a class="interactive link" href="https://twitter.com/GilFromUI" target="_blank" rel="noopener">@GilFromUI <Icon name="mdi:external-link" /></a> on Twitter) and the Insomniac team on the design work that I was inspired by.
+</Panel>
 <br />
 
-<Image src="/screenshots/sm-miles-skill-tree-ss-1.png" alt="Watch face screenshot 1" height={325} width={325}/>
-<Image src="/screenshots/sm-miles-skill-tree-ss-2.png" alt="Watch face screenshot 2" height={325} width={325}/>
-<Image src="/screenshots/sm-miles-skill-tree-ss-3.png" alt="Watch face screenshot 3" height={325} width={325}/>
-<Image src="/screenshots/sm-miles-skill-tree-ss-4.png" alt="Watch face screenshot 4" height={325} width={325}/>
-<Image src="/screenshots/sm-miles-skill-tree-ss-5.png" alt="Watch face screenshot 5" height={325} width={325}/>
-
-<br /><br />
-
-### Wireframes
+<Panel id="screenshots" headerText='Screenshots' headerSize='3' backgroundColor='var(--color-sm-miles-skill-tree-hd-primary-rgb)'>
+    <div class='panel-grid'>
+        <Image src="/images/screenshots/sm-miles-skill-tree-ss-1.png" alt="Watch face screenshot 1" height={325} width={325}/>
+        <Image src="/images/screenshots/sm-miles-skill-tree-ss-2.png" alt="Watch face screenshot 2" height={325} width={325}/>
+        <Image src="/images/screenshots/sm-miles-skill-tree-ss-3.png" alt="Watch face screenshot 3" height={325} width={325}/>
+        <Image src="/images/screenshots/sm-miles-skill-tree-ss-4.png" alt="Watch face screenshot 4" height={325} width={325}/>
+        <Image src="/images/screenshots/sm-miles-skill-tree-ss-5.png" alt="Watch face screenshot 5" height={325} width={325}/>
+    </div>
+</Panel>
 <br />
-<Image src="/wireframes/SM_Miles_Skilltree_wireframe_1.jpg" alt="SM Miles Skill Tree Wireframe 1" height={600} width={325}/>
-<Image src="/wireframes/SM_Miles_Skilltree_wireframe_2.jpg" alt="SM Miles Skill Tree Wireframe 2" height={600} width={325}/>
 
-
-
-*Note: I will update this page with my design process for this site including sketches and commentary.*
+<Panel id="wireframes" headerText='Wireframes' headerSize='3' backgroundColor='var(--color-sm-miles-skill-tree-hd-primary-rgb)'>
+    <div class='panel-grid'>
+        <Image src="/images/wireframes/SM_Miles_Skilltree_wireframe_1.jpg" alt="SM Miles Skill Tree Wireframe 1" height={600} width={325}/>
+        <Image src="/images/wireframes/SM_Miles_Skilltree_wireframe_2.jpg" alt="SM Miles Skill Tree Wireframe 2" height={600} width={325}/>
+    </div>
+</Panel>
+<br />
