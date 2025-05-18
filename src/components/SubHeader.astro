@@ -1,17 +1,19 @@
 ---
 interface Props {
   subheading: string,
+  fluid?: boolean,
+  class?: string
 }
 
-const { subheading } = Astro.props;
+const { subheading, fluid, class: className,...rest } = Astro.props;
 ---
 
-<div class="subheader-container">
+<div class:list={[className, 'subheader-container']} {...rest}>
   {
     Astro.slots.has('left') ? <slot name="left" /> : <div class="spacer"></div>
   }
   
-  <h2 class="subheading" transition:name={`${subheading}`}>{subheading}</h2>
+  <h2 class:list={['subheading', { fluid: fluid }]} transition:name={`${subheading}`}>{subheading}</h2>
   {
     Astro.slots.has('right') ? <slot name="right" /> : <div class="spacer"></div> 
   }
@@ -23,20 +25,22 @@ const { subheading } = Astro.props;
         align-items: flex-end;
         justify-content: center;
         min-height: 75px;
+        h2 {
+          // min-height: 75px;
+          text-align: center;
+          text-shadow: var(--text-shadow-lg);
+          // font-size: clamp(3.5rem, 2vw, 3rem);
+          --font-level: 4;
+        }
     }
     :global(.subheader-container:has(.link-icon-button span.reveal)) {
       min-height: 100px;
       margin-bottom: -0.5rem;
     }
     
-    
-    .subheader-container h2 {
-      min-height: 75px;
-      text-align: center;
-      text-shadow: var(--text-shadow-lg);
-    }
     :global(.subheader-container:has(.link-icon-button span.reveal)) h2 {
-      min-height: 100px;
+      // min-height: 100px;
+      margin-bottom: 2.25rem;
     }
     .spacer {
         display: flex;

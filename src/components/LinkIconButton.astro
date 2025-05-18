@@ -29,7 +29,6 @@ const { id, link, icon, label, reveal, above, secondary, small, mono = false, ex
       padding: var(--padding-x) var(--padding-y);
       text-decoration: none;
       flex-direction: column;
-
       &.mono {
         color: var(--gray-0);
         .icon {
@@ -38,7 +37,7 @@ const { id, link, icon, label, reveal, above, secondary, small, mono = false, ex
         &:hover,
         &:focus-visible {
           color: var(--gray-100);
-          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11);
+          text-shadow: var(--text-shadow-lg);
           .icon {
             border: 2px solid var(--gray-100);
           }
@@ -70,7 +69,7 @@ const { id, link, icon, label, reveal, above, secondary, small, mono = false, ex
       &:focus-visible {
         color: var(--link-hover);
         font-weight: bold;
-    
+        text-shadow: var(--text-shadow-lg);
         &:active {
           color: var(--link-active-hover);
         }
@@ -86,6 +85,7 @@ const { id, link, icon, label, reveal, above, secondary, small, mono = false, ex
         height: 55px;
         width: 55px;
         padding: 5px;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.11)) drop-shadow(0 2px 0 rgba(255, 255, 255, 0.11));
         &.secondary {
             border-style: dashed;
         }

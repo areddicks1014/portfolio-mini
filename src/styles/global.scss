@@ -170,9 +170,9 @@
 	--text-4xl: 3.5rem;
 	--text-5xl: 4.5rem;
 
-	--font-size-min: 17;
+	--font-size-min: 18;
 	--font-size-max: 20;
-	--font-ratio-min: 1.25;
+	--font-ratio-min: 1.28;
 	--font-ratio-max: 1.33;
 	--font-width-min: 320;
 	--font-width-max: 1500;
@@ -716,6 +716,26 @@ starlight-image-zoom-zoomable {
 	display: flex;
 	flex-direction: column;
 }
+
+.spacer-1 {
+	height: 0.5rem;
+}
+.spacer-2 {
+	height: 1rem;
+}
+.spacer-3 {
+	height: 1.5rem;
+}
+.spacer-4 {
+	height: 2rem;
+}
+.spacer-5 {
+	height: 2.5rem;
+}
+.spacer-6 {
+	height: 3rem;
+}
+
 
 .gap-2 {
 	gap: 0.5rem;

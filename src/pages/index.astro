@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeListItem from '../components/HomeListItem.astro';
 import FlipHeader from '../components/FlipHeader.astro';
 import SubHeader from '../components/SubHeader.astro';
+import { Image } from 'astro:assets';
 ---
 
 <BaseLayout>
@@ -18,6 +19,10 @@ import SubHeader from '../components/SubHeader.astro';
 			<HomeListItem label="resume" link="/resume/"></HomeListItem>
 			<HomeListItem label="about" link="/about/"></HomeListItem>
 		</ul>
+		<div class="spacer-4"></div>
+		<div class="footer flex-center">
+			<Image src="/augmented-alex-logo.svg" alt="Augmented Alex Logo" width="75" height="75"></Image>
+		</div>
 	</main>
 </BaseLayout>
 

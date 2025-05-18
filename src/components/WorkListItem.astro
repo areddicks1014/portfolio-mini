@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import LinkIconButton from "../components/LinkIconButton.astro";
 
 interface Props {
   title: string;
@@ -231,8 +230,59 @@ const {
           background-position: top;
         }
       }
+      &:active {
+        background: var(--background), rgba(var(--gray-999-rgb), 0.33);
+        background-blend-mode: overlay;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        border: 2px solid var(--gray-300);
+        .header .title, .description {
+          color: var(--gray-0);
+        }
+        .footer {
+        .tags .tag {
+            color: var(--gray-0);
+            border: 2px solid rgba(var(--gray-0-rgb), 0.11);
+            background-color: rgba(var(--gray-0-rgb), 0.11);
+            &:hover {
+              color: var(--gray-0);
+              border: 2px solid rgba(var(--gray-0-rgb), 0.33);
+            }
+            &.status {
+            color: var(--gray-999);
+            background-color: var(--gray-0);
+            border: 2px solid var(--gray-0);
+            }
+          }
+          .actions .icon {
+            color: var(--gray-0);
+          }
+        }
+        &.locked {
+          background: var(--background), rgba(var(--gray-999-rgb), 0.66);
+          background-blend-mode: overlay;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top;
+        }
+      }
       html.theme-dark &:hover {
         background: var(--background), rgba(var(--gray-999-rgb), 0.11);
+        background-blend-mode: overlay;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        &.locked {
+          background: var(--background), rgba(var(--gray-999-rgb), 0.66);
+          background-blend-mode: overlay;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top;
+        }
+      }
+      html.theme-dark  &:active {
+        background: var(--background), rgba(var(--gray-999-rgb), 0.01);
         background-blend-mode: overlay;
         background-size: cover;
         background-repeat: no-repeat;
@@ -257,19 +307,41 @@ const {
       }
     }
     &:hover {
-      border: 2px solid rgba(var(--gray-0-rgb), 0.33);
-      background-color: var(--gray-900);
-      transform: translate3d(0, -3px, 3px);
-      html.theme-dark & {
-        background-color: var(--gray-800);
-      }
-    }
-    &:active {
       border: 2px solid var(--gray-0);
       background-color: var(--accent-regular);
       transform: translate3d(0, -3px, 3px);
       html.theme-dark & {
         background-color: var(--accent-dark);
+      }
+    }
+    &:active {
+      .header .title, .description {
+        color: var(--gray-999);
+      }
+      .footer {
+      .tags .tag {
+          color: var(--gray-999);
+          border: 2px solid rgba(var(--gray-999-rgb), 0.11);
+          background-color: rgba(var(--gray-999-rgb), 0.11);
+          &:hover {
+            color: var(--gray-999);
+            border: 2px solid rgba(var(--gray-999-rgb), 0.33);
+          }
+          &.status {
+          color: var(--gray-0);
+          background-color: var(--gray-999);
+          border: 2px solid var(--gray-999);
+          }
+        }
+        .actions .icon {
+          color: var(--gray-999);
+        }
+      }
+      // border: 2px solid rgba(var(--gray-999));
+      background-color: var(--accent-light);
+      transform: translate3d(0, -3px, 3px);
+      html.theme-dark & {
+        background-color: var(--accent-light);
       }
     }
     .title {
