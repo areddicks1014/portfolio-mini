@@ -40,7 +40,14 @@ export default defineConfig({
         "design",
         "art",
         "artboard",
-        "lock"
+        "lock",
+        "work",
+        "invoice-text-multiple",
+        "tools",
+        "certificate",
+        "book-education",
+        "volunteer",
+        "bag-personal"
       ],
       solar: [
         "figma-bold",

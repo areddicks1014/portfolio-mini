@@ -31,7 +31,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div class="text-body">
       <div class="resume-section">
-        <h3>Employment</h3>
+        <h3><Icon name="mdi:work" /> Employment</h3>
         <h4>JB Hunt Transport Inc</h4>
         <h5>Software Engineer II (April 2018 - September 2024)</h5>
         <ul>
@@ -78,7 +78,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <hr class="divider" />
       <div class="resume-section">
-        <h3>Projects | Work | Experience</h3>
+        <h3><Icon name="mdi:invoice-text-multiple" /> Projects | Work | Experience</h3>
         <h4>Web Apps</h4>
         <ul>
           <li>
@@ -146,7 +146,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <hr class="divider" />
       <div class="resume-section">
-        <h3>Skills | Tools | Languages</h3>
+        <h3><Icon name="mdi:tools" /> Skills | Tools | Languages</h3>
         <h4>Proficient In:</h4>
         <ul>
           <li>HTML, CSS, SCSS</li>
@@ -169,7 +169,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <hr class="divider" />
       <div class="resume-section">
-        <h3>Education</h3>
+        <h3><Icon name="mdi:book-education" /> Education</h3>
         <h4>Certificates</h4>
         <h5>Google UX Design Professional Certificate (Dec 2024)</h5>
         <ul class="list-style-none">
@@ -205,7 +205,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <hr class="divider" />
       <div class="resume-section">
-        <h3>Volunteering</h3>
+        <h3><Icon name="mdi:volunteer" /> Volunteering</h3>
         <ul>
           <li>Habitat for Humanity</li>
           <li>Saint Vincent de Paul Community Garden and “Hot Meals” program</li>
@@ -214,12 +214,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <hr class="divider" />
       <div class="resume-section">
-        <h3>Interests</h3>
+        <h3><Icon name="mdi:bag-personal" /> Interests</h3>
         <ul>
           <li>Keeping up with the latest technologies</li>
           <li>Pursuing physical and outdoor activities</li>
           <li>Playing video games</li>
           <li>Sketching/coding personal designs</li>
+          <li>Spending time with my family</li>
         </ul>
       </div>
       <hr class="divider" />
@@ -282,6 +283,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     position: sticky;
     top: 100px;
     z-index: 9;
+    svg {
+      vertical-align: bottom;
+    }
     &::before {
       content: "";
       z-index: -1;
@@ -289,7 +293,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       position: absolute;
       left: -0.5rem;
       width: calc(100% + 1rem);
-      height: calc(100% + 0.75rem);
+      height: calc(100% + 0.5rem);
       backdrop-filter: blur(0);
       animation: bg-fill linear both;
       animation-timeline: scroll();
