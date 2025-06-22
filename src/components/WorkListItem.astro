@@ -44,6 +44,7 @@ const {
     class:list={[className, background && "backgroundImg", status === "Upcoming" && "locked"]}
     {...rest}
     href={status === "Upcoming" ? null : details}
+    aria-label={title}
   >
     <div class="header">
       <h3 class="title" transition:name={title}>{title}</h3>

@@ -48,7 +48,14 @@
 	--color-sm-miles-skill-tree-hd-primary: #4ffefa; // use black foreground 
 	--color-sm-miles-skill-tree-hd-primary-rgb: 79, 250, 254;
 
-
+	// mPING Colors
+	--color-mping-logo-dome: #E17822; // use white foreground
+	--color-mping-logo-dome-rgb: 225, 120, 34;
+	--color-mping-primary: #092C4E; // use white foreground
+	--color-mping-primary-rgb: 9, 44, 78;
+	--color-mping-secondary: #405B75; // use white foreground
+	--color-mping-secondary-rgb: 64, 91, 117;
+	
 
 	// JBH UX Colors
 	--colors-jbh-primary: #005dba;
@@ -487,9 +494,6 @@ a:active {
 a:active:hover {
 	color: var(--link-active-hover);
 }
-a.interactive:not(.icon-link-button) svg {
-	vertical-align: text-bottom;
-}
 a.link.interactive {
 	font-weight: 500;
 	display: inline-block;
@@ -581,6 +585,21 @@ h5 {
   color: transparent;
 }
 
+.image-context {
+	width: fit-content;
+	background-color: var(--accent-overlay);
+	&.mping {
+		background-color: rgba(var(--color-mping-logo-dome-rgb), 0.33);
+	}
+	color: var(--gray-100);
+    text-shadow: var(--text-shadow-lg);
+	padding: 0 0.75rem;
+	margin: 0 0 0.5rem 0;
+	white-space: nowrap;
+	font-weight: 500;
+	backdrop-filter: blur(3px);
+}
+
 .flex-center {
 	display: flex;
 	justify-content: center;
@@ -598,6 +617,9 @@ h5 {
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 1rem;
 	padding: 1rem 0;
+	&.no-top-padding {
+		padding-top: 0;
+	}
 }
 
 .panel-gap {

@@ -6,11 +6,193 @@ tags:
 - "Mobile"
 - "Redesign"
 - "Case Study"
-status: "Upcoming"
-background: "url(/images/mping-vector-bg-03.svg)"
+status: "New"
+background: "url(/images/backgrounds/mping-vector-bg-03.svg)"
 ---
 
 import { Image } from 'astro:assets';
 import { Icon } from "astro-icon/components";
 import Panel from '../../components/Panel.astro';
+
+<br />
+### My mPING redesigns for mobile platforms
+<br /><br />
+
+<Panel headerText="Table of Contents" headerSize="3" backgroundColor="var(--gray-999-rgb)">
+- [Project Overview](#project-overview)
+- [Before and After](#before-after)
+- [Paper Wireframes](#paper-wireframes)
+{/* - [Outcomes](#outcomes) */}
+{/* - [What I Learned](#what-i-learned) */}
+</Panel>
+<br />
+
+<Panel id="project-overview" headerText='Project Overview' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='The Goal' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        The mPING (Meteorological Phenomena Identification Near the Ground) mobile apps on Android + iOS have outdated designs that could also be confusing for new users.
+    </Panel>
+    <Panel headerText='My Roles' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+    <div class='panel-grid'>
+        <Panel headerText='UX Designer' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Created wireframes, mockups, and prototypes for the redesigns.
+        </Panel>
+        <Panel headerText='Web Developer' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            Created a <a class="interactive link" href="https://web.dev/explore/progressive-web-apps" target="_blank" rel="noopener">Progressive Web App <Icon name="mdi:external-link" /></a> that would work across platforms that could also serve as a high fidelity functional prototype that uses the APIs provided by NOAA + NSSL + OU.
+        </Panel>
+    </div>
+    </Panel>
+    <Panel headerText='Context' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        - I have been using this app for many years casually and while storm chasing
+        - The design has degraded over time as devices and operating systems have been updated
+        - This functionality has been built into other apps (such as RadarScope)
+    </Panel>
+</Panel>
+<br />
+
+<Panel id="before-after" headerText='Before and After Redesign' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='App Icon' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+    <div class='panel-grid'>
+        <Panel headerText='Before' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside small'>
+            <Image src="/images/mping/mPing-old-icon-460w.webp" alt="mPING App Icon - Before" width="325" height="200" />
+        </Panel>
+        <Panel headerText='After' headerSize='5' class='inside small'>
+            <Image src="/images/mping/mPing-new-icon-512w.png" alt="mPING App Icon - After" width="325" height="200" />
+        </Panel>
+    </div>
+    </Panel>
+    <Panel headerText='Main Page' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <Panel headerText='Before' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Android</p>
+                <Image src="/images/mping/screenshots/mPing-Android-screenshot-main.png" alt="mPING Main Page Android - Before" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">iPhone</p>
+                <Image src="/images/mping/screenshots/mPing-iPhone-screenshot.webp" alt="mPING Main Page iPhone - Before" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+        <Panel headerText='After' headerSize='5' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Menu Closed</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-main.png" alt="mPING Main Page - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Menu Open</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-main-menu-open.png" alt="mPING Main Page with the menu open - After" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+    </Panel>
+    <Panel headerText='Select Report Type' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <Panel headerText='Before' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Some types can be expanded</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-select-report-type.png" alt="mPING Select Report Type Android - Before" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">One subtype can be selected</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-select-report-subtype.png" alt="mPING Select Report Type Android - Before" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+        <Panel headerText='After' headerSize='5' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Selecting Type</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-select-type.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Selecting Subtype</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-select-subtype.png" alt="mPING Select Report Subtype - After" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+    </Panel>
+    <Panel headerText='Submit Report Flow' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <Panel headerText='Before' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Shows selected report type/subtype</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-report-selected.png" alt="mPING Selected Report Type - Android - Before" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Report submitted on button press</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-report-submitted.png" alt="mPING Report Submitted - Android - Before" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">30 second cooldown after submitting</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-report-cooldown.png" alt="mPING Report Cooldown - Android - Before" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+        <Panel headerText='After' headerSize='5' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Selected type/subtype</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-selected.png" alt="mPING Selected Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">3 second countdown after submit</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submitting-1.png" alt="mPING Submitting Report - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Submitted report</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submitted.png" alt="mPING Submitted Report - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">30 second cooldown after submitting</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submit-cooldown.png" alt="mPING Report Cooldown - After" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+    </Panel>
+    <Panel headerText='Other Pages' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <Panel headerText='Before' headerSize='5' backgroundColor='var(--gray-999-rgb)' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">About dialog</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-about-dialog.png" alt="mPING About Dialog - Android - Before" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Definitions website redirect</p>
+            <Image src="/images/mping/screenshots/mPing-Android-screenshot-definitions-web-redirect.png" alt="mPING Select Report Type - Android - Before" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+        <Panel headerText='After' headerSize='5' class='inside'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">About page</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-about.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">About page with menu open</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-about-menu-open.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Definitions page</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-defs-1.png" alt="mPING Definitions page - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Definitions page scrolled</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-defs-2.png" alt="mPING Definitions page scrolled - After" width="325" height="600" /> 
+            </div>
+            </div>
+        </Panel>
+    </Panel>
+</Panel>
+
+<Panel id="paper-wireframes" headerText='Paper Wireframes' headerSize='3' backgroundColor='var(--gray-999-rgb)'>
+    <Panel headerText='Brand Explorations' headerSize='4' class='inside' backgroundColor='var(--gray-999-rgb)'>
+        <div class="panel-grid">
+        <Image src="/images/mping/wireframes/mping-wireframes-1.jpg" alt="mPING Exploration Paper Wireframes" width="325" height="700" /> 
+        <Image src="/images/mping/wireframes/mping-wireframes-2.jpg" alt="More mPING Exploration Paper Wireframes" width="325" height="700" /> 
+        </div>
+    </Panel>
+</Panel>
+<br />
 

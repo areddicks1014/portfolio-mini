@@ -1,0 +1,100 @@
+---
+title: "mPING Mobile App Simple Redesign"
+description: "This is my first redesign of the mPING mobile app using the Simple Design System created by the Figma team as a starting place."
+tags:
+- "Design"
+- "Figma"
+- "Wireframes"
+- "Redesign"
+status: "New"
+viewLink: "https://patios-n-stuff.firebaseapp.com/"
+codeLink: "https://github.com/areddicks1014/patios-n-stuff"
+---
+
+import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import Panel from '../../components/Panel.astro';
+
+<Panel id="description" headerText='Description' headerSize='3' backgroundColor='var(--color-mping-primary-rgb)'>
+    This is my first redesign of the mPING mobile app using the Simple Design System created by the Figma team as a starting place.
+</Panel>
+<br />
+
+<Panel id="case-study" headerText='Case Study' headerSize='3' backgroundColor='var(--color-mping-logo-dome-rgb)'>
+    I also have a <a class="interactive link" href="/case-studies/mping-mobile-redesign">Case Study</a> where I expand on the process for this mobile app redesign.
+</Panel>
+<br />
+
+
+<Panel id="screenshots" headerText='Screenshots' headerSize='3' backgroundColor='var(--color-mping-secondary-rgb)'>
+    <Panel headerText='App Icon' headerSize='4' class='inside' backgroundColor='var(--color-mping-secondary-rgb)'>
+    <div class='panel-grid'>
+        <Image src="/images/mping/mPing-new-icon-512w.png" alt="mPING App Icon - After" width="325" height="200" />
+    </div>
+    </Panel>
+    <Panel headerText='Main Page' headerSize='4' class='inside' backgroundColor='var(--color-mping-secondary-rgb)'>
+        <div class='panel-grid no-top-padding'>
+        <div>
+            <p class="image-context mping">Menu Closed</p>
+        <Image src="/images/mping/screenshots/mping-simple-screenshot-main.png" alt="mPING Main Page - After" width="325" height="600" /> 
+        </div>
+        <div>
+            <p class="image-context mping">Menu Open</p>
+        <Image src="/images/mping/screenshots/mping-simple-screenshot-main-menu-open.png" alt="mPING Main Page with the menu open - After" width="325" height="600" /> 
+        </div>
+        </div>
+    </Panel>
+    <Panel headerText='Select Report Type' headerSize='4' class='inside' backgroundColor='var(--color-mping-secondary-rgb)'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Selecting Type</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-select-type.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Selecting Subtype</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-select-subtype.png" alt="mPING Select Report Subtype - After" width="325" height="600" /> 
+            </div>
+            </div>
+    </Panel>
+    <Panel headerText='Submit Report Flow' headerSize='4' class='inside' backgroundColor='var(--color-mping-secondary-rgb)'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">Selected type/subtype</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-selected.png" alt="mPING Selected Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">3 second countdown after submit</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submitting-1.png" alt="mPING Submitting Report - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Submitted report</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submitted.png" alt="mPING Submitted Report - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">30 second cooldown after submitting</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-submit-cooldown.png" alt="mPING Report Cooldown - After" width="325" height="600" /> 
+            </div>
+            </div>
+    </Panel>
+    <Panel headerText='Other Pages' headerSize='4' class='inside' backgroundColor='var(--color-mping-secondary-rgb)'>
+            <div class='panel-grid no-top-padding'>
+            <div>
+                <p class="image-context mping">About page</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-about.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">About page with menu open</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-about-menu-open.png" alt="mPING Select Report Type - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Definitions page</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-defs-1.png" alt="mPING Definitions page - After" width="325" height="600" /> 
+            </div>
+            <div>
+                <p class="image-context mping">Definitions page scrolled</p>
+            <Image src="/images/mping/screenshots/mping-simple-screenshot-defs-2.png" alt="mPING Definitions page scrolled - After" width="325" height="600" /> 
+            </div>
+            </div>
+    </Panel>
+</Panel>
+<br />

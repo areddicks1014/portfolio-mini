@@ -224,6 +224,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".mdx"] };
+"mping-simple-redesign.mdx": {
+	id: "mping-simple-redesign.mdx";
+  slug: "mping-simple-redesign";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".mdx"] };
 "old-portfolio-site.md": {
 	id: "old-portfolio-site.md";
   slug: "old-portfolio-site";
