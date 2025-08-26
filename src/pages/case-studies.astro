@@ -4,16 +4,33 @@ import LinkIconButton from "../components/LinkIconButton.astro";
 import SubHeader from "../components/SubHeader.astro";
 import WorkListItem from "../components/WorkListItem.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 const caseStudyEntries = await getCollection('case-studies');
-const sortedCaseStudyEntries = caseStudyEntries.sort((a: any, b: any) => {
-  if (a.data.status < b.data.status) {
-    return -1;
+
+const getSortGroup = (entry: CollectionEntry<'case-studies'>) => {
+    const status = entry.data.status;
+    if (status === 'Upcoming') {
+        return 3;
+    }
+    if (status) {
+        return 1;
+    }
+    return 2;
+};
+
+const sortedCaseStudyEntries = caseStudyEntries.sort((a, b) => {
+  const groupA = getSortGroup(a);
+  const groupB = getSortGroup(b);
+
+  if (groupA !== groupB) {
+    return groupA - groupB;
   }
-  if (a.data.status > b.data.status) {
-    return 1;
+
+  if (groupA === 1) {
+    return a.data.status!.localeCompare(b.data.status!);
   }
+
   return 0;
 });
 ---
@@ -28,7 +45,7 @@ const sortedCaseStudyEntries = caseStudyEntries.sort((a: any, b: any) => {
         </div>
         <div class="text-body">
             {
-                sortedCaseStudyEntries.map((entry: any, index: number) => (
+                sortedCaseStudyEntries.map((entry, index) => (
                     <WorkListItem title={entry.data.title} 
                         description={entry.data.description}
                         tags={entry.data.tags} 

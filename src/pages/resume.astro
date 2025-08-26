@@ -134,6 +134,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               rel="noopener">Sense <Icon name="mdi:external-link" /></a
             >)
           </li>
+        </ul>
+        <h4>Design</h4>
+        <ul>
           <li>
             Live Updates notification chip concepts for Android (<a
             class="interactive link"
@@ -143,7 +146,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           >) 
           </li>
           <li>
-            mPING mobile app redesign <em>(Figma)</em> 
+            mPING mobile app redesign (Figma, <a
+            class="interactive link"
+            href="/case-studies/mping-mobile-redesign">case study</a
+          >)
           </li>
         </ul>
       </div>
@@ -260,12 +266,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     0% {
       transform: scale(0.95) translateY(3px);
     }
-  //   10% {
-  //   opacity: 0.8;
-  // }
-  // 30% {
-  //   opacity: 0.5;
-  // }
     100% {
       transform: scale(1) translateY(0px);
     }
@@ -273,6 +273,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   @keyframes bg-fill {
     to {
       backdrop-filter: blur(2rem);
+    }
+  }
+  @keyframes FadeIn {
+    from {
+      scale: 0.9;
+      opacity: 0;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
     }
   }
   main {
@@ -286,6 +296,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     position: sticky;
     top: 100px;
     z-index: 9;
+    animation: FadeOut linear both;
+    animation-timeline: scroll();
+    animation-range: entry 90% cover 50%; /* adjust vibes here */
     svg {
       vertical-align: bottom;
     }
@@ -297,10 +310,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       left: -0.5rem;
       width: calc(100% + 1rem);
       height: calc(100% + 0.5rem);
-      backdrop-filter: blur(0);
-      animation: bg-fill linear both;
-      animation-timeline: scroll();
-      animation-range: 0vh 75vh; /* adjust vibes here */
+      backdrop-filter: blur(2rem);
     }
   }
   h4 {
